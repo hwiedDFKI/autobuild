@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Package</p>
+				<p class="link"><a href="Package.html">Autobuild::Package</a></p>
 				
 			</div>
 			
@@ -59,9 +69,9 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000142">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000143">#installstamp</a></li>
+					<li><a href="#method-i-installstamp">#installstamp</a></li>
 					
 				</ul>
 			</div>
@@ -105,6 +115,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -124,6 +138,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -166,8 +186,6 @@
 					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
-				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
 				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
@@ -213,7 +231,7 @@
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -228,7 +246,7 @@
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -243,7 +261,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000142"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -255,22 +273,24 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 8</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
-            <span class="ruby-ivar">@pkgconfig</span> = <span class="ruby-constant">PkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
-            <span class="ruby-ivar">@prefix</span>    = <span class="ruby-ivar">@pkgconfig</span>.<span class="ruby-identifier">prefix</span>
-            <span class="ruby-keyword kw">super</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 8</span>
+ 8:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
+ 9:             <span class="ruby-ivar">@pkgconfig</span> = <span class="ruby-constant">PkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
+10:             <span class="ruby-ivar">@prefix</span>    = <span class="ruby-ivar">@pkgconfig</span>.<span class="ruby-identifier">prefix</span>
+11:             <span class="ruby-keyword kw">super</span>
+12:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -283,7 +303,7 @@
 
 		
 			<div id="installstamp-method" class="method-detail ">
-				<a name="M000143"></a>
+				<a name="method-i-installstamp"></a>
 
 				<div class="method-heading">
 				
@@ -295,27 +315,29 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="installstamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 14</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installstamp</span>
-            <span class="ruby-identifier">std_stamp</span> = <span class="ruby-keyword kw">super</span>
-            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">std_stamp</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">std_stamp</span>)
-
-            <span class="ruby-identifier">pcfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">pkgconfig</span>.<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">&quot;lib&quot;</span>, <span class="ruby-value str">&quot;pkgconfig&quot;</span>, <span class="ruby-node">&quot;#{name}.pc&quot;</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">pcfile</span>)
-                <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;cannot find the .pc file for #{name}, tried #{pcfile}&quot;</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">pcfile</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 14</span>
+14:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installstamp</span>
+15:             <span class="ruby-identifier">std_stamp</span> = <span class="ruby-keyword kw">super</span>
+16:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">std_stamp</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">std_stamp</span>)
+17: 
+18:             <span class="ruby-identifier">pcfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">pkgconfig</span>.<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">&quot;lib&quot;</span>, <span class="ruby-value str">&quot;pkgconfig&quot;</span>, <span class="ruby-node">&quot;#{name}.pc&quot;</span>)
+19:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">pcfile</span>)
+20:                 <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;cannot find the .pc file for #{name}, tried #{pcfile}&quot;</span>
+21:             <span class="ruby-keyword kw">end</span>
+22:             <span class="ruby-identifier">pcfile</span>
+23:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

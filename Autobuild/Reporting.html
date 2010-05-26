@@ -22,6 +22,16 @@
 <body class="module">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -52,17 +62,17 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000115">::<<</a></li>
+					<li><a href="#method-c-%3C%3C">::<<</a></li>
 					
-					<li><a href="#M000117">::each_log</a></li>
+					<li><a href="#method-c-each_log">::each_log</a></li>
 					
-					<li><a href="#M000116">::each_reporter</a></li>
+					<li><a href="#method-c-each_reporter">::each_reporter</a></li>
 					
-					<li><a href="#M000114">::error</a></li>
+					<li><a href="#method-c-error">::error</a></li>
 					
-					<li><a href="#M000112">::report</a></li>
+					<li><a href="#method-c-report">::report</a></li>
 					
-					<li><a href="#M000113">::success</a></li>
+					<li><a href="#method-c-success">::success</a></li>
 					
 				</ul>
 			</div>
@@ -106,6 +116,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -125,6 +139,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -168,8 +188,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -196,7 +214,7 @@
  The reporting module provides the framework
 </pre>
 <p>
-to run commands in autobuild and report errors to the user
+to run commands in autobuild and report errors  to the user
 </p>
 <p>
 It does not use a logging framework like Log4r, but it should ;-)
@@ -217,7 +235,7 @@ It does not use a logging framework like Log4r, but it should ;-)
 
 		
 			<div id="--method" class="method-detail ">
-				<a name="M000115"></a>
+				<a name="method-c-%3C%3C"></a>
 
 				<div class="method-heading">
 				
@@ -238,25 +256,27 @@ Add a new reporter
 					<div class="method-source-code"
 						id="--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 68</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">reporter</span>)
-            <span class="ruby-ivar">@@reporters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">reporter</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 68</span>
+68:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">reporter</span>)
+69:             <span class="ruby-identifier">@@reporters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">reporter</span>
+70:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="each-log-method" class="method-detail ">
-				<a name="M000117"></a>
+				<a name="method-c-each_log"></a>
 
 				<div class="method-heading">
 				
 					<span class="method-name">each_log</span><span
-						class="method-args">()</span>
+						class="method-args">(&block)</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -272,24 +292,22 @@ Iterate on all log files
 					<div class="method-source-code"
 						id="each-log-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 77</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each_log</span>
-            <span class="ruby-constant">Find</span>.<span class="ruby-identifier">find</span>(<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\.log$/</span>
-                    <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">path</span>)
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 77</span>
+77:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each_log</span>(&amp;<span class="ruby-identifier">block</span>)
+78:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logfiles</span>.<span class="ruby-identifier">each</span>(&amp;<span class="ruby-identifier">block</span>)
+79:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="each-reporter-method" class="method-detail ">
-				<a name="M000116"></a>
+				<a name="method-c-each_reporter"></a>
 
 				<div class="method-heading">
 				
@@ -301,27 +319,29 @@ Iterate on all log files
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="each-reporter-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 72</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each_reporter</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">iter</span>)
-            <span class="ruby-ivar">@@reporters</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">iter</span>)
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 72</span>
+72:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">each_reporter</span>(&amp;<span class="ruby-identifier">iter</span>)
+73:             <span class="ruby-identifier">@@reporters</span>.<span class="ruby-identifier">each</span>(&amp;<span class="ruby-identifier">iter</span>)
+74:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="error-method" class="method-detail ">
-				<a name="M000114"></a>
+				<a name="method-c-error"></a>
 
 				<div class="method-heading">
 				
@@ -342,20 +362,22 @@ Reports that the build failed to the user
 					<div class="method-source-code"
 						id="error-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 63</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">error</span>(<span class="ruby-identifier">error</span>)
-            <span class="ruby-ivar">@@reporters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rep</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rep</span>.<span class="ruby-identifier">error</span>(<span class="ruby-identifier">error</span>) <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 63</span>
+63:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">error</span>(<span class="ruby-identifier">error</span>)
+64:             <span class="ruby-identifier">@@reporters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rep</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rep</span>.<span class="ruby-identifier">error</span>(<span class="ruby-identifier">error</span>) <span class="ruby-keyword kw">end</span>
+65:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="report-method" class="method-detail ">
-				<a name="M000112"></a>
+				<a name="method-c-report"></a>
 
 				<div class="method-heading">
 				
@@ -379,25 +401,27 @@ If an exception is fatal, the program is terminated using exit()
 					<div class="method-source-code"
 						id="report-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 48</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">report</span>
-            <span class="ruby-keyword kw">begin</span>
-                <span class="ruby-keyword kw">yield</span>
-            <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
-                <span class="ruby-identifier">error</span>(<span class="ruby-identifier">e</span>)
-                <span class="ruby-identifier">exit</span>(<span class="ruby-value">1</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">fatal?</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 48</span>
+48:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">report</span>
+49:             <span class="ruby-keyword kw">begin</span>
+50:                 <span class="ruby-keyword kw">yield</span>
+51:             <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+52:                 <span class="ruby-identifier">error</span>(<span class="ruby-identifier">e</span>)
+53:                 <span class="ruby-identifier">exit</span>(<span class="ruby-value">1</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">fatal?</span>
+54:             <span class="ruby-keyword kw">end</span>
+55:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="success-method" class="method-detail ">
-				<a name="M000113"></a>
+				<a name="method-c-success"></a>
 
 				<div class="method-heading">
 				
@@ -418,13 +442,15 @@ Reports a successful build to the user
 					<div class="method-source-code"
 						id="success-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 58</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">success</span>
-            <span class="ruby-ivar">@@reporters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rep</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rep</span>.<span class="ruby-identifier">success</span> <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 58</span>
+58:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">success</span>
+59:             <span class="ruby-identifier">@@reporters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rep</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rep</span>.<span class="ruby-identifier">success</span> <span class="ruby-keyword kw">end</span>
+60:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

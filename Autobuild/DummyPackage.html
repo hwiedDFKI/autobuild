@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Package</p>
+				<p class="link"><a href="Package.html">Autobuild::Package</a></p>
 				
 			</div>
 			
@@ -59,13 +69,13 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000209">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000210">#import</a></li>
+					<li><a href="#method-i-import">#import</a></li>
 					
-					<li><a href="#M000208">#installstamp</a></li>
+					<li><a href="#method-i-installstamp">#installstamp</a></li>
 					
-					<li><a href="#M000214">#prepare</a></li>
+					<li><a href="#method-i-prepare">#prepare</a></li>
 					
 				</ul>
 			</div>
@@ -109,6 +119,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -128,6 +142,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -171,8 +191,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -211,7 +229,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000209"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -223,20 +241,22 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 11</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-            <span class="ruby-keyword kw">super</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 11</span>
+11:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>)
+12:             <span class="ruby-keyword kw">super</span>
+13:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -249,7 +269,7 @@
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000210"></a>
+				<a name="method-i-import"></a>
 
 				<div class="method-heading">
 				
@@ -261,26 +281,28 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 15</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 15</span>
+15:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
+16:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="installstamp-method" class="method-detail ">
-				<a name="M000208"></a>
+				<a name="method-i-installstamp"></a>
 
 				<div class="method-heading">
 				
@@ -292,27 +314,29 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="installstamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 7</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installstamp</span>
-            <span class="ruby-node">&quot;#{srcdir}/#{STAMPFILE}&quot;</span>
-        <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 7</span>
+7:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installstamp</span>
+8:             <span class="ruby-node">&quot;#{srcdir}/#{STAMPFILE}&quot;</span>
+9:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000214"></a>
+				<a name="method-i-prepare"></a>
 
 				<div class="method-heading">
 				
@@ -324,27 +348,31 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 18</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
-            <span class="ruby-node">%w{import prepare build doc}</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">phase</span><span class="ruby-operator">|</span>
-                <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">task</span>(<span class="ruby-node">&quot;#{name}-#{phase}&quot;</span>)
-                <span class="ruby-identifier">t</span> = <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-node">&quot;#{name}-#{phase}&quot;</span>]
-                <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">needed?</span>; <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">task</span>(<span class="ruby-identifier">installstamp</span>)
-            <span class="ruby-identifier">t</span> = <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-identifier">installstamp</span>]
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">needed?</span>; <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 18</span>
+18:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+19:             <span class="ruby-node">%{import prepare build doc}</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">phase</span><span class="ruby-operator">|</span>
+20:                 <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">task</span>(<span class="ruby-node">&quot;#{name}-#{phase}&quot;</span>)
+21:                 <span class="ruby-identifier">t</span> = <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-node">&quot;#{name}-#{phase}&quot;</span>]
+22:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">needed?</span>; <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span>
+23:             <span class="ruby-keyword kw">end</span>
+24:             <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">task</span>(<span class="ruby-identifier">installstamp</span>)
+25:             <span class="ruby-identifier">t</span> = <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-identifier">installstamp</span>]
+26:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">needed?</span>; <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span>
+27: 
+28:             <span class="ruby-keyword kw">super</span>
+29:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

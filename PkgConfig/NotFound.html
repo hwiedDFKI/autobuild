@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -59,9 +69,9 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000006">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000007">#to_s</a></li>
+					<li><a href="#method-i-to_s">#to_s</a></li>
 					
 				</ul>
 			</div>
@@ -105,6 +115,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -124,6 +138,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -166,8 +186,6 @@
 					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
-				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
 				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
@@ -213,7 +231,7 @@
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -228,7 +246,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000006"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -240,18 +258,20 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 5</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>); <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 5</span>
+5:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>); <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -264,7 +284,7 @@
 
 		
 			<div id="to-s-method" class="method-detail ">
-				<a name="M000007"></a>
+				<a name="method-i-to_s"></a>
 
 				<div class="method-heading">
 				
@@ -276,18 +296,20 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="to-s-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 6</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>; <span class="ruby-node">&quot;#{name} is not available to pkg-config&quot;</span> <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 6</span>
+6:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>; <span class="ruby-node">&quot;#{name} is not available to pkg-config&quot;</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -59,15 +69,15 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000002">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000004">#exception_message</a></li>
+					<li><a href="#method-i-exception_message">#exception_message</a></li>
 					
-					<li><a href="#M000001">#fatal?</a></li>
+					<li><a href="#method-i-fatal%3F">#fatal?</a></li>
 					
-					<li><a href="#M000000">#mail?</a></li>
+					<li><a href="#method-i-mail%3F">#mail?</a></li>
 					
-					<li><a href="#M000003">#to_s</a></li>
+					<li><a href="#method-i-to_s">#to_s</a></li>
 					
 				</ul>
 			</div>
@@ -111,6 +121,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -130,6 +144,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -172,8 +192,6 @@
 					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
-				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
 				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
@@ -224,7 +242,7 @@ Base class for all <a href="../Autobuild.html">Autobuild</a> exceptions
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -241,7 +259,7 @@ Base class for all <a href="../Autobuild.html">Autobuild</a> exceptions
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -256,7 +274,7 @@ Base class for all <a href="../Autobuild.html">Autobuild</a> exceptions
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000002"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -269,7 +287,7 @@ Base class for all <a href="../Autobuild.html">Autobuild</a> exceptions
 				<div class="method-description">
 					
 					<pre>
- Creates a new exception which occured while doing *phase*
+ Creates a new exception which occured while doing *phase* 
 </pre>
 <p>
 in <b>target</b>
@@ -280,13 +298,15 @@ in <b>target</b>
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 12</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">target</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">phase</span> = <span class="ruby-keyword kw">nil</span>)
-            <span class="ruby-ivar">@target</span>, <span class="ruby-ivar">@phase</span> = <span class="ruby-identifier">target</span>, <span class="ruby-identifier">phase</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 12</span>
+12:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">target</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">phase</span> = <span class="ruby-keyword kw">nil</span>)
+13:             <span class="ruby-ivar">@target</span>, <span class="ruby-ivar">@phase</span> = <span class="ruby-identifier">target</span>, <span class="ruby-identifier">phase</span>
+14:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -299,7 +319,7 @@ in <b>target</b>
 
 		
 			<div id="exception-message-method" class="method-detail method-alias">
-				<a name="M000004"></a>
+				<a name="method-i-exception_message"></a>
 
 				<div class="method-heading">
 				
@@ -311,20 +331,24 @@ in <b>target</b>
 
 				<div class="method-description">
 					
-					<p>
-Alias for <a href="Exception.html#M000003">to_s</a>
-</p>
+					
 					
 
 					
 				</div>
 
 				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Exception.html#method-i-to_s">to_s</a>
+				</div>
+				
 			</div>
 
 		
 			<div id="fatal--method" class="method-detail ">
-				<a name="M000001"></a>
+				<a name="method-i-fatal%3F"></a>
 
 				<div class="method-heading">
 				
@@ -345,18 +369,20 @@ If the error is fatal
 					<div class="method-source-code"
 						id="fatal--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 7</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fatal?</span>; <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 7</span>
+7:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fatal?</span>; <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="mail--method" class="method-detail ">
-				<a name="M000000"></a>
+				<a name="method-i-mail%3F"></a>
 
 				<div class="method-heading">
 				
@@ -377,18 +403,20 @@ If the error should be reported by mail
 					<div class="method-source-code"
 						id="mail--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 5</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mail?</span>;  <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 5</span>
+5:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mail?</span>;  <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="to-s-method" class="method-detail ">
-				<a name="M000003"></a>
+				<a name="method-i-to_s"></a>
 
 				<div class="method-heading">
 				
@@ -400,31 +428,33 @@ If the error should be reported by mail
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="to-s-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 17</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">target</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">phase</span>
-                <span class="ruby-node">&quot;#{target}: failed in #{phase} phase\n    #{super}&quot;</span>
-            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">target</span>
-                <span class="ruby-node">&quot;#{target}: #{super}&quot;</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-keyword kw">super</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 17</span>
+17:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+18:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">target</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">phase</span>
+19:                 <span class="ruby-node">&quot;#{target}: failed in #{phase} phase\n    #{super}&quot;</span>
+20:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">target</span>
+21:                 <span class="ruby-node">&quot;#{target}: #{super}&quot;</span>
+22:             <span class="ruby-keyword kw">else</span>
+23:                 <span class="ruby-keyword kw">super</span>
+24:             <span class="ruby-keyword kw">end</span>
+25:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
 				<div class="aliases">
-					Also aliased as: <a href="Exception.html#M000004">exception_message</a>
+					Also aliased as: <a href="Exception.html#method-i-exception_message">exception_message</a>
 				</div>
+				
+
 				
 			</div>
 

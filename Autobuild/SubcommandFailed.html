@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Exception</p>
+				<p class="link"><a href="Exception.html">Autobuild::Exception</a></p>
 				
 			</div>
 			
@@ -59,11 +69,11 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000010">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000009">#mail?</a></li>
+					<li><a href="#method-i-mail%3F">#mail?</a></li>
 					
-					<li><a href="#M000011">#to_s</a></li>
+					<li><a href="#method-i-to_s">#to_s</a></li>
 					
 				</ul>
 			</div>
@@ -107,6 +117,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -126,6 +140,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -169,8 +189,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -207,7 +225,7 @@ An error occured while running a subcommand
 			
 				<dt><a name="ERROR_LINES">ERROR_LINES</a></dt>
 				
-				<dd class="description missing-docs">(Not documented)</dd>
+				<dd class="description"></dd>
 				
 			
 			</dl>
@@ -230,7 +248,7 @@ An error occured while running a subcommand
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -245,7 +263,7 @@ An error occured while running a subcommand
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -260,7 +278,7 @@ An error occured while running a subcommand
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -275,7 +293,7 @@ An error occured while running a subcommand
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000010"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -287,34 +305,36 @@ An error occured while running a subcommand
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 41</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-                <span class="ruby-identifier">sc</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
-                <span class="ruby-identifier">target</span>, <span class="ruby-identifier">command</span>, <span class="ruby-identifier">logfile</span>, <span class="ruby-identifier">status</span> = 
-                    <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">target</span>, <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">command</span>, <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">logfile</span>, <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">status</span>
-                <span class="ruby-ivar">@orig_message</span> = <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">exception_message</span>
-            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span>
-                <span class="ruby-identifier">target</span>, <span class="ruby-identifier">command</span>, <span class="ruby-identifier">logfile</span>, <span class="ruby-identifier">status</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;wrong number of arguments, should be 1 or 4&quot;</span>
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">target</span>)
-            <span class="ruby-ivar">@command</span> = <span class="ruby-identifier">command</span>
-            <span class="ruby-ivar">@logfile</span> = <span class="ruby-identifier">logfile</span>
-            <span class="ruby-ivar">@status</span>  = <span class="ruby-identifier">status</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 41</span>
+41:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>)
+42:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+43:                 <span class="ruby-identifier">sc</span> = <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
+44:                 <span class="ruby-identifier">target</span>, <span class="ruby-identifier">command</span>, <span class="ruby-identifier">logfile</span>, <span class="ruby-identifier">status</span> = 
+45:                     <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">target</span>, <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">command</span>, <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">logfile</span>, <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">status</span>
+46:                 <span class="ruby-ivar">@orig_message</span> = <span class="ruby-identifier">sc</span>.<span class="ruby-identifier">exception_message</span>
+47:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span>
+48:                 <span class="ruby-identifier">target</span>, <span class="ruby-identifier">command</span>, <span class="ruby-identifier">logfile</span>, <span class="ruby-identifier">status</span> = *<span class="ruby-identifier">args</span>
+49:             <span class="ruby-keyword kw">else</span>
+50:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;wrong number of arguments, should be 1 or 4&quot;</span>
+51:             <span class="ruby-keyword kw">end</span>
+52: 
+53:             <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">target</span>)
+54:             <span class="ruby-ivar">@command</span> = <span class="ruby-identifier">command</span>
+55:             <span class="ruby-ivar">@logfile</span> = <span class="ruby-identifier">logfile</span>
+56:             <span class="ruby-ivar">@status</span>  = <span class="ruby-identifier">status</span>
+57:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -327,7 +347,7 @@ An error occured while running a subcommand
 
 		
 			<div id="mail--method" class="method-detail ">
-				<a name="M000009"></a>
+				<a name="method-i-mail%3F"></a>
 
 				<div class="method-heading">
 				
@@ -339,25 +359,27 @@ An error occured while running a subcommand
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="mail--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 39</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mail?</span>; <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 39</span>
+39:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mail?</span>; <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="to-s-method" class="method-detail ">
-				<a name="M000011"></a>
+				<a name="method-i-to_s"></a>
 
 				<div class="method-heading">
 				
@@ -369,39 +391,41 @@ An error occured while running a subcommand
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="to-s-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 61</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
-            <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword kw">super</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orig_message</span>
-                <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n     #{@orig_message}&quot;</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n    see #{logfile} for details&quot;</span>
-
-            <span class="ruby-comment cmt"># If we do not have a status, it means an error occured in the</span>
-            <span class="ruby-comment cmt"># launching process. More importantly, it means we already have a</span>
-            <span class="ruby-comment cmt"># proper explanation for it. Don't display the logfile at all.</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">status</span>
-                <span class="ruby-identifier">lines</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-identifier">logfile</span>)
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">ERROR_LINES</span>
-                    <span class="ruby-identifier">lines</span> = <span class="ruby-identifier">lines</span>[<span class="ruby-operator">-</span><span class="ruby-constant">ERROR_LINES</span>, <span class="ruby-constant">ERROR_LINES</span>]
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n    last #{lines.size} lines are:\n\n&quot;</span>
-                <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span>
-                    <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;    #{l}&quot;</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">prefix</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/exceptions.rb, line 61</span>
+61:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
+62:             <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword kw">super</span>
+63:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orig_message</span>
+64:                 <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n     #{@orig_message}&quot;</span>
+65:             <span class="ruby-keyword kw">end</span>
+66:             <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n    see #{logfile} for details&quot;</span>
+67: 
+68:             <span class="ruby-comment cmt"># If we do not have a status, it means an error occured in the</span>
+69:             <span class="ruby-comment cmt"># launching process. More importantly, it means we already have a</span>
+70:             <span class="ruby-comment cmt"># proper explanation for it. Don't display the logfile at all.</span>
+71:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">status</span>
+72:                 <span class="ruby-identifier">lines</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-identifier">logfile</span>)
+73:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">ERROR_LINES</span>
+74:                     <span class="ruby-identifier">lines</span> = <span class="ruby-identifier">lines</span>[<span class="ruby-operator">-</span><span class="ruby-constant">ERROR_LINES</span>, <span class="ruby-constant">ERROR_LINES</span>]
+75:                 <span class="ruby-keyword kw">end</span>
+76:                 <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n    last #{lines.size} lines are:\n\n&quot;</span>
+77:                 <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span>
+78:                     <span class="ruby-identifier">prefix</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;    #{l}&quot;</span>
+79:                 <span class="ruby-keyword kw">end</span>
+80:             <span class="ruby-keyword kw">end</span>
+81:             <span class="ruby-identifier">prefix</span>
+82:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

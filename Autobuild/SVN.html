@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Importer</p>
+				<p class="link"><a href="Importer.html">Autobuild::Importer</a></p>
 				
 			</div>
 			
@@ -59,7 +69,7 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000091">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
 				</ul>
 			</div>
@@ -103,6 +113,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -122,6 +136,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -165,8 +185,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -205,7 +223,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000091"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -222,37 +240,40 @@ Creates an importer which gets the source for the Subversion URL
 <tt>source</tt>. The following options are allowed:
 </p>
 <dl>
-<dt>:svnup</dt><dd>options to give to &#8216;svn up&#8217;
-
+<dt>:svnup</dt><dd><p>
+options to give to &#8216;svn up&#8217;
+</p>
 </dd>
-<dt>:svnco</dt><dd>options to give to &#8216;svn co&#8217;
-
+<dt>:svnco</dt><dd><p>
+options to give to &#8216;svn co&#8217;
+</p>
 </dd>
 </dl>
 <p>
 This importer uses the &#8216;svn&#8217; tool to perform the import. It
-defaults to &#8216;svn&#8217; and can be configured by doing
+defaults to &#8216;svn&#8217; and can be configured by doing 
 </p>
 <pre>
-  Autobuild.programs['svn'] = 'my_svn_tool'
-</pre>
+  Autobuild.programs['svn'] = 'my_svn_tool'</pre>
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/svn.rb, line 14</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
-            <span class="ruby-ivar">@source</span> = [<span class="ruby-operator">*</span><span class="ruby-identifier">source</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;/&quot;</span>)
-            <span class="ruby-ivar">@program</span>    = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'svn'</span>)
-            <span class="ruby-ivar">@options_up</span> = [<span class="ruby-operator">*</span><span class="ruby-identifier">options</span>[<span class="ruby-identifier">:svnup</span>]]
-            <span class="ruby-ivar">@options_co</span> = [<span class="ruby-operator">*</span><span class="ruby-identifier">options</span>[<span class="ruby-identifier">:svnco</span>]]
-            <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">options</span>)
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/svn.rb, line 14</span>
+14:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
+15:             <span class="ruby-ivar">@source</span> = [*<span class="ruby-identifier">source</span>].<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;/&quot;</span>)
+16:             <span class="ruby-ivar">@program</span>    = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'svn'</span>)
+17:             <span class="ruby-ivar">@options_up</span> = [*<span class="ruby-identifier">options</span>[<span class="ruby-value">:svnup</span>]]
+18:             <span class="ruby-ivar">@options_co</span> = [*<span class="ruby-identifier">options</span>[<span class="ruby-value">:svnco</span>]]
+19:             <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">options</span>)
+20:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

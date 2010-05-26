@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -59,13 +69,13 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000192">::const_missing</a></li>
+					<li><a href="#method-c-const_missing">::const_missing</a></li>
 					
-					<li><a href="#M000191">::method_missing</a></li>
+					<li><a href="#method-c-method_missing">::method_missing</a></li>
 					
-					<li><a href="#M000189">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000190">#method_missing</a></li>
+					<li><a href="#method-i-method_missing">#method_missing</a></li>
 					
 				</ul>
 			</div>
@@ -109,6 +119,10 @@
 				
 					<li><a href="../../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -128,6 +142,12 @@
 					<li><a href="../../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -171,8 +191,6 @@
 				
 					<li><a href="../../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -211,7 +229,7 @@
 
 		
 			<div id="const-missing-method" class="method-detail ">
-				<a name="M000192"></a>
+				<a name="method-c-const_missing"></a>
 
 				<div class="method-heading">
 				
@@ -223,27 +241,29 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="const-missing-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 20</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">const_missing</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-                <span class="ruby-keyword kw">self</span>
-            <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 20</span>
+20:             <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">const_missing</span>(*<span class="ruby-identifier">args</span>)
+21:                 <span class="ruby-keyword kw">self</span>
+22:             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="method-missing-method" class="method-detail ">
-				<a name="M000191"></a>
+				<a name="method-c-method_missing"></a>
 
 				<div class="method-heading">
 				
@@ -255,27 +275,29 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="method-missing-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 17</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">method_missing</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-                <span class="ruby-keyword kw">self</span>
-            <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 17</span>
+17:             <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">method_missing</span>(*<span class="ruby-identifier">args</span>)
+18:                 <span class="ruby-keyword kw">self</span>
+19:             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000189"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -287,19 +309,21 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 12</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-            <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 12</span>
+12:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>)
+13:             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -312,7 +336,7 @@
 
 		
 			<div id="method-missing-method" class="method-detail ">
-				<a name="M000190"></a>
+				<a name="method-i-method_missing"></a>
 
 				<div class="method-heading">
 				
@@ -324,20 +348,22 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="method-missing-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 14</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
-                <span class="ruby-keyword kw">self</span>
-            <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 14</span>
+14:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(*<span class="ruby-identifier">args</span>)
+15:                 <span class="ruby-keyword kw">self</span>
+16:             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

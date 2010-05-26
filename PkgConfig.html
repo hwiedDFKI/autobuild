@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -68,9 +78,9 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000008">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000012">#method_missing</a></li>
+					<li><a href="#method-i-method_missing">#method_missing</a></li>
 					
 				</ul>
 			</div>
@@ -114,6 +124,10 @@
 				
 					<li><a href="./Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="./Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="./Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -133,6 +147,12 @@
 					<li><a href="./Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -176,8 +196,6 @@
 				
 					<li><a href="./Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="./Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="./PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="./PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -214,7 +232,7 @@ Access to information from pkg-config(1)
 			
 				<dt><a name="ACTIONS">ACTIONS</a></dt>
 				
-				<dd class="description missing-docs">(Not documented)</dd>
+				<dd class="description"></dd>
 				
 			
 			</dl>
@@ -271,7 +289,7 @@ The module version
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000008"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -295,20 +313,22 @@ not exist
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 16</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;pkg-config --exists #{name}&quot;</span>)
-            <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotFound</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
-        <span class="ruby-keyword kw">end</span>
-        
-        <span class="ruby-ivar">@name</span>    = <span class="ruby-identifier">name</span>
-        <span class="ruby-ivar">@version</span> = <span class="ruby-node">`pkg-config --modversion #{name}`</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">strip</span>
-        <span class="ruby-ivar">@actions</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
-        <span class="ruby-ivar">@variables</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 16</span>
+16:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
+17:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;pkg-config --exists #{name}&quot;</span>)
+18:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotFound</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>)
+19:         <span class="ruby-keyword kw">end</span>
+20:         
+21:         <span class="ruby-ivar">@name</span>    = <span class="ruby-identifier">name</span>
+22:         <span class="ruby-ivar">@version</span> = <span class="ruby-node">`pkg-config --modversion #{name}`</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">strip</span>
+23:         <span class="ruby-ivar">@actions</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+24:         <span class="ruby-ivar">@variables</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+25:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -321,7 +341,7 @@ not exist
 
 		
 			<div id="method-missing-method" class="method-detail ">
-				<a name="M000012"></a>
+				<a name="method-i-method_missing"></a>
 
 				<div class="method-heading">
 				
@@ -333,24 +353,26 @@ not exist
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="method-missing-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 35</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">varname</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
-            <span class="ruby-ivar">@variables</span>[<span class="ruby-identifier">varname</span>] <span class="ruby-operator">||=</span> <span class="ruby-node">`pkg-config --variable=#{varname} #{name}`</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">strip</span>
-        <span class="ruby-keyword kw">else</span>
-            <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">varname</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/pkgconfig.rb, line 35</span>
+35:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">varname</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">proc</span>)
+36:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+37:             <span class="ruby-ivar">@variables</span>[<span class="ruby-identifier">varname</span>] <span class="ruby-operator">||=</span> <span class="ruby-node">`pkg-config --variable=#{varname} #{name}`</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">strip</span>
+38:         <span class="ruby-keyword kw">else</span>
+39:             <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">varname</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">proc</span>)
+40:         <span class="ruby-keyword kw">end</span>
+41:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

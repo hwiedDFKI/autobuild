@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Reporter</p>
+				<p class="link"><a href="Reporter.html">Autobuild::Reporter</a></p>
 				
 			</div>
 			
@@ -59,9 +69,9 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000120">#error</a></li>
+					<li><a href="#method-i-error">#error</a></li>
 					
-					<li><a href="#M000121">#success</a></li>
+					<li><a href="#method-i-success">#success</a></li>
 					
 				</ul>
 			</div>
@@ -105,6 +115,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -124,6 +138,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -167,8 +187,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -210,7 +228,7 @@ Display using stdout
 
 		
 			<div id="error-method" class="method-detail ">
-				<a name="M000120"></a>
+				<a name="method-i-error"></a>
 
 				<div class="method-heading">
 				
@@ -222,27 +240,29 @@ Display using stdout
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="error-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 94</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">error</span>)
-            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Build failed: #{error}&quot;</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 90</span>
+90:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">error</span>(<span class="ruby-identifier">error</span>)
+91:             <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Build failed: #{error}&quot;</span>
+92:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="success-method" class="method-detail ">
-				<a name="M000121"></a>
+				<a name="method-i-success"></a>
 
 				<div class="method-heading">
 				
@@ -254,23 +274,25 @@ Display using stdout
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="success-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 97</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">success</span>
-            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Build finished successfully at #{Time.now}&quot;</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">post_success_message</span>
-                <span class="ruby-identifier">puts</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">post_success_message</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 93</span>
+93:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">success</span>
+94:             <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Build finished successfully at #{Time.now}&quot;</span>
+95:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">post_success_message</span>
+96:                 <span class="ruby-identifier">puts</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">post_success_message</span>
+97:             <span class="ruby-keyword kw">end</span>
+98:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

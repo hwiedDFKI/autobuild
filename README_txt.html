@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>File: README.txt [autobuild-1.4.4 Documentation]</title>
+	<title>File: README.txt [autobuild-1.5.9 Documentation]</title>
 
 	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
 
@@ -22,6 +22,16 @@
 
 <body class="file">
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="project-metadata">
 			
 			
@@ -56,6 +66,10 @@
 				
 					<li><a href="./Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="./Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="./Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -75,6 +89,12 @@
 					<li><a href="./Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -118,8 +138,6 @@
 				
 					<li><a href="./Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="./Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="./PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="./PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -143,16 +161,19 @@
 Copyright &#169; 2006-2009 Sylvain Joyeux <sylvain.joyeux@m4x.org>
 </p>
 <ul>
-<li><a
+<li><p>
+<a
 href="http://doudou.github.com/autobuild">doudou.github.com/autobuild</a>
-
+</p>
 </li>
-<li><a
+<li><p>
+<a
 href="http://github.com/doudou/autobuild">github.com/doudou/autobuild</a>
-
+</p>
 </li>
-<li><a href="http://doudou.github.com/autoproj">doudou.github.com/autoproj</a>
-
+<li><p>
+<a href="http://doudou.github.com/autoproj">doudou.github.com/autoproj</a>
+</p>
 </li>
 </ul>
 <p>
@@ -162,7 +183,7 @@ This work is licensed under the GPLv2 license. See License.txt for details
 <p>
 <a href="Autobuild.html">Autobuild</a> imports, configures, builds and
 installs various kinds of software packages. It can be used in software
-development to make sure that nothing is broken in the build process of a
+development to make sure that nothing is broken in the  build process of a
 set of packages, or can be used as an automated installation tool.
 </p>
 <p>
@@ -170,18 +191,22 @@ set of packages, or can be used as an automated installation tool.
 configure rake to
 </p>
 <ul>
-<li>imports the package from a SCM or (optionnaly) updates it
-
+<li><p>
+imports the package from a SCM or (optionnaly) updates it
+</p>
 </li>
-<li>configures it. This phase can handle code generation, configuration (for
+<li><p>
+configures it. This phase can handle code generation, configuration (for
 instance for autotools-based packages), &#8230;
-
+</p>
 </li>
-<li>build
-
+<li><p>
+build
+</p>
 </li>
-<li>install
-
+<li><p>
+install
+</p>
 </li>
 </ul>
 <p>
@@ -203,23 +228,25 @@ rake does)
 All package objects define the following attributes
 </p>
 <table>
-<tr><td valign="top"><b>importer</b>:</td><td>the importer object (see &#8220;Available importers&#8221; below)
-
+<tr><td valign="top"><b>importer</b></td><td><p>
+the importer object (see &#8220;Available importers&#8221; below)
+</p>
 </td></tr>
-<tr><td valign="top"><b>srcdir</b>:</td><td>where the package sources are located. If it is a relative path, it is
+<tr><td valign="top"><b>srcdir</b></td><td><p>
+where the package sources are located. If it is a relative path, it is
 relative to the value of Autobuild.srcdir. The default is to use the
-package name.
-
+package name. 
+</p>
 </td></tr>
-<tr><td valign="top"><b>prefix</b>:</td><td>the directory where the package should be installed. If it is a relative
+<tr><td valign="top"><b>prefix</b></td><td><p>
+the directory where the package should be installed. If it is a relative
 path, it is relative to the value of Autobuild.prefix. The default is to
-use the package name.
-
+use the package name. 
+</p>
 </td></tr>
 </table>
 <p>
-Each package method (<a href="Autobuild.html#M000135">Autobuild.import</a>,
-<a href="Autobuild.html#M000157">Autobuild.autotools</a>, &#8230;) takes
+Each package method (Autobuild.import, Autobuild.autotools, &#8230;) takes
 either a package name for first argument, or a <tt>name =&gt;
 dependency_array</tt> hash, and take a block which can be used to configure
 the package. For instance
@@ -251,7 +278,7 @@ build it. You just need to set <tt>importer</tt> and <tt>srcdir</tt>.
 </pre>
 <p>
 Use this to build GNU autotools-based packages. This handles autoconf-only
-packages as well as those using automake
+packages as  well as those using automake
 </p>
 <p>
 Options to give the <tt>configure</tt> script are given in the
@@ -270,7 +297,7 @@ relative path, relative to the source directory.
 </pre>
 <p>
 The generation of the configure script uses four programs:
-<tt>autoheader</tt>, <tt>autoconf</tt>, <tt>aclocal</tt>,
+<tt>autoheader</tt>, <tt>autoconf</tt>, <tt>aclocal</tt>, 
 <tt>automake</tt>. The default program path can be overriden in the
 Autotools.programs hash. For instance, to be sure that
 <tt>automake-1.9</tt> is used <bb>for all packages</bb>, you set
@@ -283,33 +310,39 @@ Autotools.programs hash. For instance, to be sure that
 run, but you can override. Autodetection works as follows:
 </p>
 <ul>
-<li>if a script named <tt>autogen</tt> or <tt>autogen.sh</tt> exists in the
+<li><p>
+if a script named <tt>autogen</tt> or <tt>autogen.sh</tt> exists in the
 package source directory, it is run and the other tools are not. The name
 of this kind of script can be set by calling Autotools#use
-
+</p>
 <pre>
   pkg.use :autogen =&gt; 'my_autogen_script'
 </pre>
 </li>
-<li><tt>autoheader</tt> is never used by default
-
+<li><p>
+<tt>autoheader</tt> is never used by default
+</p>
 </li>
-<li><tt>autoconf</tt> is used if there is <tt>configure.ac</tt> or
+<li><p>
+<tt>autoconf</tt> is used if there is <tt>configure.ac</tt> or
 <tt>configure.in</tt> in the source dir
-
+</p>
 </li>
-<li><tt>aclocal</tt> is used if <tt>autoconf</tt> is enabled (either
+<li><p>
+<tt>aclocal</tt> is used if <tt>autoconf</tt> is enabled (either
 explicitely or by autodetection)
-
+</p>
 </li>
-<li><tt>automake</tt> is used if there is a <tt>Makefile.am</tt> file in the
+<li><p>
+<tt>automake</tt> is used if there is a <tt>Makefile.am</tt> file in the
 source dir
-
+</p>
 </li>
-<li>you can force to enable or disable any of these steps by calling
+<li><p>
+you can force to enable or disable any of these steps by calling
 Autotools#use. Set it to <tt>true</tt> to force its usage, <tt>false</tt>
 to disable it or to a string to force the usage of a particular program
-
+</p>
 <pre>
   pkg.use :autogen =&gt; false
   pkg.use :automake =&gt; false
@@ -323,8 +356,7 @@ The &#8216;autogen&#8217; option cannot be set to <tt>true</tt>.
 </ul>
 <p>
 The only program used during the build and install phases is <tt>make</tt>.
-Its path can be overriden in the <a
-href="Autobuild.html#programs">Autobuild.programs</a> hash
+Its path can be overriden  in the Autobuild.programs hash
 </p>
 <pre>
     Autobuild.programs['make'] = 'gnumake'
@@ -334,6 +366,7 @@ href="Autobuild.html#programs">Autobuild.programs</a> hash
 A cmake package is defined with
 </p>
 <pre>
+ 
   require 'autobuild/packages/cmake'
   Autobuild.cmake :package_name do |pkg|
     &lt;package configuration&gt; ...
@@ -341,14 +374,14 @@ A cmake package is defined with
 </pre>
 <p>
 The only configuration attribute available for CMake package is:
-<tt>builddir</tt>
+<tt>builddir</tt> 
 </p>
 <pre>
   the directory in which to configure and build the package. It is relative to
   the package sources. A global value can be defined through Autobuild::CMake.builddir
 </pre>
 <p>
-Additionally, the define(name, value) method allows to define configuration
+Additionally, the #(name, value) method allows to define configuration
 variables.
 </p>
 <h2>Available importers</h2>
@@ -363,6 +396,7 @@ new importer object. Importer classes files are in
 <h3>Tar</h3>
 <pre>
     package.importer = tar(uri[, options])
+    
 </pre>
 <p>
 Downloads a tarfile at <tt>uri</tt> and saves it into a local cache
@@ -377,32 +411,35 @@ schemes are file:// for local files and http:// or ftp:// for remote files.
 There is currently no way to set passive mode on FTP, since the standard
 open-uri library does not allow that.
 </p>
-<h3>CVS</h3>
+<h3>CVS </h3>
 <pre>
     package.importer = cvs(cvsroot, module[, options])
 </pre>
 <p>
 Where <tt>options</tt> is an option hash. See also <a
-href="Autobuild/CVSImporter.html">Autobuild::CVSImporter</a> and <a
-href="Autobuild.html#M000108">Autobuild.cvs</a>
+href="Autobuild/CVSImporter.html">Autobuild::CVSImporter</a> and
+Autobuild.cvs
 </p>
 <ul>
-<li>the default CVS command is <tt>cvs</tt>. It can be changed by
-
+<li><p>
+the default CVS command is <tt>cvs</tt>. It can be changed by
+</p>
 <pre>
   Autobuild.programs['cvs'] = 'my_cvs_command'
 </pre>
 </li>
-<li>the default checkout option is <tt>-P</tt>. You can change that by giving a
+<li><p>
+the default checkout option is <tt>-P</tt>. You can change that by giving a
 <tt>cvsco</tt> option
-
+</p>
 <pre>
   cvs cvsroot, module, :cvsco =&gt; ['--my', '--cvs', '--options']
 </pre>
 </li>
-<li>the default update option is <tt>-dP</tt>. You can change that by giving a
+<li><p>
+the default update option is <tt>-dP</tt>. You can change that by giving a
 <tt>cvsup</tt> option
-
+</p>
 <pre>
   cvs cvsroot, module, :cvsup =&gt; ['--my', '--cvs', '--options']
 </pre>
@@ -414,25 +451,28 @@ href="Autobuild.html#M000108">Autobuild.cvs</a>
 </pre>
 <p>
 Where <tt>options</tt> is an option hash. See also Autobuild::SVNImporter
-and <a href="Autobuild.html#M000097">Autobuild.svn</a>
+and Autobuild.svn
 </p>
 <ul>
-<li>the default Subversion command is <tt>svn</tt>. It can be changed by
-
+<li><p>
+the default Subversion command is <tt>svn</tt>. It can be changed by
+</p>
 <pre>
   Autobuild.programs['svn'] = 'my_svn_command'
 </pre>
 </li>
-<li>by default, no options are given to checkout. You add some by giving a
+<li><p>
+by default, no options are given to checkout. You add some by giving a
 <tt>svnco</tt> option
-
+</p>
 <pre>
   svn url, :svnco =&gt; ['--my', '--svn', '--options']
 </pre>
 </li>
-<li>by default, no options are given to update. You can add some by giving a
+<li><p>
+by default, no options are given to update. You can add some by giving a
 <tt>svnup</tt> option
-
+</p>
 <pre>
   svn url, :svnup =&gt; ['--my', '--svn', '--options']
 </pre>
@@ -444,26 +484,29 @@ and <a href="Autobuild.html#M000097">Autobuild.svn</a>
 </pre>
 <p>
 Where <tt>options</tt> is a hash. See also <a
-href="Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a> and <a
-href="Autobuild.html#M000085">Autobuild.darcs</a>
+href="Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a> and
+Autobuild.darcs
 </p>
 <ul>
-<li>the default Darcs command is <tt>darcs</tt>. It can be changed by
-
+<li><p>
+the default Darcs command is <tt>darcs</tt>. It can be changed by
+</p>
 <pre>
   Autobuild.programs['darcs'] = 'my_svn_command'
 </pre>
 </li>
-<li>by default, no options are given to get. You add some by giving a
+<li><p>
+by default, no options are given to get. You add some by giving a
 <tt>get</tt> option
-
+</p>
 <pre>
   darcs url, :get =&gt; ['--my', '--darcs', '--options']
 </pre>
 </li>
-<li>by default, no options are given to pull. You can add some by giving a
+<li><p>
+by default, no options are given to pull. You can add some by giving a
 <tt>pull</tt> option
-
+</p>
 <pre>
   darcs url, :pull =&gt; ['--my', '--darcs', '--options']
 </pre>
@@ -480,14 +523,17 @@ and fetched into the master local branch.
 </p>
 <h1>Copyright and license</h1>
 <table>
-<tr><td valign="top">Author:</td><td>Sylvain Joyeux <sylvain.joyeux@m4x.org>
-
+<tr><td valign="top">Author</td><td><p>
+Sylvain Joyeux <sylvain.joyeux@m4x.org>
+</p>
 </td></tr>
-<tr><td valign="top">Copyright:</td><td>Copyright &#169; 2005-2008 Sylvain Joyeux
-
+<tr><td valign="top">Copyright</td><td><p>
+Copyright &#169; 2005-2008 Sylvain Joyeux
+</p>
 </td></tr>
-<tr><td valign="top">License:</td><td>GPL
-
+<tr><td valign="top">License</td><td><p>
+GPL
+</p>
 </td></tr>
 </table>
 

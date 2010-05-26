@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -59,9 +69,9 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000126">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000129">#timestamp</a></li>
+					<li><a href="#method-i-timestamp">#timestamp</a></li>
 					
 				</ul>
 			</div>
@@ -105,6 +115,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -124,6 +138,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -166,8 +186,6 @@
 					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
-				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
 				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
@@ -215,7 +233,7 @@
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -230,7 +248,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000126"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -242,21 +260,23 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 41</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-            <span class="ruby-ivar">@exclude</span> = []
-            <span class="ruby-keyword kw">super</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 41</span>
+41:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+42:             <span class="ruby-ivar">@exclude</span> = []
+43:             <span class="ruby-keyword kw">super</span>
+44:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -269,7 +289,7 @@
 
 		
 			<div id="timestamp-method" class="method-detail ">
-				<a name="M000129"></a>
+				<a name="method-i-timestamp"></a>
 
 				<div class="method-heading">
 				
@@ -281,20 +301,22 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="timestamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 46</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">timestamp</span>
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tree_timestamp</span>(<span class="ruby-identifier">name</span>, <span class="ruby-regexp re">%r#(?:^|/)(?:CVS|_darcs|\.svn)$#</span>, <span class="ruby-operator">*</span><span class="ruby-ivar">@exclude</span>)
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 46</span>
+46:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">timestamp</span>
+47:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tree_timestamp</span>(<span class="ruby-identifier">name</span>, <span class="ruby-regexp re">%(?:^|/)(?:CVS|_darcs|\.svn)$#</span>, *<span class="ruby-ivar">@exclude</span>)
+48:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

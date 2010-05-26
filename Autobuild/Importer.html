@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -68,21 +78,21 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000065">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000072">#apply</a></li>
+					<li><a href="#method-i-apply">#apply</a></li>
 					
-					<li><a href="#M000071">#call_patch</a></li>
+					<li><a href="#method-i-call_patch">#call_patch</a></li>
 					
-					<li><a href="#M000068">#import</a></li>
+					<li><a href="#method-i-import">#import</a></li>
 					
-					<li><a href="#M000075">#patch</a></li>
+					<li><a href="#method-i-patch">#patch</a></li>
 					
-					<li><a href="#M000067">#patches</a></li>
+					<li><a href="#method-i-patches">#patches</a></li>
 					
-					<li><a href="#M000070">#patchlist</a></li>
+					<li><a href="#method-i-patchlist">#patchlist</a></li>
 					
-					<li><a href="#M000074">#unapply</a></li>
+					<li><a href="#method-i-unapply">#unapply</a></li>
 					
 				</ul>
 			</div>
@@ -126,6 +136,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -145,6 +159,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -188,8 +208,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -212,12 +230,7 @@
 		<h1 class="class">Autobuild::Importer</h1>
 
 		<div id="description">
-			<p>
-This class is the base class for objects that are used to get the source
-from various RCS into the package source directory. A list of patches to
-apply after the import can be given in the <tt>:patches</tt> option.
-</p>
-
+			
 		</div>
 
 		<!-- Constants -->
@@ -233,7 +246,7 @@ apply after the import can be given in the <tt>:patches</tt> option.
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000065"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -250,8 +263,9 @@ Creates a new <a href="Importer.html">Importer</a> object. The options
 known to <a href="Importer.html">Importer</a> are:
 </p>
 <dl>
-<dt>:patches</dt><dd>a list of patch to apply after import
-
+<dt>:patches</dt><dd><p>
+a list of patch to apply after import
+</p>
 </dd>
 </dl>
 <p>
@@ -263,11 +277,13 @@ More options are specific to each importer type.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 44</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>); <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span> <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 45</span>
+45:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>); <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -280,7 +296,7 @@ More options are specific to each importer type.
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000068"></a>
+				<a name="method-i-import"></a>
 
 				<div class="method-heading">
 				
@@ -301,44 +317,48 @@ Performs the import of <tt>package</tt>
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 51</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">package</span>)
-        <span class="ruby-identifier">srcdir</span> = <span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">srcdir</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_update</span>
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;updating #{package.name}&quot;</span>
-                <span class="ruby-identifier">update</span>(<span class="ruby-identifier">package</span>)
-                <span class="ruby-identifier">patch</span>(<span class="ruby-identifier">package</span>)
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
-                    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  not updating #{package.name}&quot;</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">return</span>
-            <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">srcdir</span>)
-            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{srcdir} exists but is not a directory&quot;</span>
-        <span class="ruby-keyword kw">else</span>
-            <span class="ruby-keyword kw">begin</span>
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;checking out #{package.name}&quot;</span>
-                <span class="ruby-identifier">checkout</span>(<span class="ruby-identifier">package</span>)
-                <span class="ruby-identifier">patch</span>(<span class="ruby-identifier">package</span>)
-            <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>
-                <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>
-                <span class="ruby-identifier">raise</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 58</span>
+58:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">package</span>)
+59:         <span class="ruby-identifier">srcdir</span> = <span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>
+60:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">srcdir</span>)
+61:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_update</span>
+62:                 <span class="ruby-identifier">package</span>.<span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;updating %s&quot;</span>
+63:                 <span class="ruby-identifier">update</span>(<span class="ruby-identifier">package</span>)
+64:                 <span class="ruby-identifier">patch</span>(<span class="ruby-identifier">package</span>)
+65:                 <span class="ruby-identifier">package</span>.<span class="ruby-identifier">updated</span> = <span class="ruby-keyword kw">true</span>
+66:             <span class="ruby-keyword kw">else</span>
+67:                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
+68:                     <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  not updating #{package.name}&quot;</span>
+69:                 <span class="ruby-keyword kw">end</span>
+70:                 <span class="ruby-keyword kw">return</span>
+71:             <span class="ruby-keyword kw">end</span>
+72: 
+73:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">srcdir</span>)
+74:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{srcdir} exists but is not a directory&quot;</span>
+75:         <span class="ruby-keyword kw">else</span>
+76:             <span class="ruby-keyword kw">begin</span>
+77:                 <span class="ruby-identifier">package</span>.<span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;checking out %s&quot;</span>
+78:                 <span class="ruby-identifier">checkout</span>(<span class="ruby-identifier">package</span>)
+79:                 <span class="ruby-identifier">patch</span>(<span class="ruby-identifier">package</span>)
+80:                 <span class="ruby-identifier">package</span>.<span class="ruby-identifier">updated</span> = <span class="ruby-keyword kw">true</span>
+81:             <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>
+82:                 <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>
+83:                 <span class="ruby-identifier">raise</span>
+84:             <span class="ruby-keyword kw">end</span>
+85:         <span class="ruby-keyword kw">end</span>
+86:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="patches-method" class="method-detail ">
-				<a name="M000067"></a>
+				<a name="method-i-patches"></a>
 
 				<div class="method-heading">
 				
@@ -350,20 +370,28 @@ Performs the import of <tt>package</tt>
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="patches-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 46</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patches</span>
-        <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">:patches</span>] <span class="ruby-operator">||=</span> []
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 47</span>
+47:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patches</span>
+48:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:patches</span>].<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_ary</span>)
+49:             <span class="ruby-ivar">@options</span>[<span class="ruby-value">:patches</span>]
+50:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@options</span>[<span class="ruby-value">:patches</span>]
+51:             []
+52:         <span class="ruby-keyword kw">else</span>
+53:             [<span class="ruby-ivar">@options</span>[<span class="ruby-value">:patches</span>]]
+54:         <span class="ruby-keyword kw">end</span>
+55:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -376,7 +404,7 @@ Performs the import of <tt>package</tt>
 
 		
 			<div id="apply-method" class="method-detail ">
-				<a name="M000072"></a>
+				<a name="method-i-apply"></a>
 
 				<div class="method-heading">
 				
@@ -388,25 +416,27 @@ Performs the import of <tt>package</tt>
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="apply-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 94</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">path</span>);   <span class="ruby-identifier">call_patch</span>(<span class="ruby-identifier">package</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">path</span>) <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 103</span>
+103:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">path</span>);   <span class="ruby-identifier">call_patch</span>(<span class="ruby-identifier">package</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">path</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="call-patch-method" class="method-detail ">
-				<a name="M000071"></a>
+				<a name="method-i-call_patch"></a>
 
 				<div class="method-heading">
 				
@@ -418,30 +448,32 @@ Performs the import of <tt>package</tt>
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="call-patch-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 87</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_patch</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">reverse</span>, <span class="ruby-identifier">file</span>)
-        <span class="ruby-identifier">patch</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'patch'</span>)
-        <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-            <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">:patch</span>, <span class="ruby-identifier">patch</span>, <span class="ruby-value str">'-p0'</span>, (<span class="ruby-identifier">reverse</span> <span class="ruby-value">? </span><span class="ruby-value str">'-R'</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>), <span class="ruby-node">&quot;&lt;#{file}&quot;</span>)
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 96</span>
+ 96:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call_patch</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">reverse</span>, <span class="ruby-identifier">file</span>)
+ 97:         <span class="ruby-identifier">patch</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'patch'</span>)
+ 98:         <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
+ 99:             <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>, <span class="ruby-value">:patch</span>, <span class="ruby-identifier">patch</span>, <span class="ruby-value str">'-p0'</span>, (<span class="ruby-identifier">reverse</span> <span class="ruby-operator">?</span> <span class="ruby-value str">'-R'</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>), <span class="ruby-node">&quot;&lt;#{file}&quot;</span>)
+100:         <span class="ruby-keyword kw">end</span>
+101:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="patch-method" class="method-detail ">
-				<a name="M000075"></a>
+				<a name="method-i-patch"></a>
 
 				<div class="method-heading">
 				
@@ -453,55 +485,62 @@ Performs the import of <tt>package</tt>
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="patch-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 97</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patch</span>(<span class="ruby-identifier">package</span>)
-        <span class="ruby-comment cmt"># Get the list of already applied patches</span>
-        <span class="ruby-identifier">patches_file</span> = <span class="ruby-identifier">patchlist</span>(<span class="ruby-identifier">package</span>)
-        <span class="ruby-identifier">cur_patches</span> =   <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">patches_file</span>) <span class="ruby-keyword kw">then</span> []
-                        <span class="ruby-keyword kw">else</span>
-                            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">patches_file</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> 
-                                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">readlines</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">rstrip</span> } 
-                            <span class="ruby-keyword kw">end</span>
-                        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">patches</span>.<span class="ruby-identifier">empty?</span>
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;patching #{package.name}&quot;</span>
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-comment cmt"># Do not be smart, remove all already applied patches</span>
-        <span class="ruby-comment cmt"># and then apply the new ones</span>
-        <span class="ruby-keyword kw">begin</span>
-            <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">p</span> = <span class="ruby-identifier">cur_patches</span>.<span class="ruby-identifier">pop</span>
-                <span class="ruby-identifier">unapply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">p</span>) 
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-identifier">patches</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> 
-                <span class="ruby-identifier">apply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">p</span>) 
-                <span class="ruby-identifier">cur_patches</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">p</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">ensure</span>
-            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">patchlist</span>(<span class="ruby-identifier">package</span>), <span class="ruby-value str">'w+'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">cur_patches</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>))
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 106</span>
+106:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patch</span>(<span class="ruby-identifier">package</span>)
+107:         <span class="ruby-comment cmt"># Get the list of already applied patches</span>
+108:         <span class="ruby-identifier">patches_file</span> = <span class="ruby-identifier">patchlist</span>(<span class="ruby-identifier">package</span>)
+109:         <span class="ruby-identifier">cur_patches</span> =   <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">patches_file</span>) <span class="ruby-keyword kw">then</span> []
+110:                         <span class="ruby-keyword kw">else</span>
+111:                             <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">patches_file</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> 
+112:                                 <span class="ruby-identifier">f</span>.<span class="ruby-identifier">readlines</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">rstrip</span> } 
+113:                             <span class="ruby-keyword kw">end</span>
+114:                         <span class="ruby-keyword kw">end</span>
+115: 
+116:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cur_patches</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">patches</span>
+117:             <span class="ruby-keyword kw">return</span>
+118:         <span class="ruby-keyword kw">end</span>
+119: 
+120:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">patches</span>.<span class="ruby-identifier">empty?</span>
+121:             <span class="ruby-identifier">package</span>.<span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;patching %s&quot;</span>
+122:         <span class="ruby-keyword kw">end</span>
+123: 
+124:         <span class="ruby-comment cmt"># Do not be smart, remove all already applied patches</span>
+125:         <span class="ruby-comment cmt"># and then apply the new ones</span>
+126:         <span class="ruby-keyword kw">begin</span>
+127:             <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">p</span> = <span class="ruby-identifier">cur_patches</span>.<span class="ruby-identifier">last</span>
+128:                 <span class="ruby-identifier">unapply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">p</span>) 
+129:                 <span class="ruby-identifier">cur_patches</span>.<span class="ruby-identifier">pop</span>
+130:             <span class="ruby-keyword kw">end</span>
+131: 
+132:             <span class="ruby-identifier">patches</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> 
+133:                 <span class="ruby-identifier">apply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">p</span>) 
+134:                 <span class="ruby-identifier">cur_patches</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">p</span>
+135:             <span class="ruby-keyword kw">end</span>
+136:         <span class="ruby-keyword kw">ensure</span>
+137:             <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">patchlist</span>(<span class="ruby-identifier">package</span>), <span class="ruby-value str">'w+'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+138:                 <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">cur_patches</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>))
+139:             <span class="ruby-keyword kw">end</span>
+140:         <span class="ruby-keyword kw">end</span>
+141:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="patchlist-method" class="method-detail ">
-				<a name="M000070"></a>
+				<a name="method-i-patchlist"></a>
 
 				<div class="method-heading">
 				
@@ -523,20 +562,22 @@ been called)
 					<div class="method-source-code"
 						id="patchlist-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 83</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patchlist</span>(<span class="ruby-identifier">package</span>)
-        <span class="ruby-node">&quot;#{package.srcdir}/patches-autobuild-stamp&quot;</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 92</span>
+92:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">patchlist</span>(<span class="ruby-identifier">package</span>)
+93:         <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">package</span>.<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">&quot;patches-autobuild-stamp&quot;</span>)
+94:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="unapply-method" class="method-detail ">
-				<a name="M000074"></a>
+				<a name="method-i-unapply"></a>
 
 				<div class="method-heading">
 				
@@ -548,18 +589,20 @@ been called)
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="unapply-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 95</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unapply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">path</span>); <span class="ruby-identifier">call_patch</span>(<span class="ruby-identifier">package</span>, <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">path</span>)   <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 104</span>
+104:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unapply</span>(<span class="ruby-identifier">package</span>, <span class="ruby-identifier">path</span>); <span class="ruby-identifier">call_patch</span>(<span class="ruby-identifier">package</span>, <span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">path</span>)   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

@@ -22,6 +22,16 @@
 <body class="module">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -43,8 +53,8 @@
 						<li><a href="./lib/autobuild/config_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/autobuild/config.rb">lib/autobuild/config.rb</a></li>
 					
-						<li><a href="./lib/autobuild/import/tar_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/autobuild/import/tar.rb">lib/autobuild/import/tar.rb</a></li>
+						<li><a href="./lib/autobuild/importer_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/importer.rb">lib/autobuild/importer.rb</a></li>
 					
 						<li><a href="./lib/autobuild/import/darcs_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/autobuild/import/darcs.rb">lib/autobuild/import/darcs.rb</a></li>
@@ -54,6 +64,9 @@
 					
 						<li><a href="./lib/autobuild/import/svn_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/autobuild/import/svn.rb">lib/autobuild/import/svn.rb</a></li>
+					
+						<li><a href="./lib/autobuild/import/archive_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/import/archive.rb">lib/autobuild/import/archive.rb</a></li>
 					
 						<li><a href="./lib/autobuild/import/cvs_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
 							class="thickbox" title="lib/autobuild/import/cvs.rb">lib/autobuild/import/cvs.rb</a></li>
@@ -113,6 +126,10 @@
 					
 					<li><span class="type">MODULE</span> <a href="Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
 					
+					<li><span class="type">CLASS</span> <a href="Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+					
 					<li><span class="type">CLASS</span> <a href="Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 					
 					<li><span class="type">CLASS</span> <a href="Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -161,8 +178,6 @@
 					
 					<li><span class="type">CLASS</span> <a href="Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
 					
-					<li><span class="type">CLASS</span> <a href="Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-					
 				</ul>
 			</div>
 			
@@ -173,79 +188,89 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000058">::apply</a></li>
+					<li><a href="#method-c-apply">::apply</a></li>
 					
-					<li><a href="#M000041">::apply_post_install</a></li>
+					<li><a href="#method-c-apply_post_install">::apply_post_install</a></li>
 					
-					<li><a href="#M000138">::autodetect_processor_count</a></li>
+					<li><a href="#method-c-archive">::archive</a></li>
 					
-					<li><a href="#M000157">::autotools</a></li>
+					<li><a href="#method-c-autodetect_processor_count">::autodetect_processor_count</a></li>
 					
-					<li><a href="#M000048">::clean_log!</a></li>
+					<li><a href="#method-c-autotools">::autotools</a></li>
 					
-					<li><a href="#M000145">::cmake</a></li>
+					<li><a href="#method-c-clean_log%21">::clean_log!</a></li>
 					
-					<li><a href="#M000051">::commandline</a></li>
+					<li><a href="#method-c-clear_logfiles">::clear_logfiles</a></li>
 					
-					<li><a href="#M000108">::cvs</a></li>
+					<li><a href="#method-c-cmake">::cmake</a></li>
 					
-					<li><a href="#M000085">::darcs</a></li>
+					<li><a href="#method-c-commandline">::commandline</a></li>
 					
-					<li><a href="#M000207">::dummy</a></li>
+					<li><a href="#method-c-cvs">::cvs</a></li>
 					
-					<li><a href="#M000023">::env_add</a></li>
+					<li><a href="#method-c-darcs">::darcs</a></li>
 					
-					<li><a href="#M000026">::env_add_path</a></li>
+					<li><a href="#method-c-dummy">::dummy</a></li>
 					
-					<li><a href="#M000017">::env_clear</a></li>
+					<li><a href="#method-c-env_add">::env_add</a></li>
 					
-					<li><a href="#M000022">::env_set</a></li>
+					<li><a href="#method-c-env_add_path">::env_add_path</a></li>
 					
-					<li><a href="#M000039">::full_build?</a></li>
+					<li><a href="#method-c-env_clear">::env_clear</a></li>
 					
-					<li><a href="#M000174">::genom</a></li>
+					<li><a href="#method-c-env_set">::env_set</a></li>
 					
-					<li><a href="#M000131">::get_stamp</a></li>
+					<li><a href="#method-c-full_build%3F">::full_build?</a></li>
 					
-					<li><a href="#M000103">::git</a></li>
+					<li><a href="#method-c-genom">::genom</a></li>
 					
-					<li><a href="#M000135">::import</a></li>
+					<li><a href="#method-c-get_stamp">::get_stamp</a></li>
 					
-					<li><a href="#M000144">::installed_pkgconfig</a></li>
+					<li><a href="#method-c-git">::git</a></li>
 					
-					<li><a href="#M000047">::logdir</a></li>
+					<li><a href="#method-c-import">::import</a></li>
 					
-					<li><a href="#M000188">::orogen</a></li>
+					<li><a href="#method-c-installed_pkgconfig">::installed_pkgconfig</a></li>
 					
-					<li><a href="#M000063">::package_set</a></li>
+					<li><a href="#method-c-logdir">::logdir</a></li>
 					
-					<li><a href="#M000134">::parallel_build_level</a></li>
+					<li><a href="#method-c-logfiles">::logfiles</a></li>
 					
-					<li><a href="#M000030">::pathvar</a></li>
+					<li><a href="#method-c-orogen">::orogen</a></li>
 					
-					<li><a href="#M000040">::post_install</a></li>
+					<li><a href="#method-c-package_set">::package_set</a></li>
 					
-					<li><a href="#M000046">::post_success_message</a></li>
+					<li><a href="#method-c-parallel_build_level">::parallel_build_level</a></li>
 					
-					<li><a href="#M000109">::progress</a></li>
+					<li><a href="#method-c-pathvar">::pathvar</a></li>
 					
-					<li><a href="#M000111">::progress_value</a></li>
+					<li><a href="#method-c-post_install">::post_install</a></li>
 					
-					<li><a href="#M000110">::progress_with_value</a></li>
+					<li><a href="#method-c-post_success_message">::post_success_message</a></li>
 					
-					<li><a href="#M000130">::source_tree</a></li>
+					<li><a href="#method-c-progress">::progress</a></li>
 					
-					<li><a href="#M000097">::svn</a></li>
+					<li><a href="#method-c-progress_value">::progress_value</a></li>
 					
-					<li><a href="#M000081">::tar</a></li>
+					<li><a href="#method-c-progress_with_value">::progress_with_value</a></li>
 					
-					<li><a href="#M000049">::tool</a></li>
+					<li><a href="#method-c-register_logfile">::register_logfile</a></li>
 					
-					<li><a href="#M000132">::touch_stamp</a></li>
+					<li><a href="#method-c-registered_logfile%3F">::registered_logfile?</a></li>
 					
-					<li><a href="#M000123">::tree_timestamp</a></li>
+					<li><a href="#method-c-source_tree">::source_tree</a></li>
 					
-					<li><a href="#M000031">::update_environment</a></li>
+					<li><a href="#method-c-svn">::svn</a></li>
+					
+					<li><a href="#method-c-tar">::tar</a></li>
+					
+					<li><a href="#method-c-tool">::tool</a></li>
+					
+					<li><a href="#method-c-touch_stamp">::touch_stamp</a></li>
+					
+					<li><a href="#method-c-tree_timestamp">::tree_timestamp</a></li>
+					
+					<li><a href="#method-c-update_environment">::update_environment</a></li>
 					
 				</ul>
 			</div>
@@ -289,6 +314,10 @@
 				
 					<li><a href="./Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="./Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="./Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -308,6 +337,12 @@
 					<li><a href="./Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -351,8 +386,6 @@
 				
 					<li><a href="./Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="./Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="./PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="./PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -381,75 +414,96 @@ the build configuration options (see Autobuild::DEFAULT_OPTIONS) for the
 default values)
 </p>
 <table>
-<tr><td valign="top">nice:</td><td>the nice value at which we should spawn subprocesses
-
+<tr><td valign="top">nice</td><td><p>
+the nice value at which we should spawn subprocesses
+</p>
 </td></tr>
-<tr><td valign="top">srcdir:</td><td>the base source directory. If a package defines a relative srcdir, then
-
+<tr><td valign="top">srcdir</td><td><p>
+the base source directory. If a package defines a relative srcdir, then
+</p>
 </td></tr>
 </table>
 <pre>
   it is defined relatively to Autobuild.srcdir. Defaults to the current directory.
 </pre>
 <table>
-<tr><td valign="top">prefix:</td><td>the base install directory. If a package defines a relative prefix, then
-
+<tr><td valign="top">prefix</td><td><p>
+the base install directory. If a package defines a relative prefix, then
+</p>
 </td></tr>
 </table>
 <pre>
   it is defined relatively to Autobuild.prefix.
 </pre>
 <table>
-<tr><td valign="top">verbose:</td><td>if true, displays all subprocesses output
-
+<tr><td valign="top">verbose</td><td><p>
+if true, displays all subprocesses output
+</p>
 </td></tr>
-<tr><td valign="top">debug:</td><td>more verbose than &#8216;verbose&#8217;: displays Rake&#8217;s debugging
+<tr><td valign="top">debug</td><td><p>
+more verbose than &#8216;verbose&#8217;: displays Rake&#8217;s debugging
 output
-
+</p>
 </td></tr>
-<tr><td valign="top">do_update:</td><td>if we should update the packages
-
+<tr><td valign="top">do_update</td><td><p>
+if we should update the packages
+</p>
 </td></tr>
-<tr><td valign="top">do_build:</td><td>if we should build the packages
-
+<tr><td valign="top">do_build</td><td><p>
+if we should build the packages
+</p>
 </td></tr>
-<tr><td valign="top">do_forced_build:</td><td>if we should forcefully trigger all the packages build phases
-
+<tr><td valign="top">do_forced_build</td><td><p>
+if we should forcefully trigger all the packages build phases
+</p>
 </td></tr>
-<tr><td valign="top">do_rebuild:</td><td>if we should cleanly rebuild every packages
-
+<tr><td valign="top">do_rebuild</td><td><p>
+if we should cleanly rebuild every packages
+</p>
 </td></tr>
-<tr><td valign="top">do_doc:</td><td>if we should produce the documentation
-
+<tr><td valign="top">do_doc</td><td><p>
+if we should produce the documentation
+</p>
 </td></tr>
-<tr><td valign="top">doc_errors:</td><td>if errors during the documentation generation are treated as errors
-
+<tr><td valign="top">doc_errors</td><td><p>
+if errors during the documentation generation are treated as errors
+</p>
 </td></tr>
-<tr><td valign="top">daemonize:</td><td>if the build should go into daemon mode (only if the daemons gem is
+<tr><td valign="top">daemonize</td><td><p>
+if the build should go into daemon mode (only if the daemons gem is
 available)
-
+</p>
 </td></tr>
-<tr><td valign="top">clean_log:</td><td>remove all logs before starting the build
-
+<tr><td valign="top">clean_log</td><td><p>
+remove all logs before starting the build
+</p>
 </td></tr>
-<tr><td valign="top">packages:</td><td>a list of packages to build specifically
-
+<tr><td valign="top">packages</td><td><p>
+a list of packages to build specifically
+</p>
 </td></tr>
-<tr><td valign="top">default_packages:</td><td>the list of packages to build if Autobuild.packages is empty.
-
+<tr><td valign="top">default_packages</td><td><p>
+the list of packages to build if Autobuild.packages is empty.
+</p>
 </td></tr>
 </table>
 <pre>
   It this array is empty too, build all defined packages.
 </pre>
 <table>
-<tr><td valign="top">keep_oldlogs:</td><td>if true, new runs will be appended to existing logfiles.
-
+<tr><td valign="top">keep_oldlogs</td><td><p>
+if true, new runs will be appended to existing logfiles.
+</p>
 </td></tr>
 </table>
 <pre>
   Otherwise, the existing logfile contents is erased.
 </pre>
+<hr style="height: 1px"></hr><p>
+This class is the base class for objects that are used to get the source
+from various RCS into the package source directory. A list of patches to
+apply after the import can be given in the <tt>:patches</tt> option.
+</p>
 
 		</div>
 
@@ -461,17 +515,24 @@ available)
 			
 				<dt><a name="TARGETS">TARGETS</a></dt>
 				
-				<dd class="description missing-docs">(Not documented)</dd>
+				<dd class="description"></dd>
 				
 			
 				<dt><a name="DEFAULT_OPTIONS">DEFAULT_OPTIONS</a></dt>
 				
-				<dd class="description missing-docs">(Not documented)</dd>
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="TarImporter">TarImporter</a></dt>
+				
+				<dd class="description"><p>
+For backwards compatibility
+</p></dd>
 				
 			
 				<dt><a name="VERSION">VERSION</a></dt>
 				
-				<dd class="description missing-docs">(Not documented)</dd>
+				<dd class="description"></dd>
 				
 			
 			</dl>
@@ -494,7 +555,7 @@ available)
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -509,7 +570,7 @@ available)
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -560,7 +621,7 @@ The directory in which logs are saved. Defaults to PREFIX/log.
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -579,22 +640,27 @@ The directory in which logs are saved. Defaults to PREFIX/log.
 Mailing configuration. It is a hash with the following keys (as symbols)
 </p>
 <dl>
-<dt>:to</dt><dd>the mail destination. Defaults to USER@HOSTNAME, where USER is the username
+<dt>:to</dt><dd><p>
+the mail destination. Defaults to USER@HOSTNAME, where USER is the username
 of autobuild&#8217;s caller, and HOSTNAME the hostname of the current
 machine.
-
+</p>
 </dd>
-<dt>:from</dt><dd>the mail origin. Defaults to the same value than <tt>:to</tt>
-
+<dt>:from</dt><dd><p>
+the mail origin. Defaults to the same value than <tt>:to</tt>
+</p>
 </dd>
-<dt>:smtp</dt><dd>the hostname of the SMTP server, defaults to localhost
-
+<dt>:smtp</dt><dd><p>
+the hostname of the SMTP server, defaults to localhost
+</p>
 </dd>
-<dt>:port</dt><dd>the port of the SMTP server, defauts to 22
-
+<dt>:port</dt><dd><p>
+the port of the SMTP server, defauts to 22
+</p>
 </dd>
-<dt>:only_errors</dt><dd>mail only on errors. Defaults to false.
-
+<dt>:only_errors</dt><dd><p>
+mail only on errors. Defaults to false.
+</p>
 </dd>
 </dl>
 				
@@ -617,8 +683,7 @@ machine.
 Sets the level of parallelism during the build
 </p>
 <p>
-See <a href="Autobuild.html#M000134">parallel_build_level</a> for detailed
-information
+See # for detailed information
 </p>
 				
 				</div>
@@ -634,7 +699,7 @@ information
 
 		
 			<div id="apply-method" class="method-detail ">
-				<a name="M000058"></a>
+				<a name="method-c-apply"></a>
 
 				<div class="method-heading">
 				
@@ -646,68 +711,72 @@ information
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="apply-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 209</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">apply</span>(<span class="ruby-identifier">packages</span>, <span class="ruby-identifier">buildname</span> = <span class="ruby-value str">&quot;autobuild&quot;</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:to</span>]
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">HAS_RMAIL</span>
-                <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;RMail is not available. Mail notification is disabled&quot;</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-constant">Reporting</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MailReporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">mail</span>)
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_rebuild</span>
-            <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg_name</span><span class="ruby-operator">|</span>
-                <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg_name</span>].<span class="ruby-identifier">prepare_for_rebuild</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-comment cmt"># And delete the prefix !</span>
-            <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">prefix</span>
-
-        <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_forced_build</span>
-            <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg_name</span><span class="ruby-operator">|</span>
-                <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg_name</span>].<span class="ruby-identifier">prepare_for_forced_build</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">only_doc</span>
-            <span class="ruby-identifier">phases</span>  = [<span class="ruby-value str">'doc'</span>]
-        <span class="ruby-keyword kw">else</span>
-            <span class="ruby-identifier">phases</span>  = [<span class="ruby-value str">'import'</span>]
-            <span class="ruby-identifier">phases</span> <span class="ruby-operator">+=</span> [<span class="ruby-value str">'prepare'</span>, <span class="ruby-value str">'build'</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_build</span>
-            <span class="ruby-identifier">phases</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'doc'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_doc</span>
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-identifier">phases</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">phase</span><span class="ruby-operator">|</span>
-            <span class="ruby-comment cmt"># We create a dummy task listing what needs to be done, and then we</span>
-            <span class="ruby-comment cmt"># call it</span>
-            <span class="ruby-identifier">targets</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">empty?</span>
-                          <span class="ruby-identifier">phase</span>
-                      <span class="ruby-keyword kw">else</span>
-                          <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{pkg}-#{phase}&quot;</span> }
-                      <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{buildname}-#{phase}&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">targets</span>
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-identifier">phases</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">phase</span><span class="ruby-operator">|</span>
-            <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-node">&quot;#{buildname}-#{phase}&quot;</span>].<span class="ruby-identifier">invoke</span>
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 209</span>
+209:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">apply</span>(<span class="ruby-identifier">packages</span>, <span class="ruby-identifier">buildname</span> = <span class="ruby-value str">&quot;autobuild&quot;</span>)
+210:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">mail</span>[<span class="ruby-value">:to</span>]
+211:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">HAS_RMAIL</span>
+212:                 <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;RMail is not available. Mail notification is disabled&quot;</span>
+213:             <span class="ruby-keyword kw">else</span>
+214:                 <span class="ruby-constant">Reporting</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MailReporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">mail</span>)
+215:             <span class="ruby-keyword kw">end</span>
+216:         <span class="ruby-keyword kw">end</span>
+217: 
+218:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_rebuild</span>
+219:             <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg_name</span><span class="ruby-operator">|</span>
+220:                 <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg_name</span>].<span class="ruby-identifier">prepare_for_rebuild</span>
+221:             <span class="ruby-keyword kw">end</span>
+222:             <span class="ruby-comment cmt"># And delete the prefix !</span>
+223:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">prefix</span>
+224: 
+225:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_forced_build</span>
+226:             <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg_name</span><span class="ruby-operator">|</span>
+227:                 <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg_name</span>].<span class="ruby-identifier">prepare_for_forced_build</span>
+228:             <span class="ruby-keyword kw">end</span>
+229:         <span class="ruby-keyword kw">end</span>
+230: 
+231:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">only_doc</span>
+232:             <span class="ruby-identifier">phases</span>  = [<span class="ruby-value str">'doc'</span>]
+233:         <span class="ruby-keyword kw">else</span>
+234:             <span class="ruby-identifier">phases</span>  = [<span class="ruby-value str">'import'</span>]
+235:             <span class="ruby-identifier">phases</span> <span class="ruby-operator">+=</span> [<span class="ruby-value str">'prepare'</span>, <span class="ruby-value str">'build'</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_build</span>
+236:             <span class="ruby-identifier">phases</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'doc'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_doc</span>
+237:         <span class="ruby-keyword kw">end</span>
+238:         <span class="ruby-identifier">phases</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">phase</span><span class="ruby-operator">|</span>
+239:             <span class="ruby-comment cmt"># We create a dummy task listing what needs to be done, and then we</span>
+240:             <span class="ruby-comment cmt"># call it</span>
+241:             <span class="ruby-identifier">targets</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">empty?</span>
+242:                           <span class="ruby-identifier">phase</span>
+243:                       <span class="ruby-keyword kw">else</span>
+244:                           <span class="ruby-identifier">packages</span>.
+245:                             <span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span> <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">lookup</span>(<span class="ruby-node">&quot;#{pkg}-#{phase}&quot;</span>) }.
+246:                             <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{pkg}-#{phase}&quot;</span> }
+247:                       <span class="ruby-keyword kw">end</span>
+248: 
+249:             <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{buildname}-#{phase}&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">targets</span>
+250:         <span class="ruby-keyword kw">end</span>
+251:         <span class="ruby-identifier">phases</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">phase</span><span class="ruby-operator">|</span>
+252:             <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-node">&quot;#{buildname}-#{phase}&quot;</span>].<span class="ruby-identifier">invoke</span>
+253:         <span class="ruby-keyword kw">end</span>
+254:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="apply-post-install-method" class="method-detail ">
-				<a name="M000041"></a>
+				<a name="method-c-apply_post_install"></a>
 
 				<div class="method-heading">
 				
@@ -719,37 +788,77 @@ information
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="apply-post-install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 74</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">apply_post_install</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">info</span>)
-        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">info</span>
-
-        <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">info</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
-            <span class="ruby-identifier">args</span> = <span class="ruby-identifier">info</span>.<span class="ruby-identifier">dup</span>
-            <span class="ruby-identifier">tool</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>)
-
-            <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span> <span class="ruby-identifier">name</span>, <span class="ruby-value str">'post-install'</span>, <span class="ruby-identifier">tool</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
-        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Proc</span>
-            <span class="ruby-identifier">info</span>.<span class="ruby-identifier">call</span>
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">apply_post_install</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">info</span>)
+75:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">info</span>
+76: 
+77:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">info</span>
+78:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+79:             <span class="ruby-identifier">args</span> = <span class="ruby-identifier">info</span>.<span class="ruby-identifier">dup</span>
+80:             <span class="ruby-identifier">tool</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>)
+81: 
+82:             <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span> <span class="ruby-identifier">name</span>, <span class="ruby-value str">'post-install'</span>, <span class="ruby-identifier">tool</span>, *<span class="ruby-identifier">args</span>
+83:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Proc</span>
+84:             <span class="ruby-identifier">info</span>.<span class="ruby-identifier">call</span>
+85:         <span class="ruby-keyword kw">end</span>
+86:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="archive-method" class="method-detail ">
+				<a name="method-c-archive"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">archive</span><span
+						class="method-args">(source, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates an importer which downloads a tarball from <tt>source</tt> and
+unpacks it. The allowed values in <tt>options</tt> are described in
+ArchiveImporter.new.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="archive-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 169</span>
+169:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">archive</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
+170:         <span class="ruby-constant">ArchiveImporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
+171:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="autodetect-processor-count-method" class="method-detail ">
-				<a name="M000138"></a>
+				<a name="method-c-autodetect_processor_count"></a>
 
 				<div class="method-heading">
 				
@@ -770,38 +879,40 @@ Returns the number of CPUs present on this system
 					<div class="method-source-code"
 						id="autodetect-processor-count-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 34</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">autodetect_processor_count</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@processor_count</span>
-            <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@processor_count</span>
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'/sys/devices/system/cpu/present'</span>)
-            <span class="ruby-identifier">range</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value str">'/sys/devices/system/cpu/present'</span>).
-                <span class="ruby-identifier">chomp</span>
-                
-            <span class="ruby-ivar">@processor_count</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">range</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'-'</span>).<span class="ruby-identifier">last</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
-        <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'/proc/cpuinfo'</span>)
-            <span class="ruby-comment cmt"># Just count the numer of processor: \d lines</span>
-            <span class="ruby-ivar">@processor_count</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-value str">'/proc/cpuinfo'</span>).
-                <span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^processor\s+:\s+\d+$/</span> }.
-                <span class="ruby-identifier">count</span>
-        <span class="ruby-keyword kw">else</span>
-            <span class="ruby-comment cmt"># Hug... What kind of system is it ?</span>
-            <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;INFO: cannot autodetect the number of CPUs on this sytem&quot;</span>
-            <span class="ruby-ivar">@processor_count</span> = <span class="ruby-value">1</span>
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 52</span>
+52:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">autodetect_processor_count</span>
+53:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@processor_count</span>
+54:             <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@processor_count</span>
+55:         <span class="ruby-keyword kw">end</span>
+56: 
+57:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'/sys/devices/system/cpu/present'</span>)
+58:             <span class="ruby-identifier">range</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value str">'/sys/devices/system/cpu/present'</span>).
+59:                 <span class="ruby-identifier">chomp</span>
+60:                 
+61:             <span class="ruby-ivar">@processor_count</span> = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">range</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'-'</span>).<span class="ruby-identifier">last</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+62:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'/proc/cpuinfo'</span>)
+63:             <span class="ruby-comment cmt"># Just count the numer of processor: \d lines</span>
+64:             <span class="ruby-ivar">@processor_count</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-value str">'/proc/cpuinfo'</span>).
+65:                 <span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^processor\s+:\s+\d+$/</span> }.
+66:                 <span class="ruby-identifier">count</span>
+67:         <span class="ruby-keyword kw">else</span>
+68:             <span class="ruby-comment cmt"># Hug... What kind of system is it ?</span>
+69:             <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;INFO: cannot autodetect the number of CPUs on this sytem&quot;</span>
+70:             <span class="ruby-ivar">@processor_count</span> = <span class="ruby-value">1</span>
+71:         <span class="ruby-keyword kw">end</span>
+72:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="autotools-method" class="method-detail ">
-				<a name="M000157"></a>
+				<a name="method-c-autotools"></a>
 
 				<div class="method-heading">
 				
@@ -813,27 +924,29 @@ Returns the number of CPUs present on this system
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="autotools-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 10</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">autotools</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-        <span class="ruby-constant">Autotools</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 10</span>
+10:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">autotools</span>(<span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">proc</span>)
+11:         <span class="ruby-constant">Autotools</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">proc</span>)
+12:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="clean-log--method" class="method-detail ">
-				<a name="M000048"></a>
+				<a name="method-c-clean_log%21"></a>
 
 				<div class="method-heading">
 				
@@ -854,22 +967,58 @@ Removes all log files
 					<div class="method-source-code"
 						id="clean-log--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 125</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean_log!</span>
-            <span class="ruby-constant">Reporting</span>.<span class="ruby-identifier">each_log</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
-                <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">file</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 125</span>
+125:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean_log!</span>
+126:             <span class="ruby-constant">Reporting</span>.<span class="ruby-identifier">each_log</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+127:                 <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">file</span>
+128:             <span class="ruby-keyword kw">end</span>
+129:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="clear-logfiles-method" class="method-detail ">
+				<a name="method-c-clear_logfiles"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">clear_logfiles</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="clear-logfiles-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 8</span>
+ 8:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">clear_logfiles</span>
+ 9:         <span class="ruby-ivar">@logfiles</span>.<span class="ruby-identifier">clear</span>
+10:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="cmake-method" class="method-detail ">
-				<a name="M000145"></a>
+				<a name="method-c-cmake"></a>
 
 				<div class="method-heading">
 				
@@ -881,27 +1030,29 @@ Removes all log files
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="cmake-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 4</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">cmake</span>(<span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-        <span class="ruby-constant">CMake</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 4</span>
+4:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">cmake</span>(<span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+5:         <span class="ruby-constant">CMake</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+6:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="commandline-method" class="method-detail ">
-				<a name="M000051"></a>
+				<a name="method-c-commandline"></a>
 
 				<div class="method-heading">
 				
@@ -923,81 +1074,83 @@ elements
 					<div class="method-source-code"
 						id="commandline-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 143</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">commandline</span>(<span class="ruby-identifier">args</span>)
-            <span class="ruby-identifier">parser</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opts</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;Path specification&quot;</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--srcdir PATH&quot;</span>, <span class="ruby-value str">&quot;sources are installed in PATH&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@srcdir</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--prefix PATH&quot;</span>, <span class="ruby-value str">&quot;built packages are installed in PATH&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@prefix</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--logdir PATH&quot;</span>, <span class="ruby-value str">&quot;logs are saved in PATH (default: &lt;prefix&gt;/autobuild)&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@logdir</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;&quot;</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;General behaviour&quot;</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">'--nice NICE'</span>, <span class="ruby-constant">Integer</span>, <span class="ruby-value str">'nice the subprocesses to the given value'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@nice</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;-h&quot;</span>, <span class="ruby-value str">&quot;--help&quot;</span>, <span class="ruby-value str">&quot;Show this message&quot;</span>) <span class="ruby-keyword kw">do</span>
-                    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">opts</span>
-                    <span class="ruby-identifier">exit</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">Daemons</span>
-                    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--[no-]daemon&quot;</span>, <span class="ruby-value str">&quot;go into daemon mode&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@daemonize</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--no-update&quot;</span>, <span class="ruby-value str">&quot;update already checked-out sources&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@do_update</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--no-build&quot;</span>,  <span class="ruby-value str">&quot;only prepare packages, do not build them&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@do_build</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span> 
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--forced-build&quot;</span>,  <span class="ruby-value str">&quot;force the trigger of all the build commands&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@do_forced_build</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span> 
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--rebuild&quot;</span>,  <span class="ruby-value str">&quot;clean and rebuild&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@do_forced_build</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span> 
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--only-doc&quot;</span>, <span class="ruby-value str">&quot;only generate documentation&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@only_doc</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--no-doc&quot;</span>, <span class="ruby-value str">&quot;don't generate documentation&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@do_doc</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--doc-errors&quot;</span>, <span class="ruby-value str">&quot;treat documentation failure as error&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@doc_errors</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;&quot;</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;Program output&quot;</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--[no-]verbose&quot;</span>, <span class="ruby-value str">&quot;display output of commands on stdout&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@verbose</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--[no-]debug&quot;</span>, <span class="ruby-value str">&quot;debug information (for debugging purposes)&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@debug</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--keep-oldlogs&quot;</span>, <span class="ruby-value str">&quot;old logs will be kept, new program output being appended&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@keep_oldlogs</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">end</span>
-
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;&quot;</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;Mail reports&quot;</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-from EMAIL&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot;From: field of the sent mails&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">from_email</span><span class="ruby-operator">|</span>
-                    <span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:from</span>] = <span class="ruby-identifier">from_email</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-to EMAILS&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot;comma-separated list of emails to which the reports should be sent&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">emails</span><span class="ruby-operator">|</span> 
-                    <span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:to</span>] <span class="ruby-operator">||=</span> []
-                    <span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:to</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">emails</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>)
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-subject SUBJECT&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot;Subject: field of the sent mails&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">subject_email</span><span class="ruby-operator">|</span>
-                    <span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:subject</span>] = <span class="ruby-identifier">subject_email</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-smtp HOSTNAME&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot; address of the mail server written as hostname[:port]&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">smtp</span><span class="ruby-operator">|</span>
-                    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;invalid SMTP specification #{smtp}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">smtp</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^([^:]+)(?::(\d+))?$/</span>
-                    <span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:smtp</span>] = <span class="ruby-identifier">$1</span>
-                    <span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:port</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">$2</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$2</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">$2</span>.<span class="ruby-identifier">empty?</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-only-errors&quot;</span>, <span class="ruby-value str">&quot;send mail only on errors&quot;</span>) <span class="ruby-keyword kw">do</span>
-                    <span class="ruby-identifier">mail</span>[<span class="ruby-identifier">:only_errors</span>] = <span class="ruby-keyword kw">true</span>
-                <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">args</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
-                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>
-                <span class="ruby-identifier">exit</span>
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">trace</span> = <span class="ruby-identifier">debug</span>
-
-            <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 143</span>
+143:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">commandline</span>(<span class="ruby-identifier">args</span>)
+144:             <span class="ruby-identifier">parser</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opts</span><span class="ruby-operator">|</span>
+145:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;Path specification&quot;</span>
+146:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--srcdir PATH&quot;</span>, <span class="ruby-value str">&quot;sources are installed in PATH&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">srcdir</span>=<span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+147:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--prefix PATH&quot;</span>, <span class="ruby-value str">&quot;built packages are installed in PATH&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">prefix</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+148:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--logdir PATH&quot;</span>, <span class="ruby-value str">&quot;logs are saved in PATH (default: &lt;prefix&gt;/autobuild)&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">logdir</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+149: 
+150:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;&quot;</span>
+151:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;General behaviour&quot;</span>
+152:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">'--nice NICE'</span>, <span class="ruby-constant">Integer</span>, <span class="ruby-value str">'nice the subprocesses to the given value'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">nice</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+153:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;-h&quot;</span>, <span class="ruby-value str">&quot;--help&quot;</span>, <span class="ruby-value str">&quot;Show this message&quot;</span>) <span class="ruby-keyword kw">do</span>
+154:                     <span class="ruby-identifier">puts</span> <span class="ruby-identifier">opts</span>
+155:                     <span class="ruby-identifier">exit</span>
+156:                 <span class="ruby-keyword kw">end</span>
+157:                 <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">Daemons</span>
+158:                     <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--[no-]daemon&quot;</span>, <span class="ruby-value str">&quot;go into daemon mode&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">daemonize</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+159:                 <span class="ruby-keyword kw">end</span>
+160:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--no-update&quot;</span>, <span class="ruby-value str">&quot;update already checked-out sources&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>  <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_update</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+161:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--no-build&quot;</span>,  <span class="ruby-value str">&quot;only prepare packages, do not build them&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_build</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span> 
+162:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--forced-build&quot;</span>,  <span class="ruby-value str">&quot;force the trigger of all the build commands&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_forced_build</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span> 
+163:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--rebuild&quot;</span>,  <span class="ruby-value str">&quot;clean and rebuild&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_forced_build</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span> 
+164:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--only-doc&quot;</span>, <span class="ruby-value str">&quot;only generate documentation&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">only_doc</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+165:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--no-doc&quot;</span>, <span class="ruby-value str">&quot;don't generate documentation&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">do_doc</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+166:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--doc-errors&quot;</span>, <span class="ruby-value str">&quot;treat documentation failure as error&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">doc_errors</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+167: 
+168:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;&quot;</span>
+169:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;Program output&quot;</span>
+170:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--[no-]verbose&quot;</span>, <span class="ruby-value str">&quot;display output of commands on stdout&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+171:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--[no-]debug&quot;</span>, <span class="ruby-value str">&quot;debug information (for debugging purposes)&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+172:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--keep-oldlogs&quot;</span>, <span class="ruby-value str">&quot;old logs will be kept, new program output being appended&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">keep_oldlogs</span> = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+173: 
+174:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;&quot;</span>
+175:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;Mail reports&quot;</span>
+176:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-from EMAIL&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot;From: field of the sent mails&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">from_email</span><span class="ruby-operator">|</span>
+177:                     <span class="ruby-identifier">mail</span>[<span class="ruby-value">:from</span>] = <span class="ruby-identifier">from_email</span>
+178:                 <span class="ruby-keyword kw">end</span>
+179:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-to EMAILS&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot;comma-separated list of emails to which the reports should be sent&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">emails</span><span class="ruby-operator">|</span> 
+180:                     <span class="ruby-identifier">mail</span>[<span class="ruby-value">:to</span>] <span class="ruby-operator">||=</span> []
+181:                     <span class="ruby-identifier">mail</span>[<span class="ruby-value">:to</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">emails</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">','</span>)
+182:                 <span class="ruby-keyword kw">end</span>
+183:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-subject SUBJECT&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot;Subject: field of the sent mails&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">subject_email</span><span class="ruby-operator">|</span>
+184:                     <span class="ruby-identifier">mail</span>[<span class="ruby-value">:subject</span>] = <span class="ruby-identifier">subject_email</span>
+185:                 <span class="ruby-keyword kw">end</span>
+186:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-smtp HOSTNAME&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-value str">&quot; address of the mail server written as hostname[:port]&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">smtp</span><span class="ruby-operator">|</span>
+187:                     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;invalid SMTP specification #{smtp}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">smtp</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^([^:]+)(?::(\d+))?$/</span>
+188:                     <span class="ruby-identifier">mail</span>[<span class="ruby-value">:smtp</span>] = <span class="ruby-node">$1</span>
+189:                     <span class="ruby-identifier">mail</span>[<span class="ruby-value">:port</span>] = <span class="ruby-constant">Integer</span>(<span class="ruby-node">$2</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-node">$2</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-node">$2</span>.<span class="ruby-identifier">empty?</span>
+190:                 <span class="ruby-keyword kw">end</span>
+191:                 <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-value str">&quot;--mail-only-errors&quot;</span>, <span class="ruby-value str">&quot;send mail only on errors&quot;</span>) <span class="ruby-keyword kw">do</span>
+192:                     <span class="ruby-identifier">mail</span>[<span class="ruby-value">:only_errors</span>] = <span class="ruby-keyword kw">true</span>
+193:                 <span class="ruby-keyword kw">end</span>
+194: 
+195:             <span class="ruby-keyword kw">end</span>
+196: 
+197:             <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">args</span>)
+198:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
+199:                 <span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>
+200:                 <span class="ruby-identifier">exit</span>
+201:             <span class="ruby-keyword kw">end</span>
+202: 
+203:             <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">trace</span> = <span class="ruby-identifier">debug</span>
+204: 
+205:             <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>]
+206:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="cvs-method" class="method-detail ">
-				<a name="M000108"></a>
+				<a name="method-c-cvs"></a>
 
 				<div class="method-heading">
 				
@@ -1012,8 +1165,7 @@ elements
 					<p>
 Returns the CVS importer which will get the <tt>name</tt> module in
 repository <tt>repo</tt>. The allowed values in <tt>options</tt> are
-described in <a
-href="Autobuild/CVSImporter.html#M000104">CVSImporter.new</a>.
+described in CVSImporter.new.    
 </p>
 					
 
@@ -1021,20 +1173,22 @@ href="Autobuild/CVSImporter.html#M000104">CVSImporter.new</a>.
 					<div class="method-source-code"
 						id="cvs-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/cvs.rb, line 74</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">cvs</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
-        <span class="ruby-constant">CVSImporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/cvs.rb, line 74</span>
+74:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">cvs</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+75:         <span class="ruby-constant">CVSImporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+76:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="darcs-method" class="method-detail ">
-				<a name="M000085"></a>
+				<a name="method-c-darcs"></a>
 
 				<div class="method-heading">
 				
@@ -1049,8 +1203,7 @@ href="Autobuild/CVSImporter.html#M000104">CVSImporter.new</a>.
 					<p>
 Returns the Darcs importer which will get the source from the Darcs
 repository <tt>source</tt>. The allowed values in <tt>options</tt> are
-described in <a
-href="Autobuild/DarcsImporter.html#M000082">DarcsImporter.new</a>.
+described in DarcsImporter.new.
 </p>
 					
 
@@ -1058,20 +1211,22 @@ href="Autobuild/DarcsImporter.html#M000082">DarcsImporter.new</a>.
 					<div class="method-source-code"
 						id="darcs-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/darcs.rb, line 47</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">darcs</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
-        <span class="ruby-constant">DarcsImporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/darcs.rb, line 47</span>
+47:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">darcs</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
+48:         <span class="ruby-constant">DarcsImporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
+49:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="dummy-method" class="method-detail ">
-				<a name="M000207"></a>
+				<a name="method-c-dummy"></a>
 
 				<div class="method-heading">
 				
@@ -1083,27 +1238,29 @@ href="Autobuild/DarcsImporter.html#M000082">DarcsImporter.new</a>.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="dummy-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 2</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dummy</span>(<span class="ruby-identifier">spec</span>)
-        <span class="ruby-constant">ImporterPackage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">spec</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/packages/dummy.rb, line 2</span>
+2:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dummy</span>(<span class="ruby-identifier">spec</span>)
+3:         <span class="ruby-constant">ImporterPackage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">spec</span>)
+4:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="env-add-method" class="method-detail ">
-				<a name="M000023"></a>
+				<a name="method-c-env_add"></a>
 
 				<div class="method-heading">
 				
@@ -1124,42 +1281,44 @@ Adds a new value to an environment variable
 					<div class="method-source-code"
 						id="env-add-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 20</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_add</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
-        <span class="ruby-identifier">set</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">environment</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
-                  <span class="ruby-identifier">environment</span>[<span class="ruby-identifier">name</span>]
-              <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">inherited_environment</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parent_env</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>]
-                <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">parent_env</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>)
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">set</span>
-            <span class="ruby-identifier">set</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
-        <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">set</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_ary</span>)
-            <span class="ruby-identifier">set</span> = [<span class="ruby-identifier">set</span>]
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-identifier">values</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">set</span>)
-        <span class="ruby-ivar">@environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">values</span>
-
-        <span class="ruby-identifier">inherited</span> = <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
-        <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>] = (<span class="ruby-identifier">values</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">inherited</span>).<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;:&quot;</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 20</span>
+20:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_add</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">values</span>)
+21:         <span class="ruby-identifier">set</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">environment</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+22:                   <span class="ruby-identifier">environment</span>[<span class="ruby-identifier">name</span>]
+23:               <span class="ruby-keyword kw">end</span>
+24: 
+25:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">inherited_environment</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+26:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parent_env</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>]
+27:                 <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">parent_env</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>)
+28:             <span class="ruby-keyword kw">else</span>
+29:                 <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+30:             <span class="ruby-keyword kw">end</span>
+31:         <span class="ruby-keyword kw">end</span>
+32: 
+33:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">set</span>
+34:             <span class="ruby-identifier">set</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+35:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">set</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_ary</span>)
+36:             <span class="ruby-identifier">set</span> = [<span class="ruby-identifier">set</span>]
+37:         <span class="ruby-keyword kw">end</span>
+38: 
+39:         <span class="ruby-identifier">values</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">set</span>)
+40:         <span class="ruby-ivar">@environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">values</span>
+41: 
+42:         <span class="ruby-identifier">inherited</span> = <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+43:         <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>] = (<span class="ruby-identifier">values</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">inherited</span>).<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;:&quot;</span>)
+44:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="env-add-path-method" class="method-detail ">
-				<a name="M000026"></a>
+				<a name="method-c-env_add_path"></a>
 
 				<div class="method-heading">
 				
@@ -1171,38 +1330,40 @@ Adds a new value to an environment variable
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="env-add-path-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 46</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_add_path</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
-            <span class="ruby-identifier">oldpath</span> = <span class="ruby-identifier">environment</span>[<span class="ruby-identifier">name</span>]
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">oldpath</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">oldpath</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">path</span>)
-                <span class="ruby-identifier">env_add</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>)
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'RUBYLIB'</span>
-                    <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">path</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">paths</span>.<span class="ruby-identifier">empty?</span>
-            <span class="ruby-identifier">env_add_path</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>)
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 46</span>
+46:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_add_path</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>, *<span class="ruby-identifier">paths</span>)
+47:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
+48:             <span class="ruby-identifier">oldpath</span> = <span class="ruby-identifier">environment</span>[<span class="ruby-identifier">name</span>]
+49:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">oldpath</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">oldpath</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">path</span>)
+50:                 <span class="ruby-identifier">env_add</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>)
+51:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'RUBYLIB'</span>
+52:                     <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">path</span>
+53:                 <span class="ruby-keyword kw">end</span>
+54:             <span class="ruby-keyword kw">end</span>
+55:         <span class="ruby-keyword kw">end</span>
+56:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">paths</span>.<span class="ruby-identifier">empty?</span>
+57:             <span class="ruby-identifier">env_add_path</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">paths</span>)
+58:         <span class="ruby-keyword kw">end</span>
+59:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="env-clear-method" class="method-detail ">
-				<a name="M000017"></a>
+				<a name="method-c-env_clear"></a>
 
 				<div class="method-heading">
 				
@@ -1214,28 +1375,30 @@ Adds a new value to an environment variable
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="env-clear-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 9</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_clear</span>(<span class="ruby-identifier">name</span>)
-        <span class="ruby-identifier">environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-keyword kw">nil</span>
-        <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-keyword kw">nil</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 9</span>
+ 9:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_clear</span>(<span class="ruby-identifier">name</span>)
+10:         <span class="ruby-identifier">environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-keyword kw">nil</span>
+11:         <span class="ruby-identifier">inherited_environment</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-keyword kw">nil</span>
+12:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="env-set-method" class="method-detail ">
-				<a name="M000022"></a>
+				<a name="method-c-env_set"></a>
 
 				<div class="method-heading">
 				
@@ -1256,21 +1419,23 @@ Set a new environment variable
 					<div class="method-source-code"
 						id="env-set-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 15</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_set</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
-        <span class="ruby-identifier">env_clear</span>(<span class="ruby-identifier">name</span>)
-        <span class="ruby-identifier">env_add</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 15</span>
+15:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">env_set</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">values</span>)
+16:         <span class="ruby-identifier">env_clear</span>(<span class="ruby-identifier">name</span>)
+17:         <span class="ruby-identifier">env_add</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">values</span>)
+18:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="full-build--method" class="method-detail ">
-				<a name="M000039"></a>
+				<a name="method-c-full_build%3F"></a>
 
 				<div class="method-heading">
 				
@@ -1291,20 +1456,22 @@ True if we build and if the build is applied on all packages
 					<div class="method-source-code"
 						id="full-build--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 47</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_build?</span>
-            <span class="ruby-identifier">do_build</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">only_doc</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">empty?</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 47</span>
+47:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_build?</span>
+48:             <span class="ruby-identifier">do_build</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">only_doc</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">empty?</span>
+49:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="genom-method" class="method-detail ">
-				<a name="M000174"></a>
+				<a name="method-c-genom"></a>
 
 				<div class="method-heading">
 				
@@ -1316,27 +1483,29 @@ True if we build and if the build is applied on all packages
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="genom-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 6</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">genom</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-        <span class="ruby-constant">GenomModule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 6</span>
+6:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">genom</span>(<span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">proc</span>)
+7:         <span class="ruby-constant">GenomModule</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">proc</span>)
+8:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="get-stamp-method" class="method-detail ">
-				<a name="M000131"></a>
+				<a name="method-c-get_stamp"></a>
 
 				<div class="method-heading">
 				
@@ -1348,28 +1517,30 @@ True if we build and if the build is applied on all packages
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="get-stamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 56</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_stamp</span>(<span class="ruby-identifier">stampfile</span>)
-        <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">stampfile</span>)
-        <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">stampfile</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 56</span>
+56:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_stamp</span>(<span class="ruby-identifier">stampfile</span>)
+57:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">stampfile</span>)
+58:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">stampfile</span>)
+59:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="git-method" class="method-detail ">
-				<a name="M000103"></a>
+				<a name="method-c-git"></a>
 
 				<div class="method-heading">
 				
@@ -1384,7 +1555,7 @@ True if we build and if the build is applied on all packages
 					<p>
 Creates a git importer which gets the source for the given repository and
 branch URL <tt>source</tt>. The allowed values in <tt>options</tt> are
-described in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
+described in SVN.new.
 </p>
 					
 
@@ -1392,20 +1563,22 @@ described in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
 					<div class="method-source-code"
 						id="git-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 244</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">git</span>(<span class="ruby-identifier">repository</span>, <span class="ruby-identifier">branch</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {})
-        <span class="ruby-constant">Git</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">repository</span>, <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">options</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/import/git.rb, line 276</span>
+276:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">git</span>(<span class="ruby-identifier">repository</span>, <span class="ruby-identifier">branch</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {})
+277:         <span class="ruby-constant">Git</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">repository</span>, <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">options</span>)
+278:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000135"></a>
+				<a name="method-c-import"></a>
 
 				<div class="method-heading">
 				
@@ -1417,27 +1590,29 @@ described in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/import.rb, line 5</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-        <span class="ruby-constant">ImporterPackage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/packages/import.rb, line 5</span>
+5:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">import</span>(<span class="ruby-identifier">spec</span>, &amp;<span class="ruby-identifier">proc</span>)
+6:         <span class="ruby-constant">ImporterPackage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">spec</span>, &amp;<span class="ruby-identifier">proc</span>)
+7:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="installed-pkgconfig-method" class="method-detail ">
-				<a name="M000144"></a>
+				<a name="method-c-installed_pkgconfig"></a>
 
 				<div class="method-heading">
 				
@@ -1449,27 +1624,29 @@ described in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="installed-pkgconfig-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 25</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">installed_pkgconfig</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-        <span class="ruby-constant">InstalledPkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/pkgconfig.rb, line 25</span>
+25:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">installed_pkgconfig</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+26:         <span class="ruby-constant">InstalledPkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+27:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="logdir-method" class="method-detail ">
-				<a name="M000047"></a>
+				<a name="method-c-logdir"></a>
 
 				<div class="method-heading">
 				
@@ -1490,18 +1667,54 @@ The directory in which logs are saved
 					<div class="method-source-code"
 						id="logdir-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 122</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logdir</span>; <span class="ruby-ivar">@logdir</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{prefix}/log&quot;</span> <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 122</span>
+122:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logdir</span>; <span class="ruby-ivar">@logdir</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{prefix}/log&quot;</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="logfiles-method" class="method-detail ">
+				<a name="method-c-logfiles"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">logfiles</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="logfiles-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 12</span>
+12:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">logfiles</span>
+13:         <span class="ruby-ivar">@logfiles</span>
+14:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="orogen-method" class="method-detail ">
-				<a name="M000188"></a>
+				<a name="method-c-orogen"></a>
 
 				<div class="method-heading">
 				
@@ -1513,27 +1726,29 @@ The directory in which logs are saved
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="orogen-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 2</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-        <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">proc</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 2</span>
+2:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen</span>(<span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">proc</span>)
+3:         <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">proc</span>)
+4:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="package-set-method" class="method-detail ">
-				<a name="M000063"></a>
+				<a name="method-c-package_set"></a>
 
 				<div class="method-heading">
 				
@@ -1545,31 +1760,33 @@ The directory in which logs are saved
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="package-set-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 333</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">package_set</span>(<span class="ruby-identifier">spec</span>)
-        <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">packages</span><span class="ruby-operator">|</span>
-            <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">TARGETS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">target</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{name}-#{target}&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{dep}-#{target}&quot;</span> }
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/package.rb, line 411</span>
+411:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">package_set</span>(<span class="ruby-identifier">spec</span>)
+412:         <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">packages</span><span class="ruby-operator">|</span>
+413:             <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">TARGETS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">target</span><span class="ruby-operator">|</span>
+414:                 <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{name}-#{target}&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{dep}-#{target}&quot;</span> }
+415:             <span class="ruby-keyword kw">end</span>
+416:         <span class="ruby-keyword kw">end</span>
+417:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="parallel-build-level-method" class="method-detail ">
-				<a name="M000134"></a>
+				<a name="method-c-parallel_build_level"></a>
 
 				<div class="method-heading">
 				
@@ -1585,13 +1802,13 @@ The directory in which logs are saved
 Returns the number of processes that can run in parallel during the build.
 This is a system-wide value that can be overriden in a per-package fashion
 by using <a
-href="Autobuild/Package.html#M000062">Package#parallel_build_level</a>.
+href="Autobuild/Package.html#method-i-parallel_build_level">Package#parallel_build_level</a>.
 </p>
 <p>
 If not set, defaults to the number of CPUs on the system
 </p>
 <p>
-See also parallel_build_level=
+See also #
 </p>
 					
 
@@ -1599,28 +1816,30 @@ See also parallel_build_level=
 					<div class="method-source-code"
 						id="parallel-build-level-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 20</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parallel_build_level</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@parallel_build_level</span>.<span class="ruby-identifier">nil?</span>
-                <span class="ruby-comment cmt"># No user-set value, return the count of processors on this</span>
-                <span class="ruby-comment cmt"># machine</span>
-                <span class="ruby-identifier">autodetect_processor_count</span>
-            <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@parallel_build_level</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@parallel_build_level</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
-                <span class="ruby-value">1</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-ivar">@parallel_build_level</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 38</span>
+38:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parallel_build_level</span>
+39:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@parallel_build_level</span>.<span class="ruby-identifier">nil?</span>
+40:                 <span class="ruby-comment cmt"># No user-set value, return the count of processors on this</span>
+41:                 <span class="ruby-comment cmt"># machine</span>
+42:                 <span class="ruby-identifier">autodetect_processor_count</span>
+43:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@parallel_build_level</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@parallel_build_level</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+44:                 <span class="ruby-value">1</span>
+45:             <span class="ruby-keyword kw">else</span>
+46:                 <span class="ruby-ivar">@parallel_build_level</span>
+47:             <span class="ruby-keyword kw">end</span>
+48:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="pathvar-method" class="method-detail ">
-				<a name="M000030"></a>
+				<a name="method-c-pathvar"></a>
 
 				<div class="method-heading">
 				
@@ -1633,7 +1852,8 @@ See also parallel_build_level=
 				<div class="method-description">
 					
 					<p>
-DEPRECATED: use <a href="Autobuild.html#M000026">env_add_path</a> instead
+DEPRECATED: use <a
+href="Autobuild.html#method-c-env_add_path">env_add_path</a> instead
 </p>
 					
 
@@ -1641,25 +1861,27 @@ DEPRECATED: use <a href="Autobuild.html#M000026">env_add_path</a> instead
 					<div class="method-source-code"
 						id="pathvar-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 62</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pathvar</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">varname</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-                <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">path</span>)
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">env_add_path</span>(<span class="ruby-identifier">varname</span>, <span class="ruby-identifier">path</span>)
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 62</span>
+62:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pathvar</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">varname</span>)
+63:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
+64:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+65:                 <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">path</span>)
+66:             <span class="ruby-keyword kw">end</span>
+67:             <span class="ruby-identifier">env_add_path</span>(<span class="ruby-identifier">varname</span>, <span class="ruby-identifier">path</span>)
+68:         <span class="ruby-keyword kw">end</span>
+69:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="post-install-method" class="method-detail ">
-				<a name="M000040"></a>
+				<a name="method-c-post_install"></a>
 
 				<div class="method-heading">
 				
@@ -1671,33 +1893,35 @@ DEPRECATED: use <a href="Autobuild.html#M000026">env_add_path</a> instead
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="post-install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 63</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">post_install</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
-            <span class="ruby-ivar">@post_install_handler</span> = <span class="ruby-identifier">block</span>
-        <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
-            <span class="ruby-ivar">@post_install_handler</span> = <span class="ruby-identifier">args</span>
-        <span class="ruby-keyword kw">else</span>
-            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;cannot set both arguments and block&quot;</span>
-        <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 63</span>
+63:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">post_install</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+64:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+65:             <span class="ruby-ivar">@post_install_handler</span> = <span class="ruby-identifier">block</span>
+66:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
+67:             <span class="ruby-ivar">@post_install_handler</span> = <span class="ruby-identifier">args</span>
+68:         <span class="ruby-keyword kw">else</span>
+69:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;cannot set both arguments and block&quot;</span>
+70:         <span class="ruby-keyword kw">end</span>
+71:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="post-success-message-method" class="method-detail ">
-				<a name="M000046"></a>
+				<a name="method-c-post_success_message"></a>
 
 				<div class="method-heading">
 				
@@ -1720,30 +1944,32 @@ string or a block, in which case the block must return the message string.
 					<div class="method-source-code"
 						id="post-success-message-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 107</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">post_success_message</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@post_success_message</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_str</span>)
-                    <span class="ruby-ivar">@post_success_message</span>.<span class="ruby-identifier">to_str</span>
-                <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@post_success_message</span>
-                    <span class="ruby-ivar">@post_success_message</span>.<span class="ruby-identifier">call</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">block</span>
-                <span class="ruby-ivar">@post_success_message</span> = <span class="ruby-identifier">block</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-ivar">@post_success_message</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_str</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 107</span>
+107:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">post_success_message</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+108:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
+109:                 <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@post_success_message</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+110:                     <span class="ruby-ivar">@post_success_message</span>.<span class="ruby-identifier">to_str</span>
+111:                 <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@post_success_message</span>
+112:                     <span class="ruby-ivar">@post_success_message</span>.<span class="ruby-identifier">call</span>
+113:                 <span class="ruby-keyword kw">end</span>
+114:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">block</span>
+115:                 <span class="ruby-ivar">@post_success_message</span> = <span class="ruby-identifier">block</span>
+116:             <span class="ruby-keyword kw">else</span>
+117:                 <span class="ruby-ivar">@post_success_message</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_str</span>
+118:             <span class="ruby-keyword kw">end</span>
+119:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="progress-method" class="method-detail ">
-				<a name="M000109"></a>
+				<a name="method-c-progress"></a>
 
 				<div class="method-heading">
 				
@@ -1755,32 +1981,34 @@ string or a block, in which case the block must return the message string.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="progress-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 18</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">progress</span>(<span class="ruby-identifier">msg</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_msg</span>
-            <span class="ruby-identifier">progress_value</span>(<span class="ruby-value">100</span>)
-            <span class="ruby-identifier">puts</span>
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-ivar">@last_msg</span> = <span class="ruby-keyword kw">nil</span>
-        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  #{msg}&quot;</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 18</span>
+18:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">progress</span>(<span class="ruby-identifier">msg</span>)
+19:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_msg</span>
+20:             <span class="ruby-identifier">progress_value</span>(<span class="ruby-value">100</span>)
+21:             <span class="ruby-identifier">puts</span>
+22:         <span class="ruby-keyword kw">end</span>
+23:         <span class="ruby-ivar">@last_msg</span> = <span class="ruby-keyword kw">nil</span>
+24:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  #{msg}&quot;</span>
+25:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="progress-value-method" class="method-detail ">
-				<a name="M000111"></a>
+				<a name="method-c-progress_value"></a>
 
 				<div class="method-heading">
 				
@@ -1792,27 +2020,29 @@ string or a block, in which case the block must return the message string.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="progress-value-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 34</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">progress_value</span>(<span class="ruby-identifier">value</span>)
-        <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;\r  #{@last_msg} (#{value}%)&quot;</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 34</span>
+34:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">progress_value</span>(<span class="ruby-identifier">value</span>)
+35:         <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;\r  #{@last_msg} (#{value}%)&quot;</span>
+36:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="progress-with-value-method" class="method-detail ">
-				<a name="M000110"></a>
+				<a name="method-c-progress_with_value"></a>
 
 				<div class="method-heading">
 				
@@ -1824,32 +2054,102 @@ string or a block, in which case the block must return the message string.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="progress-with-value-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 26</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">progress_with_value</span>(<span class="ruby-identifier">msg</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_msg</span>
-            <span class="ruby-identifier">progress_value</span>(<span class="ruby-value">100</span>)
-            <span class="ruby-identifier">puts</span>
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-ivar">@last_msg</span> = <span class="ruby-identifier">msg</span>
-        <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;  #{msg}&quot;</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/reporting.rb, line 26</span>
+26:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">progress_with_value</span>(<span class="ruby-identifier">msg</span>)
+27:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_msg</span>
+28:             <span class="ruby-identifier">progress_value</span>(<span class="ruby-value">100</span>)
+29:             <span class="ruby-identifier">puts</span>
+30:         <span class="ruby-keyword kw">end</span>
+31:         <span class="ruby-ivar">@last_msg</span> = <span class="ruby-identifier">msg</span>
+32:         <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;  #{msg}&quot;</span>
+33:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="register-logfile-method" class="method-detail ">
+				<a name="method-c-register_logfile"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">register_logfile</span><span
+						class="method-args">(path)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="register-logfile-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 16</span>
+16:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">register_logfile</span>(<span class="ruby-identifier">path</span>)
+17:         <span class="ruby-ivar">@logfiles</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">path</span>
+18:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="registered-logfile--method" class="method-detail ">
+				<a name="method-c-registered_logfile%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">registered_logfile?</span><span
+						class="method-args">(logfile)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="registered-logfile--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/subcommand.rb, line 20</span>
+20:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">registered_logfile?</span>(<span class="ruby-identifier">logfile</span>)
+21:         <span class="ruby-ivar">@logfiles</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">logfile</span>)
+22:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="source-tree-method" class="method-detail ">
-				<a name="M000130"></a>
+				<a name="method-c-source_tree"></a>
 
 				<div class="method-heading">
 				
@@ -1861,29 +2161,31 @@ string or a block, in which case the block must return the message string.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="source-tree-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 50</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
-        <span class="ruby-identifier">task</span> = <span class="ruby-constant">SourceTreeTask</span>.<span class="ruby-identifier">define_task</span>(<span class="ruby-identifier">path</span>)
-        <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">task</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
-        <span class="ruby-identifier">task</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 50</span>
+50:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">path</span>, &amp;<span class="ruby-identifier">block</span>)
+51:         <span class="ruby-identifier">task</span> = <span class="ruby-constant">SourceTreeTask</span>.<span class="ruby-identifier">define_task</span>(<span class="ruby-identifier">path</span>)
+52:         <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">task</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
+53:         <span class="ruby-identifier">task</span>
+54:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="svn-method" class="method-detail ">
-				<a name="M000097"></a>
+				<a name="method-c-svn"></a>
 
 				<div class="method-heading">
 				
@@ -1898,7 +2200,7 @@ string or a block, in which case the block must return the message string.
 					<p>
 Creates a subversion importer which import the source for the Subversion
 URL <tt>source</tt>. The allowed values in <tt>options</tt> are described
-in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
+in SVN.new.
 </p>
 					
 
@@ -1906,20 +2208,22 @@ in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
 					<div class="method-source-code"
 						id="svn-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/svn.rb, line 53</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">svn</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
-        <span class="ruby-constant">SVN</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/svn.rb, line 53</span>
+53:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">svn</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
+54:         <span class="ruby-constant">SVN</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
+55:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="tar-method" class="method-detail ">
-				<a name="M000081"></a>
+				<a name="method-c-tar"></a>
 
 				<div class="method-heading">
 				
@@ -1932,9 +2236,7 @@ in <a href="Autobuild/SVN.html#M000091">SVN.new</a>.
 				<div class="method-description">
 					
 					<p>
-Creates an importer which downloads a tarball from <tt>source</tt> and
-unpacks it. The allowed values in <tt>options</tt> are described in <a
-href="Autobuild/TarImporter.html#M000078">TarImporter.new</a>.
+DEPRECATED. Use Autobuild.archive instead.
 </p>
 					
 
@@ -1942,20 +2244,22 @@ href="Autobuild/TarImporter.html#M000078">TarImporter.new</a>.
 					<div class="method-source-code"
 						id="tar-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/import/tar.rb, line 141</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tar</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
-        <span class="ruby-constant">TarImporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 174</span>
+174:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tar</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
+175:         <span class="ruby-constant">ArchiveImporter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span>)
+176:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="tool-method" class="method-detail ">
-				<a name="M000049"></a>
+				<a name="method-c-tool"></a>
 
 				<div class="method-heading">
 				
@@ -1971,36 +2275,36 @@ href="Autobuild/TarImporter.html#M000078">TarImporter.new</a>.
 Get a given program, using its name as default value. For instance
 </p>
 <pre>
-  tool('automake')
+  tool('automake') 
 </pre>
 <p>
 will return &#8216;automake&#8217; unless the autobuild script defined
-another automake program in <a
-href="Autobuild.html#programs">Autobuild.programs</a> by doing
+another automake program in Autobuild.programs by doing
 </p>
 <pre>
-  Autobuild.programs['automake'] = 'automake1.9'
-</pre>
+  Autobuild.programs['automake'] = 'automake1.9'</pre>
 					
 
 					
 					<div class="method-source-code"
 						id="tool-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 137</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tool</span>(<span class="ruby-identifier">name</span>)
-            <span class="ruby-identifier">programs</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">programs</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/config.rb, line 137</span>
+137:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tool</span>(<span class="ruby-identifier">name</span>)
+138:             <span class="ruby-identifier">programs</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">programs</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+139:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="touch-stamp-method" class="method-detail ">
-				<a name="M000132"></a>
+				<a name="method-c-touch_stamp"></a>
 
 				<div class="method-heading">
 				
@@ -2012,33 +2316,41 @@ href="Autobuild.html#programs">Autobuild.programs</a> by doing
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="touch-stamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 61</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">stampfile</span>)
-        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Touching #{stampfile}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
-        <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">touch</span>(<span class="ruby-identifier">stampfile</span>)
-
-        <span class="ruby-comment cmt"># File modification times on most Unix filesystems have a granularity of</span>
-        <span class="ruby-comment cmt"># one second, so we (unfortunately) have to sleep 1s to make sure that</span>
-        <span class="ruby-comment cmt"># time comparisons will work as expected.</span>
-        <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 61</span>
+61:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">stampfile</span>)
+62:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Touching #{stampfile}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
+63:         <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">stampfile</span>)
+64:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>)
+65:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;#{dir} exists and is not a directory&quot;</span>
+66:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>)
+67:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dir</span>
+68:         <span class="ruby-keyword kw">end</span>
+69:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">touch</span>(<span class="ruby-identifier">stampfile</span>)
+70: 
+71:         <span class="ruby-comment cmt"># File modification times on most Unix filesystems have a granularity of</span>
+72:         <span class="ruby-comment cmt"># one second, so we (unfortunately) have to sleep 1s to make sure that</span>
+73:         <span class="ruby-comment cmt"># time comparisons will work as expected.</span>
+74:         <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+75:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="tree-timestamp-method" class="method-detail ">
-				<a name="M000123"></a>
+				<a name="method-c-tree_timestamp"></a>
 
 				<div class="method-heading">
 				
@@ -2050,53 +2362,55 @@ href="Autobuild.html#programs">Autobuild.programs</a> by doing
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="tree-timestamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 9</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tree_timestamp</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">exclude</span>)
-        <span class="ruby-comment cmt"># Exclude autobuild timestamps</span>
-        <span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">rx</span><span class="ruby-operator">|</span> <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Regexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">rx</span> }
-        <span class="ruby-identifier">exclude</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-node">/#{Regexp.quote(STAMPFILE)}$/</span>)
-
-        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;getting tree timestamp for #{path}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
-        <span class="ruby-identifier">latest</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>)
-        <span class="ruby-identifier">latest_file</span> = <span class="ruby-value str">&quot;&quot;</span>
-
-        <span class="ruby-constant">Find</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
-            <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">p</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\./</span>
-            <span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span><span class="ruby-operator">|</span> 
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">pattern</span>
-                    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  excluding #{p}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
-                    <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span>
-                <span class="ruby-keyword kw">end</span>
-            }
-            <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">p</span>)
-
-            <span class="ruby-identifier">p_time</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">p</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">latest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">p_time</span>
-                <span class="ruby-identifier">latest</span> = <span class="ruby-identifier">p_time</span>
-                <span class="ruby-identifier">latest_file</span> = <span class="ruby-identifier">p</span>
-            <span class="ruby-keyword kw">end</span>
-        }
-
-        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  newest file: #{latest_file} at #{latest}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
-        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">latest</span>
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 9</span>
+ 9:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">tree_timestamp</span>(<span class="ruby-identifier">path</span>, *<span class="ruby-identifier">exclude</span>)
+10:         <span class="ruby-comment cmt"># Exclude autobuild timestamps</span>
+11:         <span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">rx</span><span class="ruby-operator">|</span> <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Regexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">rx</span> }
+12:         <span class="ruby-identifier">exclude</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-node">/#{Regexp.quote(STAMPFILE)}$/</span>)
+13: 
+14:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;getting tree timestamp for #{path}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
+15:         <span class="ruby-identifier">latest</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>)
+16:         <span class="ruby-identifier">latest_file</span> = <span class="ruby-value str">&quot;&quot;</span>
+17: 
+18:         <span class="ruby-constant">Find</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">path</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+19:             <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">p</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\./</span>
+20:             <span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span><span class="ruby-operator">|</span> 
+21:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">pattern</span>
+22:                     <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  excluding #{p}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
+23:                     <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span>
+24:                 <span class="ruby-keyword kw">end</span>
+25:             }
+26:             <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">p</span>)
+27: 
+28:             <span class="ruby-identifier">p_time</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">p</span>)
+29:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">latest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">p_time</span>
+30:                 <span class="ruby-identifier">latest</span> = <span class="ruby-identifier">p_time</span>
+31:                 <span class="ruby-identifier">latest_file</span> = <span class="ruby-identifier">p</span>
+32:             <span class="ruby-keyword kw">end</span>
+33:         }
+34: 
+35:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  newest file: #{latest_file} at #{latest}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
+36:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">latest</span>
+37:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="update-environment-method" class="method-detail ">
-				<a name="M000031"></a>
+				<a name="method-c-update_environment"></a>
 
 				<div class="method-heading">
 				
@@ -2117,28 +2431,32 @@ Updates the environment when a new prefix has been added
 					<div class="method-source-code"
 						id="update-environment-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 72</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_environment</span>(<span class="ruby-identifier">newprefix</span>)
-        <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'PATH'</span>, <span class="ruby-node">&quot;#{newprefix}/bin&quot;</span>)
-        <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'PKG_CONFIG_PATH'</span>, <span class="ruby-node">&quot;#{newprefix}/lib/pkgconfig&quot;</span>)
-        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-node">&quot;#{newprefix}/lib&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-node">&quot;#{newprefix}/lib/*.so&quot;</span>).<span class="ruby-identifier">empty?</span>
-            <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'LD_LIBRARY_PATH'</span>, <span class="ruby-node">&quot;#{newprefix}/lib&quot;</span>)
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-comment cmt"># Validate the new rubylib path</span>
-        <span class="ruby-identifier">new_rubylib</span> = <span class="ruby-node">&quot;#{newprefix}/lib&quot;</span>
-        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">new_rubylib</span>, <span class="ruby-value str">&quot;ruby&quot;</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{new_rubylib}/**/*.rb&quot;</span>].<span class="ruby-identifier">empty?</span>
-            <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'RUBYLIB'</span>, <span class="ruby-identifier">new_rubylib</span>)
-        <span class="ruby-keyword kw">end</span>
-
-        <span class="ruby-identifier">require</span> <span class="ruby-value str">'rbconfig'</span>
-        <span class="ruby-identifier">ruby_arch</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'archdir'</span>])
-        <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">&quot;RUBYLIB&quot;</span>, <span class="ruby-node">&quot;#{newprefix}/lib/ruby/1.8&quot;</span>)
-        <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">&quot;RUBYLIB&quot;</span>, <span class="ruby-node">&quot;#{newprefix}/lib/ruby/1.8/#{ruby_arch}&quot;</span>)
-    <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/environment.rb, line 72</span>
+72:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_environment</span>(<span class="ruby-identifier">newprefix</span>)
+73:         <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'PATH'</span>, <span class="ruby-node">&quot;#{newprefix}/bin&quot;</span>)
+74:         <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'PKG_CONFIG_PATH'</span>, <span class="ruby-node">&quot;#{newprefix}/lib/pkgconfig&quot;</span>)
+75:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-node">&quot;#{newprefix}/lib&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-node">&quot;#{newprefix}/lib/*.so&quot;</span>).<span class="ruby-identifier">empty?</span>
+76:             <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'LD_LIBRARY_PATH'</span>, <span class="ruby-node">&quot;#{newprefix}/lib&quot;</span>)
+77:         <span class="ruby-keyword kw">end</span>
+78: 
+79:         <span class="ruby-comment cmt"># Validate the new rubylib path</span>
+80:         <span class="ruby-identifier">new_rubylib</span> = <span class="ruby-node">&quot;#{newprefix}/lib&quot;</span>
+81:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">new_rubylib</span>, <span class="ruby-value str">&quot;ruby&quot;</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{new_rubylib}/**/*.rb&quot;</span>].<span class="ruby-identifier">empty?</span>
+82:             <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">'RUBYLIB'</span>, <span class="ruby-identifier">new_rubylib</span>)
+83:         <span class="ruby-keyword kw">end</span>
+84: 
+85:         <span class="ruby-identifier">require</span> <span class="ruby-value str">'rbconfig'</span>
+86:         <span class="ruby-identifier">ruby_arch</span>    = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'archdir'</span>])
+87:         <span class="ruby-identifier">candidates</span> = <span class="ruby-node">%{rubylibdir archdir sitelibdir sitearchdir vendorlibdir vendorarchdir}</span>.
+88:             <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-identifier">key</span>] }.
+89:             <span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/.*lib(?:32|64)?\/(\w*ruby\/)/</span>, <span class="ruby-value str">'\1'</span>) }.
+90:             <span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">subdir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">env_add_path</span>(<span class="ruby-value str">&quot;RUBYLIB&quot;</span>, <span class="ruby-node">&quot;#{newprefix}/lib/#{subdir}&quot;</span>) }
+91:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

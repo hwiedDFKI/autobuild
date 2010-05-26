@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Autotools</p>
+				<p class="link"><a href="Autotools.html">Autobuild::Autotools</a></p>
 				
 			</div>
 			
@@ -59,25 +69,23 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000175">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000179">#cpp_options</a></li>
+					<li><a href="#method-i-cpp_options">#cpp_options</a></li>
 					
-					<li><a href="#M000185">#depends_on</a></li>
+					<li><a href="#method-i-genom_dependencies">#genom_dependencies</a></li>
 					
-					<li><a href="#M000186">#genom_dependencies</a></li>
+					<li><a href="#method-i-genomstamp">#genomstamp</a></li>
 					
-					<li><a href="#M000178">#genomstamp</a></li>
+					<li><a href="#method-i-get_provides">#get_provides</a></li>
 					
-					<li><a href="#M000183">#get_provides</a></li>
+					<li><a href="#method-i-get_requires">#get_requires</a></li>
 					
-					<li><a href="#M000181">#get_requires</a></li>
+					<li><a href="#method-i-import">#import</a></li>
 					
-					<li><a href="#M000176">#import</a></li>
+					<li><a href="#method-i-prepare">#prepare</a></li>
 					
-					<li><a href="#M000177">#prepare</a></li>
-					
-					<li><a href="#M000187">#regen</a></li>
+					<li><a href="#method-i-regen">#regen</a></li>
 					
 				</ul>
 			</div>
@@ -121,6 +129,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -140,6 +152,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -182,8 +200,6 @@
 					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
-				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
 				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
@@ -231,7 +247,7 @@
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -246,7 +262,7 @@
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000175"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -258,23 +274,25 @@
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 13</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">config</span>)
-            <span class="ruby-ivar">@genomflags</span> = []
-            <span class="ruby-keyword kw">super</span>
-
-            <span class="ruby-identifier">use</span> <span class="ruby-identifier">:autogen</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'autogen'</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 13</span>
+13:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">config</span>)
+14:             <span class="ruby-ivar">@genomflags</span> = []
+15:             <span class="ruby-keyword kw">super</span>
+16: 
+17:             <span class="ruby-identifier">use</span> <span class="ruby-value">:autogen</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'autogen'</span>
+18:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -287,7 +305,7 @@
 
 		
 			<div id="cpp-options-method" class="method-detail ">
-				<a name="M000179"></a>
+				<a name="method-i-cpp_options"></a>
 
 				<div class="method-heading">
 				
@@ -308,53 +326,22 @@ Extract the cpp options from the genom options
 					<div class="method-source-code"
 						id="cpp-options-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 38</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cpp_options</span>
-            [<span class="ruby-operator">*</span><span class="ruby-identifier">genomflags</span>].<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">opt</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^-D/</span> }
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 40</span>
+40:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cpp_options</span>
+41:             [*<span class="ruby-identifier">genomflags</span>].<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">opt</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^-D/</span> }
+42:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
-			</div>
-
-		
-			<div id="depends-on-method" class="method-detail ">
-				<a name="M000185"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">depends_on</span><span
-						class="method-args">(*packages)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p class="missing-docs">(Not documented)</p>
-					
-
-					
-					<div class="method-source-code"
-						id="depends-on-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 89</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
-            <span class="ruby-keyword kw">super</span>
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>].<span class="ruby-identifier">installstamp</span> }
-        <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
 
 				
 			</div>
 
 		
 			<div id="genom-dependencies-method" class="method-detail ">
-				<a name="M000186"></a>
+				<a name="method-i-genom_dependencies"></a>
 
 				<div class="method-heading">
 				
@@ -372,44 +359,45 @@ Make the genom-stamp file depend on
 <pre>
   * genom includes
   * genom canvas
-  * the genom binary itself
-</pre>
+  * the genom binary itself</pre>
 					
 
 					
 					<div class="method-source-code"
 						id="genom-dependencies-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 98</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genom_dependencies</span>
-            <span class="ruby-comment cmt"># Get the genom pkg-config</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Package</span>[<span class="ruby-value str">'genom'</span>]
-                <span class="ruby-value str">'genom'</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-identifier">genom_pkg</span> = <span class="ruby-constant">PkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'genom'</span>)
-
-                <span class="ruby-identifier">includedir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">includedir</span>, <span class="ruby-value str">'genom'</span>)
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">includedir</span>
-
-                <span class="ruby-identifier">canvasdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">&quot;share&quot;</span>, <span class="ruby-value str">&quot;genom&quot;</span>, <span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">version</span>);;
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">canvasdir</span>
-
-                <span class="ruby-identifier">binary</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">exec_prefix</span>, <span class="ruby-value str">&quot;bin&quot;</span>, <span class="ruby-value str">&quot;genom&quot;</span>)
-                <span class="ruby-identifier">file</span> <span class="ruby-identifier">binary</span>
-
-                [<span class="ruby-identifier">binary</span>, <span class="ruby-identifier">includedir</span>, <span class="ruby-identifier">canvasdir</span>]
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 95</span>
+ 95:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genom_dependencies</span>
+ 96:             <span class="ruby-comment cmt"># Get the genom pkg-config</span>
+ 97:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Package</span>[<span class="ruby-value str">'genom'</span>]
+ 98:                 <span class="ruby-value str">'genom'</span>
+ 99:             <span class="ruby-keyword kw">else</span>
+100:                 <span class="ruby-identifier">genom_pkg</span> = <span class="ruby-constant">PkgConfig</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'genom'</span>)
+101: 
+102:                 <span class="ruby-identifier">includedir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">includedir</span>, <span class="ruby-value str">'genom'</span>)
+103:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">includedir</span>
+104: 
+105:                 <span class="ruby-identifier">canvasdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">&quot;share&quot;</span>, <span class="ruby-value str">&quot;genom&quot;</span>, <span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">version</span>);;
+106:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">canvasdir</span>
+107: 
+108:                 <span class="ruby-identifier">binary</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">genom_pkg</span>.<span class="ruby-identifier">exec_prefix</span>, <span class="ruby-value str">&quot;bin&quot;</span>, <span class="ruby-value str">&quot;genom&quot;</span>)
+109:                 <span class="ruby-identifier">file</span> <span class="ruby-identifier">binary</span>
+110: 
+111:                 [<span class="ruby-identifier">binary</span>, <span class="ruby-identifier">includedir</span>, <span class="ruby-identifier">canvasdir</span>]
+112:             <span class="ruby-keyword kw">end</span>
+113:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="genomstamp-method" class="method-detail ">
-				<a name="M000178"></a>
+				<a name="method-i-genomstamp"></a>
 
 				<div class="method-heading">
 				
@@ -430,18 +418,20 @@ The file touched by genom on successful generation
 					<div class="method-source-code"
 						id="genomstamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 35</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genomstamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.genom'</span>, <span class="ruby-value str">'genom-stamp'</span>) <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 37</span>
+37:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genomstamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.genom'</span>, <span class="ruby-value str">'genom-stamp'</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="get-provides-method" class="method-detail ">
-				<a name="M000183"></a>
+				<a name="method-i-get_provides"></a>
 
 				<div class="method-heading">
 				
@@ -454,7 +444,7 @@ The file touched by genom on successful generation
 				<div class="method-description">
 					
 					<p>
-Alias this package to the ones defined in the EXTRA_PKGCONFIG flag in
+Alias this package to the ones defined in the EXTRA_PKGCONFIG  flag in
 configure.ac.user
 </p>
 					
@@ -463,28 +453,30 @@ configure.ac.user
 					<div class="method-source-code"
 						id="get-provides-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 77</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_provides</span>
-            <span class="ruby-identifier">configure_ac_user</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.ac.user'</span>)
-            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">configure_ac_user</span>)
-            <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">configure_ac_user</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*EXTRA_PKGCONFIG\s*=\s*&quot;?([\w\-]+(?:\s+[\w\-]+)*)&quot;?/</span>
-                        <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s+/</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">provides</span> <span class="ruby-identifier">pkg</span> }
-                    <span class="ruby-keyword kw">end</span>
-                }
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 79</span>
+79:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_provides</span>
+80:             <span class="ruby-identifier">configure_ac_user</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.ac.user'</span>)
+81:             <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">configure_ac_user</span>)
+82:             <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">configure_ac_user</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+83:                 <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+84:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*EXTRA_PKGCONFIG\s*=\s*&quot;?([\w\-]+(?:\s+[\w\-]+)*)&quot;?/</span>
+85:                         <span class="ruby-node">$1</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s+/</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">provides</span> <span class="ruby-identifier">pkg</span> }
+86:                     <span class="ruby-keyword kw">end</span>
+87:                 }
+88:             <span class="ruby-keyword kw">end</span>
+89:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="get-requires-method" class="method-detail ">
-				<a name="M000181"></a>
+				<a name="method-i-get_requires"></a>
 
 				<div class="method-heading">
 				
@@ -505,48 +497,50 @@ Extracts dependencies using the requires: field in the .gen file
 					<div class="method-source-code"
 						id="get-requires-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 43</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_requires</span>
-            <span class="ruby-identifier">apionly</span> = <span class="ruby-identifier">genomflags</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'-a'</span> }
-            <span class="ruby-identifier">cpp</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:cpp</span>)
-            <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-keyword kw">nil</span>
-            <span class="ruby-constant">Open3</span>.<span class="ruby-identifier">popen3</span>(<span class="ruby-node">&quot;#{cpp} #{cpp_options.join(&quot; &quot;)} #{srcdir}/#{name}.gen&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cin</span>, <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">out</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:.*$/</span>
-                        <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-value str">&quot;&quot;</span>
-                    <span class="ruby-keyword kw">end</span>
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">currentBuffer</span>
-                        <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>
-                        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:\s*(\&quot;?\s*[\w\-=&gt;&lt;0-9.\s]+\s*\&quot;?(?:\s*,\s*\&quot;?\s*[\w\-=&gt;&lt;0-9.\s]+\s*\&quot;?)*);/</span>
-                            <span class="ruby-comment cmt"># Remove the codels_requires lines if -a is given to genom</span>
-                            <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">$1</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;codels_&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">apionly</span>
-                                <span class="ruby-identifier">$2</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/,/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
-                                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\s*\&quot;?\s*([\w\-]+)\s*[&lt;=&gt;]+\s*[0-9.]+\s*\&quot;?\s*/</span>
-                                        <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">$1</span>
-                                    <span class="ruby-keyword kw">else</span>
-                                        <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">strip</span>
-                                    <span class="ruby-keyword kw">end</span>
-                                <span class="ruby-keyword kw">end</span>
-                            <span class="ruby-keyword kw">end</span>
-                            <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-keyword kw">nil</span>
-                        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(?:codels_)?requires.*;$/</span>
-                            <span class="ruby-comment cmt"># Check that the regexp is not too strict</span>
-                            <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;failed to match #{currentBuffer}&quot;</span>
-                        <span class="ruby-keyword kw">end</span>
-                    <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 45</span>
+45:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_requires</span>
+46:             <span class="ruby-identifier">apionly</span> = <span class="ruby-identifier">genomflags</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'-a'</span> }
+47:             <span class="ruby-identifier">cpp</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:cpp</span>)
+48:             <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-keyword kw">nil</span>
+49:             <span class="ruby-constant">Open3</span>.<span class="ruby-identifier">popen3</span>(<span class="ruby-node">&quot;#{cpp} #{cpp_options.join(&quot; &quot;)} #{srcdir}/#{name}.gen&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cin</span>, <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span><span class="ruby-operator">|</span>
+50:                 <span class="ruby-identifier">out</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+51:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:.*$/</span>
+52:                         <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-value str">&quot;&quot;</span>
+53:                     <span class="ruby-keyword kw">end</span>
+54:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">currentBuffer</span>
+55:                         <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>
+56:                         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(codels_)?requires\s*:\s*(\&quot;?\s*[\w\-=&gt;&lt;0-9.\s]+\s*\&quot;?(?:\s*,\s*\&quot;?\s*[\w\-=&gt;&lt;0-9.\s]+\s*\&quot;?)*);/</span>
+57:                             <span class="ruby-comment cmt"># Remove the codels_requires lines if -a is given to genom</span>
+58:                             <span class="ruby-keyword kw">unless</span> <span class="ruby-node">$1</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;codels_&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">apionly</span>
+59:                                 <span class="ruby-node">$2</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/,/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+60:                                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\s*\&quot;?\s*([\w\-]+)\s*[&lt;=&gt;]+\s*[0-9.]+\s*\&quot;?\s*/</span>
+61:                                         <span class="ruby-identifier">depends_on</span> <span class="ruby-node">$1</span>
+62:                                     <span class="ruby-keyword kw">else</span>
+63:                                         <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">strip</span>
+64:                                     <span class="ruby-keyword kw">end</span>
+65:                                 <span class="ruby-keyword kw">end</span>
+66:                             <span class="ruby-keyword kw">end</span>
+67:                             <span class="ruby-identifier">currentBuffer</span> = <span class="ruby-keyword kw">nil</span>
+68:                         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">currentBuffer</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\s*(?:codels_)?requires.*;$/</span>
+69:                             <span class="ruby-comment cmt"># Check that the regexp is not too strict</span>
+70:                             <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;failed to match #{currentBuffer}&quot;</span>
+71:                         <span class="ruby-keyword kw">end</span>
+72:                     <span class="ruby-keyword kw">end</span>
+73:                 <span class="ruby-keyword kw">end</span>
+74:             <span class="ruby-keyword kw">end</span>
+75:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000176"></a>
+				<a name="method-i-import"></a>
 
 				<div class="method-heading">
 				
@@ -558,28 +552,30 @@ Extracts dependencies using the requires: field in the .gen file
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 20</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
-            <span class="ruby-keyword kw">super</span>
-            <span class="ruby-identifier">get_provides</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 20</span>
+20:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
+21:             <span class="ruby-keyword kw">super</span>
+22:             <span class="ruby-identifier">get_provides</span>
+23:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000177"></a>
+				<a name="method-i-prepare"></a>
 
 				<div class="method-heading">
 				
@@ -600,23 +596,27 @@ Called before running the rake tasks and after all imports have been made
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 27</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
-            <span class="ruby-identifier">genomflags</span>.<span class="ruby-identifier">flatten!</span>
-
-            <span class="ruby-keyword kw">super</span>
-            <span class="ruby-identifier">get_requires</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 27</span>
+27:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+28:             <span class="ruby-identifier">genomflags</span>.<span class="ruby-identifier">flatten!</span>
+29:             <span class="ruby-identifier">get_requires</span>
+30: 
+31:             <span class="ruby-keyword kw">super</span>
+32: 
+33:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>].<span class="ruby-identifier">installstamp</span> }
+34:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="regen-method" class="method-detail ">
-				<a name="M000187"></a>
+				<a name="method-i-regen"></a>
 
 				<div class="method-heading">
 				
@@ -628,53 +628,55 @@ Called before running the rake tasks and after all imports have been made
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="regen-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 118</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
-            <span class="ruby-identifier">cmdline</span> = [ <span class="ruby-value str">'genom'</span>, <span class="ruby-node">&quot;#{name}.gen&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">genomflags</span> ]
-
-            <span class="ruby-comment cmt"># Check that the module has been generated with the same flags</span>
-            <span class="ruby-identifier">genom_mk</span> = <span class="ruby-node">&quot;#{srcdir}/autoconf/genom.mk&quot;</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">genom_mk</span>)
-                <span class="ruby-identifier">contents</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">genom_mk</span>).<span class="ruby-identifier">readlines</span>
-                <span class="ruby-identifier">old_file</span> = <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^GENFILE/</span> }.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'GENFILE='</span>, <span class="ruby-value str">''</span>).<span class="ruby-identifier">strip</span>
-                <span class="ruby-identifier">old_flags</span> = <span class="ruby-constant">Shellwords</span>.<span class="ruby-identifier">shellwords</span>(
-                            <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^GENFLAGS/</span> }.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'GENFLAGS='</span>, <span class="ruby-value str">''</span>))
-
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old_file</span> <span class="ruby-operator">!=</span> <span class="ruby-node">&quot;#{name}.gen&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">old_flags</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">genomflags</span>).<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">genomflags</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">old_flags</span>).<span class="ruby-identifier">empty?</span>
-                    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">genomstamp</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">buildstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genomstamp</span>
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genom_dependencies</span>
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span>
-                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-                    <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating GenoM files for #{name}&quot;</span>
-                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">cmdline</span>)
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-identifier">acuser</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">&quot;configure.ac.user&quot;</span>)
-            <span class="ruby-identifier">file</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure'</span>) =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">acuser</span> <span class="ruby-keyword kw">do</span>
-                <span class="ruby-comment cmt"># configure does not depend on the .gen file</span>
-                <span class="ruby-comment cmt"># since the generation takes care of rebuilding configure</span>
-                <span class="ruby-comment cmt"># if .gen has changed</span>
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating build system for #{name}&quot;</span>
-                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) { <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'autogen'</span>)) }
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-keyword kw">super</span>(<span class="ruby-node">&quot;#{srcdir}/autoconf/configure.ac&quot;</span>)
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/genom.rb, line 115</span>
+115:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
+116:             <span class="ruby-identifier">cmdline</span> = [ <span class="ruby-value str">'genom'</span>, <span class="ruby-node">&quot;#{name}.gen&quot;</span>, *<span class="ruby-identifier">genomflags</span> ]
+117: 
+118:             <span class="ruby-comment cmt"># Check that the module has been generated with the same flags</span>
+119:             <span class="ruby-identifier">genom_mk</span> = <span class="ruby-node">&quot;#{srcdir}/autoconf/genom.mk&quot;</span>
+120:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">genom_mk</span>)
+121:                 <span class="ruby-identifier">contents</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">genom_mk</span>).<span class="ruby-identifier">readlines</span>
+122:                 <span class="ruby-identifier">old_file</span> = <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^GENFILE/</span> }.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'GENFILE='</span>, <span class="ruby-value str">''</span>).<span class="ruby-identifier">strip</span>
+123:                 <span class="ruby-identifier">old_flags</span> = <span class="ruby-constant">Shellwords</span>.<span class="ruby-identifier">shellwords</span>(
+124:                             <span class="ruby-identifier">contents</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span> <span class="ruby-identifier">l</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^GENFLAGS/</span> }.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'GENFLAGS='</span>, <span class="ruby-value str">''</span>))
+125: 
+126:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old_file</span> <span class="ruby-operator">!=</span> <span class="ruby-node">&quot;#{name}.gen&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">old_flags</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">genomflags</span>).<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">genomflags</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">old_flags</span>).<span class="ruby-identifier">empty?</span>
+127:                     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">genomstamp</span>
+128:                 <span class="ruby-keyword kw">end</span>
+129:             <span class="ruby-keyword kw">end</span>
+130: 
+131:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">buildstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genomstamp</span>
+132:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genom_dependencies</span>
+133:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genomstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span>
+134:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
+135:                     <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating GenoM files for %s&quot;</span>
+136:                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'genom'</span>, *<span class="ruby-identifier">cmdline</span>)
+137:                 <span class="ruby-keyword kw">end</span>
+138:             <span class="ruby-keyword kw">end</span>
+139: 
+140:             <span class="ruby-identifier">acuser</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">&quot;configure.ac.user&quot;</span>)
+141:             <span class="ruby-identifier">file</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure'</span>) =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">acuser</span> <span class="ruby-keyword kw">do</span>
+142:                 <span class="ruby-comment cmt"># configure does not depend on the .gen file</span>
+143:                 <span class="ruby-comment cmt"># since the generation takes care of rebuilding configure</span>
+144:                 <span class="ruby-comment cmt"># if .gen has changed</span>
+145:                 <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating build system for %s&quot;</span>
+146:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) { <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'genom'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'autogen'</span>)) }
+147:             <span class="ruby-keyword kw">end</span>
+148: 
+149:             <span class="ruby-keyword kw">super</span>(<span class="ruby-node">&quot;#{srcdir}/autoconf/configure.ac&quot;</span>)
+150:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

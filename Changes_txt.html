@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>File: Changes.txt [autobuild-1.4.4 Documentation]</title>
+	<title>File: Changes.txt [autobuild-1.5.9 Documentation]</title>
 
 	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
 
@@ -22,6 +22,16 @@
 
 <body class="file">
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="project-metadata">
 			
 			
@@ -56,6 +66,10 @@
 				
 					<li><a href="./Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="./Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="./Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="./Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -75,6 +89,12 @@
 					<li><a href="./Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="./Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -118,8 +138,6 @@
 				
 					<li><a href="./Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="./Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="./PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="./PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -139,103 +157,346 @@
 	</div>
 
 	<div id="documentation">
-		<h2>Version 1.4.4</h2>
+		<h2>Version 1.5.9</h2>
 <ul>
-<li>minor bug fixes
-
+<li><p>
+small fixes
+</p>
+</li>
+<li><p>
+fixed some corner-case problems with log files not being created in the
+right folders
+</p>
+</li>
+</ul>
+<h2>Version 1.5.8</h2>
+<ul>
+<li><p>
+fix major issue while setting up dependencies
+</p>
+</li>
+<li><p>
+small 1.8/1.9 compatibility fix in Autotools#use
+</p>
+</li>
+<li><p>
+small backward compatibility fix w.r.t. Configurable.builddir
+</p>
+</li>
+</ul>
+<h2>Version 1.5.7</h2>
+<ul>
+<li><p>
+the &#8220;importer&#8221; package will now rebuild if the main prefix is
+deleted. It was previously not, which was leading to partial builds if the
+actual installation was done by a post_install block
+</p>
+</li>
+<li><p>
+fix the documentation mode
+</p>
+</li>
+</ul>
+<h2>Version 1.5.6</h2>
+<ul>
+<li><p>
+fix the directory in error message when a git importer detects a non-git
+repository
+</p>
+</li>
+</ul>
+<h2>Version 1.5.5</h2>
+<ul>
+<li><p>
+small API additions
+</p>
+</li>
+</ul>
+<h2>Version 1.5.4</h2>
+<ul>
+<li><p>
+support orogen&#8217;s &#8212;extended-states
+</p>
+</li>
+<li><p>
+small API fix when subclassing CMake package handler
+</p>
+</li>
+</ul>
+<h2>Version 1.5.3</h2>
+<ul>
+<li><p>
+quickfix for RUBYLIB on OSes that install libraries in usr/lib32 or
+usr/lib64 instead of usr/lib
+</p>
+</li>
+</ul>
+<h2>Version 1.5.2</h2>
+<ul>
+<li><p>
+fix broken mail reporting. The mail report was always saved in a file since
+1.5.1.
+</p>
+</li>
+<li><p>
+fix small bugs in the patching part of the import
+</p>
+<ul>
+<li><p>
+be error tolerant: if patching/unpatching fails, we go back to a well
+defined state instead of having to fix the package by hand
+</p>
+</li>
+</ul>
+<ul>
+<li><p>
+do not apply patches unnecessarily
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Version 1.5.1</h2>
+<ul>
+<li><p>
+autotools: must run libtool before the other tools
+</p>
+</li>
+<li><p>
+autotools: properly autodetect need for autoconf (autoconf was always
+enabled before)
+</p>
+</li>
+<li><p>
+logs: properly log everything that happens in one session. The previous
+behaviour was to have, in each log file, only the last command that has
+been run.
+</p>
+</li>
+<li><p>
+logs: only attach relevant logs to report mails. The previous behaviour was
+to attach all log files that were in <prefix>/log
+</p>
+</li>
+</ul>
+<h2>Version 1.5.0</h2>
+<ul>
+<li><p>
+now Ruby1.9 compatibility fixes, can be run with ruby1.9.1 on Debian
+</p>
+</li>
+<li><p>
+properly runs if the ruby interpreter is not called &#8216;ruby&#8217;, as
+ruby1.9.1 on Debian
+</p>
+</li>
+<li><p>
+fix some issues with the usage of # <b>before</b> Package#srcdir # and #
+were set. It fixes an autoproj bug in case the autobuild files use #
+</p>
+</li>
+<li><p>
+the archive importer now properly handles interruptions
+</p>
+</li>
+<li><p>
+the archive importer now properly autodetects file names if the URLs
+contains &#8217;?&#8217;
+</p>
+</li>
+<li><p>
+fixed the importer package type
+</p>
+</li>
+<li><p>
+fixed some rare issues with internal dependency definitions. This bug was
+usually manifesting itself with rake exceptions whose message were
+&#8220;do not know how to build <package name>-stamp&#8220;
+</p>
+</li>
+</ul>
+<h2>Version 1.4.9</h2>
+<ul>
+<li><p>
+quickfix an issue related to a discrepancy between the definition of the
+installstamp and the definition of the log dir.
+</p>
+</li>
+</ul>
+<h2>Version 1.4.8</h2>
+<ul>
+<li><p>
+make the archive importer nicer to use:
+</p>
+<ul>
+<li><p>
+the archive_dir is unneeded for tarballs from now on
+</p>
+</li>
+</ul>
+<ul>
+<li><p>
+filename detection works better (and therefore the :filename option will be
+less needed)
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Version 1.4.7</h2>
+<ul>
+<li><p>
+have the git importer update the autobuild remote on update.
+</p>
+</li>
+</ul>
+<h2>Version 1.4.6</h2>
+<ul>
+<li><p>
+add missing importer/archive.rb file
+</p>
+</li>
+</ul>
+<h2>Version 1.4.5</h2>
+<ul>
+<li><p>
+add support for zip in TarImporter, which is renamed ArchiveImporter to
+reflect that. Backward compatibility is retained.
+</p>
+</li>
+<li><p>
+support sourceforge-like setups in ArchiveImporter: use wget for download
+and add a :filename option to specify what is the name of the downloaded
+file.
+</p>
+</li>
+<li><p>
+improve configurability of the progress display for tools built on top of
+autobuild
+</p>
+</li>
+<li><p>
+always call with_doc in orogen packages, as orogen itself adds a
+documentation target
+</p>
+</li>
+</ul>
+<h2>Version 1.4.4</h2>
+<ul>
+<li><p>
+minor bug fixes
+</p>
 </li>
 </ul>
 <h2>Version 1.4.3</h2>
 <ul>
-<li>minor changes in how the shell environment is managed
-
+<li><p>
+minor changes in how the shell environment is managed
+</p>
 </li>
-<li>update LD_LIBRARY_PATH when applicable
-
+<li><p>
+update LD_LIBRARY_PATH when applicable
+</p>
 </li>
-<li>fix parsing of genom &#8216;require&#8217; statements (fix from Matthieu
+<li><p>
+fix parsing of genom &#8216;require&#8217; statements (fix from Matthieu
 Gallien)
-
+</p>
 </li>
-<li>fix issues with tracking tags and commits (fix from Matthieu Gallien)
-
+<li><p>
+fix issues with tracking tags and commits (fix from Matthieu Gallien)
+</p>
 </li>
 </ul>
 <h2>Version 1.4.2</h2>
 <ul>
-<li>call subversion with the &#8212;non-interactive option, otherwise the build
+<li><p>
+call subversion with the &#8212;non-interactive option, otherwise the build
 will block indefinitely. Note that git &#8220;questions&#8221; are properly
 passed to the user.
-
+</p>
 </li>
-<li>don&#8217;t forcefully depend on orogen being available. This fixes
+<li><p>
+don&#8217;t forcefully depend on orogen being available. This fixes
 bootstrapping situations where both orogen and some orogen modules need to
 be built.
-
+</p>
 </li>
-<li>workaround CMake heavy-caching behaviour. When a reconfiguration is needed,
+<li><p>
+workaround CMake heavy-caching behaviour. When a reconfiguration is needed,
 delete the CMakeCache.txt file instead of recalling cmake on top of it. It
 should fix most of the problems of CMake related to caching of pkg-config
 files for instance.
-
+</p>
 </li>
 </ul>
 <h2>Version 1.4.0</h2>
 <ul>
-<li>cmake package handler now displays progress value
-
+<li><p>
+cmake package handler now displays progress value
+</p>
 </li>
-<li>added support for parallel builds
-
+<li><p>
+added support for parallel builds
+</p>
 </li>
-<li>added the long-awaited &#8212;force-build and &#8212;rebuild options. The
+<li><p>
+added the long-awaited &#8212;force-build and &#8212;rebuild options. The
 first one forces the call to all the build steps, but without deleting the
 build products. The second one deletes all build products and retriggers a
 full build.
-
+</p>
 </li>
 </ul>
 <h2>Version 1.3.3</h2>
 <ul>
-<li>fix: changing Orogen.corba now affects packages that have already been
-declared but for which the corba attribute has not been set explicitely to
-true or false.
-
+<li><p>
+fix: changing Orogen.corba now affects packages that have already been
+declared but for which the # attribute has not been set explicitely to true
+or false.
+</p>
 </li>
-<li>fix issues with the parsing of codel requirement in the genom package
+<li><p>
+fix issues with the parsing of codel requirement in the genom package
 handler
-
+</p>
 </li>
 </ul>
 <h2>Version 1.3.2</h2>
 <ul>
-<li>fix stupid issues with the genom package
-
+<li><p>
+fix stupid issues with the genom package
+</p>
 </li>
-<li>import caller&#8217;s environment instead of erasing it.
-
+<li><p>
+import caller&#8217;s environment instead of erasing it.
+</p>
 </li>
 </ul>
 <h2>Version 1.3.1</h2>
 <ul>
-<li>1.3.* now depend on utilrb, add it to the gem dependency list
-
+<li><p>
+1.3.* now depend on utilrb, add it to the gem dependency list
+</p>
 </li>
 </ul>
 <h2>Version 1.3.0</h2>
 <ul>
-<li>major update of the user interaction. <a
+<li><p>
+major update of the user interaction. <a
 href="Autobuild.html">Autobuild</a> is now much less verbose, and
 (hopefully) displays more useful error messages in most cases.
-
+</p>
 </li>
-<li>make the library easier to use to build other tools (i.e. not so much
+<li><p>
+make the library easier to use to build other tools (i.e. not so much
 autobuild-centered anymore)
-
+</p>
 </li>
-<li>add the :branch and :tag targets to the git importer. The git importer
+<li><p>
+add the :branch and :tag targets to the git importer. The git importer
 should now be used as:
-
+</p>
 <pre>
   Autobuild.git(URL, :branch =&gt; branch_name)
 </pre>
@@ -253,273 +514,335 @@ Autobuild.importer_type(URL, option_hash) form.
 </ul>
 <h2>Version 1.2.15</h2>
 <ul>
-<li>fix branch switching in the git importer: the build will not fail anymore
+<li><p>
+fix branch switching in the git importer: the build will not fail anymore
 if autobuild has to switch to an already existing branch
-
+</p>
 </li>
 </ul>
 <h2>Version 1.2.14</h2>
 <ul>
-<li>fix git importer&#8217;s handling of branch names: the importer now always
+<li><p>
+fix git importer&#8217;s handling of branch names: the importer now always
 works on a local branch that has the same name than the remote branch.
-
+</p>
 </li>
 </ul>
 <h2>Version 1.2.12</h2>
 <ul>
-<li>reconfigure orogen packages if orogen itself has been updated
-
+<li><p>
+reconfigure orogen packages if orogen itself has been updated
+</p>
 </li>
 </ul>
 <h2>Version 1.2.11</h2>
 <ul>
-<li>fix small issues with CMake
-
+<li><p>
+fix small issues with CMake
+</p>
 <ul>
-<li>CMake 2.6 can convert option values between what the user provides (for
+<li><p>
+CMake 2.6 can convert option values between what the user provides (for
 instance YES) and what is written in the cache (ON). Take that into account
-
+</p>
 </li>
-<li>if the first configuration fails, no Makefile is generated but a
+</ul>
+<ul>
+<li><p>
+if the first configuration fails, no Makefile is generated but a
 CMakeCache.txt is there. <a href="Autobuild.html">Autobuild</a> was failing
 in that situation and will now handle it gracefully.
-
+</p>
 </li>
 </ul>
 </li>
 </ul>
 <h2>Version 1.2.10</h2>
 <ul>
-<li>small fix logs are sorted into subdirectories, following the structure of
+<li><p>
+small fix logs are sorted into subdirectories, following the structure of
 the packages. Up until now, the mailing code was not searching for logfiles
 in the subdirectories. This commit fixes this.
-
+</p>
 </li>
 </ul>
 <h2>Version 1.2.9</h2>
 <ul>
-<li>small usability issue
-
+<li><p>
+small usability issue
+</p>
 <ul>
-<li>provide the &#8212;keep-oldlogs command line option and the
+<li><p>
+provide the &#8212;keep-oldlogs command line option and the
 Autobuild.erase_oldlogs configuration flag to configure whether old logs
 should be kept (new data being appended to them), or erased
-
+</p>
 </li>
-<li>change the default behaviour from keeping old logs to erasing them
-
+</ul>
+<ul>
+<li><p>
+change the default behaviour from keeping old logs to erasing them
+</p>
 </li>
 </ul>
 </li>
 </ul>
 <h2>Version 1.2.8</h2>
 <ul>
-<li>small fix
-
+<li><p>
+small fix
+</p>
 <ul>
-<li>fixes &#8212;mail-smtp. This now works even without port specification.
-
+<li><p>
+fixes &#8212;mail-smtp. This now works even without port specification.
+</p>
 </li>
 </ul>
 </li>
 </ul>
 <h2>Version 1.2.7</h2>
 <ul>
-<li>fixes to documentation support
-
+<li><p>
+fixes to documentation support
+</p>
 <ul>
-<li>&#8217;&#8212;no-doc&#8217; now works
-
+<li><p>
+&#8217;&#8212;no-doc&#8217; now works
+</p>
 </li>
-<li>failures to generate documentation are now simple warnings, an error can be
+</ul>
+<ul>
+<li><p>
+failures to generate documentation are now simple warnings, an error can be
 obtained by setting Autobuild.doc_errors or by using the &#8212;doc-errors
 command line flag
-
+</p>
 </li>
 </ul>
 </li>
 </ul>
 <h2>Version 1.2.6</h2>
 <ul>
-<li>really fix the dependency problem
-
+<li><p>
+really fix the dependency problem
+</p>
 </li>
-<li>add documentation support in autotools
-
+<li><p>
+add documentation support in autotools
+</p>
 </li>
 </ul>
 <h2>Version 1.2.5</h2>
 <ul>
-<li>really fix the git fetch phase
-
+<li><p>
+really fix the git fetch phase
+</p>
 </li>
-<li>fix a dependency issue between code generation and CMake configuration in
+<li><p>
+fix a dependency issue between code generation and CMake configuration in
 the orogen package type
-
+</p>
 </li>
 </ul>
 <h2>Version 1.2.4</h2>
 <ul>
-<li>git update phase now fetches the repository and branch specified by the
+<li><p>
+git update phase now fetches the repository and branch specified by the
 autobuild script. It previously was using remote tracking branches. This
 will allow to detect branch changes in the autobuild specification.
-
+</p>
 </li>
-<li>documentation support. Packages can now declare that they can generate
+<li><p>
+documentation support. Packages can now declare that they can generate
 documentation (see Package#doc_task and CMake#with_doc). That documentation
 is generated post-build and installed.
-
+</p>
 </li>
-<li>fix build updates in the CMake package class.
-
+<li><p>
+fix build updates in the CMake package class.
+</p>
 </li>
 </ul>
 <h2>Version 1.2.3</h2>
 <ul>
-<li>Fix git update again. FETCH_HEAD may resolve as an ID which is not the one
+<li><p>
+Fix git update again. FETCH_HEAD may resolve as an ID which is not the one
 to be selected for merge
-
+</p>
 </li>
-<li>Make the dependency on <a href="RMail.html">RMail</a> optional
-
+<li><p>
+Make the dependency on <a href="RMail.html">RMail</a> optional
+</p>
 </li>
-<li>added the orogen package type
-
+<li><p>
+added the orogen package type
+</p>
 </li>
 </ul>
 <h2>Version 1.2</h2>
 <ul>
-<li>Fix git update
-
+<li><p>
+Fix git update
+</p>
 </li>
-<li>Fix cmake dependency handling. Give a way to always run cmake before
+<li><p>
+Fix cmake dependency handling. Give a way to always run cmake before
 running make (needed sometime)
-
+</p>
 </li>
-<li>Fix the genom package handling
-
+<li><p>
+Fix the genom package handling
+</p>
 </li>
 </ul>
 <h2>Version 1.1</h2>
 <ul>
-<li>Make the CVS importer discard differences on method and username between
+<li><p>
+Make the CVS importer discard differences on method and username between
 the current root and the configured root
-
+</p>
 </li>
-<li>Allow to specify exclusions in the importer package, which are used to
+<li><p>
+Allow to specify exclusions in the importer package, which are used to
 ignore some changes in the source tree. Useful if some packages are built
 inside the imported source tree
-
+</p>
 </li>
-<li>added the git importer
-
+<li><p>
+added the git importer
+</p>
 </li>
-<li>added the cmake package
-
+<li><p>
+added the cmake package
+</p>
 </li>
-<li>set the current repository as default global prefix and srcdir
-
+<li><p>
+set the current repository as default global prefix and srcdir
+</p>
 </li>
-<li>misc fixes w.r.t. handling dependencies
-
+<li><p>
+misc fixes w.r.t. handling dependencies
+</p>
 </li>
-<li>added <a href="Autobuild.html#M000046">Autobuild.post_success_message</a>
-
+<li><p>
+added Autobuild.post_success_message
+</p>
 </li>
 </ul>
 <h2>Version 1.0.1</h2>
 <ul>
-<li>The &#8220;test suites are there for something&#8221; release
-
+<li><p>
+The &#8220;test suites are there for something&#8221; release
+</p>
 </li>
-<li>Fixes bugs introduced in the last version
-
+<li><p>
+Fixes bugs introduced in the last version
+</p>
 </li>
-<li>Added a real example in samples/openrobots.rb
-
+<li><p>
+Added a real example in samples/openrobots.rb
+</p>
 </li>
-<li>Fixed documentation in various places
-
+<li><p>
+Fixed documentation in various places
+</p>
 </li>
-<li>Fail more gracefully on circular dependencies
-
+<li><p>
+Fail more gracefully on circular dependencies
+</p>
 </li>
 </ul>
 <h2>Version 1.0</h2>
 <ul>
-<li>Releasing 1.0. <a href="Autobuild.html">Autobuild</a> is stable, and is in
+<li><p>
+Releasing 1.0. <a href="Autobuild.html">Autobuild</a> is stable, and is in
 daily use at my work
-
+</p>
 </li>
-<li>Handle .tgz as valid tar extension (Closes 11722)
-
+<li><p>
+Handle .tgz as valid tar extension (Closes #11722)
+</p>
 </li>
-<li>Fix bug in the tar importer, which made checkout fail (Closes 11716)
-
+<li><p>
+Fix bug in the tar importer, which made checkout fail (Closes #11716)
+</p>
 </li>
 </ul>
 <h2>Version 0.6.7</h2>
 <ul>
-<li>put install-stamp files into logdir, to clean up the installation prefix
-
+<li><p>
+put install-stamp files into logdir, to clean up the installation prefix
+</p>
 </li>
-<li>added <a href="Autobuild.html#M000040">Autobuild.post_install</a>: run an
-external program or call a block after all packages have been successfully
-built
-
+<li><p>
+added Autobuild.post_install: run an external program or call a block after
+all packages have been successfully built
+</p>
 </li>
-<li>bugfix: darcs get expects that the path to the destination directory
+<li><p>
+bugfix: darcs get expects that the path to the destination directory
 already exists. Create it ourselves if it does not exist.
-
+</p>
 </li>
-<li>bugfix: when computing the timestamp of a source tree, exclude .svn and
+<li><p>
+bugfix: when computing the timestamp of a source tree, exclude .svn and
 _darcs directories
-
+</p>
 </li>
-<li>bugfix: &#8216;opencv.pc&#8217; were searched in <a
+<li><p>
+bugfix: &#8216;opencv.pc&#8217; were searched in <a
 href="PkgConfig.html">PkgConfig</a> packages instead of the actual .pc file
 &#8230;
-
+</p>
 </li>
-<li>bugfix: installed_pkgconfig is supposed to be a singleton method of <a
+<li><p>
+bugfix: installed_pkgconfig is supposed to be a singleton method of <a
 href="Autobuild.html">Autobuild</a>
-
+</p>
 </li>
-<li>bugfix: &#8220;darcs get&#8221; expects that the path leading to the
+<li><p>
+bugfix: &#8220;darcs get&#8221; expects that the path leading to the
 destination directory exists. Create it.
-
+</p>
 </li>
-<li>bugfix: fix handling of Genom&#8217;s requires lists: we were previously
+<li><p>
+bugfix: fix handling of Genom&#8217;s requires lists: we were previously
 expecting packages to be exactly separated by &#8217;, &#8216;
-
+</p>
 </li>
 </ul>
 <h2>Version 0.6.6</h2>
 <ul>
-<li>add Package#post_install: executes either a block or an external command
+<li><p>
+add Package#post_install: executes either a block or an external command
 after the package has been installed
-
+</p>
 </li>
-<li>allow to reference pkg-config packages not built by autobuild. The .pc file
+<li><p>
+allow to reference pkg-config packages not built by autobuild. The .pc file
 is then used as installation stamp file
-
+</p>
 </li>
-<li>the configure.ac.user file generated by Genom may not be present in the
+<li><p>
+the configure.ac.user file generated by Genom may not be present in the
 RCS. Do not expect it to be there after import.
-
+</p>
 </li>
-<li>removed the Ruby package. If there are extensions to build, better have a
+<li><p>
+removed the Ruby package. If there are extensions to build, better have a
 post_install script to do that
-
+</p>
 </li>
 </ul>
 <h2>Version 0.6.5</h2>
 <ul>
-<li>add Autobuild.default_packages
-
+<li><p>
+add Autobuild.default_packages
+</p>
 </li>
-<li>big rdoc update
-
+<li><p>
+big rdoc update
+</p>
 </li>
 </ul>
 <h2>Version 0.6.4</h2>
@@ -527,28 +850,33 @@ post_install script to do that
 This is a bugfix release
 </p>
 <ul>
-<li>More checks for working copy sanity: check that the target working copy has
+<li><p>
+More checks for working copy sanity: check that the target working copy has
 been created by the right tools before doing anything. Update test suite so
 that these parts of the importers is tested
-
+</p>
 </li>
-<li>Since we grep &#8216;svn info&#8217; output, make sure that its output will
-be in english by setting LC_ALL to C
-
+<li><p>
+Since we grep &#8216;svn info&#8217; output, make sure that its output will
+be in  english by setting LC_ALL to C
+</p>
 </li>
 </ul>
 <h2>Version 0.6.3</h2>
 <ul>
-<li>CVS and SVN importing plugins check that the current working copy comes
+<li><p>
+CVS and SVN importing plugins check that the current working copy comes
 from the right source
-
+</p>
 </li>
-<li>the autotools and genom package are now reconfiguring if the flags
+<li><p>
+the autotools and genom package are now reconfiguring if the flags
 (configureflags and/or genomflags) changed
-
+</p>
 </li>
-<li>bugfixes
-
+<li><p>
+bugfixes
+</p>
 </li>
 </ul>
 <h2>Version 0.6.2</h2>
@@ -556,16 +884,19 @@ from the right source
 Small changes
 </p>
 <ul>
-<li>added the Ruby package, which does an import and builds all C extensions
-
+<li><p>
+added the Ruby package, which does an import and builds all C extensions
+</p>
 </li>
-<li>added the pkgconfig package, which allows to use an already-installed
+<li><p>
+added the pkgconfig package, which allows to use an already-installed
 package if this packages can be found through pkg-config
-
+</p>
 </li>
-<li>check that working copies that are already checked out are from the right
+<li><p>
+check that working copies that are already checked out are from the right
 source (for CVS and Subversion)
-
+</p>
 </li>
 </ul>
 <h2>Version 0.6.1</h2>
@@ -573,15 +904,17 @@ source (for CVS and Subversion)
 Bugfixes
 </p>
 <ul>
-<li>fix dependency handling for Genom modules. In particular, we add
+<li><p>
+fix dependency handling for Genom modules. In particular, we add 
 dependencies between the module generation and the installed genom files
 (includes, canvas, and the genom executable). Information is taken from the
 pkg-config file
-
+</p>
 </li>
-<li>new package types: InstalledPkgConfig, to reuse pkg-config based packages
+<li><p>
+new package types: InstalledPkgConfig, to reuse pkg-config based packages
 installed by another autobuild script
-
+</p>
 </li>
 </ul>
 <h2>Version 0.6</h2>
@@ -590,14 +923,17 @@ Use a Ruby-based DSL instead of YAML config files. It is waaaaaay more
 powerful and waaay cleaner. See demo.rb for an example
 </p>
 <ul>
-<li>Added the Darcs importer
-
+<li><p>
+Added the Darcs importer
+</p>
 </li>
-<li>Fixes in dependency handling
-
+<li><p>
+Fixes in dependency handling
+</p>
 </li>
-<li>Uses Rake 0.7
-
+<li><p>
+Uses Rake 0.7
+</p>
 </li>
 </ul>
 <h2>Version 0.5.1</h2>
@@ -605,9 +941,10 @@ powerful and waaay cleaner. See demo.rb for an example
 Fixes the release process, in which the bin/ directory was not distributed
 </p>
 <ul>
-<li>0.5 gem did not include bin/autobuild (which obviously was not good). Fix
+<li><p>
+0.5 gem did not include bin/autobuild (which obviously was not good). Fix
 that
-
+</p>
 </li>
 </ul>
 <h2>Version 0.5</h2>
@@ -615,44 +952,52 @@ that
 Fixes the mail default behaviour. Added the &#8216;tar&#8217; importer.
 </p>
 <ul>
-<li>all the API is now in a separate module
-
+<li><p>
+all the API is now in a separate module
+</p>
 </li>
-<li>genflags has been renamed back to genomflags. The convention is now to have
+<li><p>
+genflags has been renamed back to genomflags. The convention is now to have
 a <tool>flags option. For instance: genomflags, configureflags
-
+</p>
 </li>
-<li>added the &#8212;[no-]build option to do only import
-
+<li><p>
+added the &#8212;[no-]build option to do only import
+</p>
 </li>
-<li>changed behaviour for mail reports:
-
+<li><p>
+changed behaviour for mail reports:
+</p>
 <pre>
-  - set sensible default options for mail
-  - mail: true uses default options
-  - mail: &lt;string&gt; is equivalent to
+  * set sensible default options for mail
+  * mail: true uses default options
+  * mail: &lt;string&gt; is equivalent to
       mail:
           to: &lt;string&gt;
 </pre>
 </li>
-<li>if a value is undefined in the config file, parameter expansion tries to
+<li><p>
+if a value is undefined in the config file, parameter expansion tries to
 get it from the program environment, and raises an error if it is not
 present in the environment vars
-
+</p>
 </li>
-<li>changed the names of log files. All importers now uses
+<li><p>
+changed the names of log files. All importers now uses
 <package>-<import>.log
-
+</p>
 </li>
-<li>added the &#8216;tar&#8217; importer, which downloads and uncompress a
-tarball
-
+<li><p>
+added the &#8216;tar&#8217; importer, which downloads and uncompress a
+tarball 
+</p>
 </li>
 </ul>
 <h2>Version 0.4</h2>
 <ul>
-<li>added support to split import and build. For instance
-
+<li><p>
+added support to split import and build. For instance
+</p>
 <pre>
   whole_tree:
       type: import
@@ -663,40 +1008,47 @@ tarball
       type: autotools
       srcdir: whole_tree/package1
       depends: whole_tree
-
+      
   package2:
       type: autotools
       srcdir: whole_tree/package2
       depends: whole_tree
+      
 </pre>
 <p>
 Works as it should
 </p>
 </li>
-<li>the <tt>autotools</tt> package has now an <tt>autogen</tt> options, which
+<li><p>
+the <tt>autotools</tt> package has now an <tt>autogen</tt> options, which
 gives a name for a script which creates the autotools environment
-
+</p>
 </li>
-<li>renamed &#8216;genomflags&#8217; -> &#8216;genflags&#8217;
-
+<li><p>
+renamed &#8216;genomflags&#8217; -> &#8216;genflags&#8217;
+</p>
 </li>
-<li>variable interpolation checks for environment variables
-
+<li><p>
+variable interpolation checks for environment variables
+</p>
 </li>
-<li>bugfixes
-
+<li><p>
+bugfixes
+</p>
 </li>
 </ul>
 <h2>Version 0.3</h2>
 <ul>
-<li>added support for patching source code. Add patch: [ patches ] to the
+<li><p>
+added support for patching source code. Add patch: [ patches ] to the
 package configuration
-
+</p>
 </li>
-<li>renamed autobuild-config, common-config and clean-log to autobuild, common
+<li><p>
+renamed autobuild-config, common-config and clean-log to autobuild, common
 and clean_log. <a href="Autobuild.html">Autobuild</a> warns if it finds one
 the previous spelling but ignores it anyway
-
+</p>
 </li>
 </ul>
 

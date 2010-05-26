@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Configurable</p>
+				<p class="link"><a href="Configurable.html">Autobuild::Configurable</a></p>
 				
 			</div>
 			
@@ -59,35 +69,37 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000146">::builddir</a></li>
+					<li><a href="#method-c-builddir">::builddir</a></li>
 					
-					<li><a href="#M000147">::builddir=</a></li>
+					<li><a href="#method-c-builddir%3D">::builddir=</a></li>
 					
-					<li><a href="#M000148">::full_reconfigures?</a></li>
+					<li><a href="#method-c-full_reconfigures%3F">::full_reconfigures?</a></li>
 					
-					<li><a href="#M000151">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
-					<li><a href="#M000167">#build</a></li>
+					<li><a href="#method-i-build">#build</a></li>
 					
-					<li><a href="#M000162">#configure</a></li>
+					<li><a href="#method-i-cmake_cache">#cmake_cache</a></li>
 					
-					<li><a href="#M000150">#configurestamp</a></li>
+					<li><a href="#method-i-configure">#configure</a></li>
 					
-					<li><a href="#M000152">#define</a></li>
+					<li><a href="#method-i-configurestamp">#configurestamp</a></li>
 					
-					<li><a href="#M000155">#equivalent_option_value?</a></li>
+					<li><a href="#method-i-define">#define</a></li>
 					
-					<li><a href="#M000149">#full_reconfigures?</a></li>
+					<li><a href="#method-i-doc_dir">#doc_dir</a></li>
 					
-					<li><a href="#M000156">#import</a></li>
+					<li><a href="#method-i-equivalent_option_value%3F">#equivalent_option_value?</a></li>
 					
-					<li><a href="#M000169">#install</a></li>
+					<li><a href="#method-i-full_reconfigures%3F">#full_reconfigures?</a></li>
 					
-					<li><a href="#M000153">#install_doc</a></li>
+					<li><a href="#method-i-import">#import</a></li>
 					
-					<li><a href="#M000158">#prepare</a></li>
+					<li><a href="#method-i-install">#install</a></li>
 					
-					<li><a href="#M000154">#with_doc</a></li>
+					<li><a href="#method-i-prepare">#prepare</a></li>
+					
+					<li><a href="#method-i-with_doc">#with_doc</a></li>
 					
 				</ul>
 			</div>
@@ -131,6 +143,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -150,6 +166,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -193,8 +215,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -228,7 +248,7 @@
 			
 				<dt><a name="CMAKE_EQVS">CMAKE_EQVS</a></dt>
 				
-				<dd class="description missing-docs">(Not documented)</dd>
+				<dd class="description"></dd>
 				
 			
 			</dl>
@@ -253,7 +273,7 @@
 
 				<div class="method-description">
 				
-				<p class="missing-docs">(Not documented)</p>
+				
 				
 				</div>
 			</div>
@@ -311,7 +331,8 @@ If true, we always remove the <a href="CMake.html">CMake</a> cache before
 reconfiguring.
 </p>
 <p>
-See <a href="CMake.html#M000148">full_reconfigures?</a> for more details
+See <a href="CMake.html#method-i-full_reconfigures%3F">#</a> for more
+details
 </p>
 				
 				</div>
@@ -327,7 +348,7 @@ See <a href="CMake.html#M000148">full_reconfigures?</a> for more details
 
 		
 			<div id="builddir-method" class="method-detail ">
-				<a name="M000146"></a>
+				<a name="method-c-builddir"></a>
 
 				<div class="method-heading">
 				
@@ -339,25 +360,27 @@ See <a href="CMake.html#M000148">full_reconfigures?</a> for more details
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="builddir-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 10</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir</span>; <span class="ruby-ivar">@builddir</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Configurable</span>.<span class="ruby-identifier">builddir</span> <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 10</span>
+10:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir</span>; <span class="ruby-ivar">@builddir</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Configurable</span>.<span class="ruby-identifier">builddir</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000147"></a>
+				<a name="method-c-builddir%3D"></a>
 
 				<div class="method-heading">
 				
@@ -369,29 +392,31 @@ See <a href="CMake.html#M000148">full_reconfigures?</a> for more details
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="builddir--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 11</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-nil and non-empty&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">new</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>)
-                <span class="ruby-ivar">@builddir</span> = <span class="ruby-identifier">new</span>
-            <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 11</span>
+11:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
+12:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
+13:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-nil and non-empty&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">new</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>)
+14:                 <span class="ruby-ivar">@builddir</span> = <span class="ruby-identifier">new</span>
+15:             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="full-reconfigures--method" class="method-detail ">
-				<a name="M000148"></a>
+				<a name="method-c-full_reconfigures%3F"></a>
 
 				<div class="method-heading">
 				
@@ -403,27 +428,29 @@ See <a href="CMake.html#M000148">full_reconfigures?</a> for more details
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="full-reconfigures--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 18</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_reconfigures?</span>
-                <span class="ruby-ivar">@full_reconfigures</span>
-            <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 18</span>
+18:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_reconfigures?</span>
+19:                 <span class="ruby-ivar">@full_reconfigures</span>
+20:             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000151"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -435,21 +462,23 @@ See <a href="CMake.html#M000148">full_reconfigures?</a> for more details
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 49</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
-            <span class="ruby-ivar">@defines</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
-            <span class="ruby-keyword kw">super</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 50</span>
+50:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
+51:             <span class="ruby-ivar">@defines</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+52:             <span class="ruby-keyword kw">super</span>
+53:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
@@ -462,7 +491,7 @@ See <a href="CMake.html#M000148">full_reconfigures?</a> for more details
 
 		
 			<div id="build-method" class="method-detail ">
-				<a name="M000167"></a>
+				<a name="method-i-build"></a>
 
 				<div class="method-heading">
 				
@@ -483,31 +512,65 @@ Do the build in builddir
 					<div class="method-source-code"
 						id="build-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 162</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
-            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress_with_value</span> <span class="ruby-node">&quot;building #{name}&quot;</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">always_reconfigure</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'Makefile'</span>)
-                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:cmake</span>), <span class="ruby-value str">'.'</span>)
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\[\s+(\d+)%\]/</span>
-                        <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress_value</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">$1</span>)
-                    <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">buildstamp</span>)
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 168</span>
+168:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
+169:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
+170:                 <span class="ruby-identifier">progress_with_value</span> <span class="ruby-value str">&quot;building %s&quot;</span>
+171:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">always_reconfigure</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'Makefile'</span>)
+172:                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:cmake</span>), <span class="ruby-value str">'.'</span>)
+173:                 <span class="ruby-keyword kw">end</span>
+174:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+175:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\[\s+(\d+)%\]/</span>
+176:                         <span class="ruby-identifier">progress_value</span> <span class="ruby-constant">Integer</span>(<span class="ruby-node">$1</span>)
+177:                     <span class="ruby-keyword kw">end</span>
+178:                 <span class="ruby-keyword kw">end</span>
+179:             <span class="ruby-keyword kw">end</span>
+180:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">buildstamp</span>)
+181:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cmake-cache-method" class="method-detail ">
+				<a name="method-i-cmake_cache"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cmake_cache</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="cmake-cache-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 47</span>
+47:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cmake_cache</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">builddir</span>, <span class="ruby-value str">&quot;CMakeCache.txt&quot;</span>) <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="configure-method" class="method-detail ">
-				<a name="M000162"></a>
+				<a name="method-i-configure"></a>
 
 				<div class="method-heading">
 				
@@ -528,38 +591,40 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configure-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 139</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">builddir</span>)
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{builddir} already exists but is not a directory&quot;</span>
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">builddir</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">builddir</span>)
-            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-identifier">command</span> = [ <span class="ruby-value str">&quot;cmake&quot;</span>, <span class="ruby-node">&quot;-DCMAKE_INSTALL_PREFIX=#{prefix}&quot;</span> ]
-                <span class="ruby-identifier">defines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-                    <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-D#{name}=#{value}&quot;</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">srcdir</span>
-                
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating and configuring build system for #{name}&quot;</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">full_reconfigures?</span>
-                    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">command</span>)
-                <span class="ruby-keyword kw">super</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 145</span>
+145:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
+146:             <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">do</span>
+147:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
+148:                     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'CMakeLists.txt'</span>))
+149:                         <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{srcdir} contains no CMakeLists.txt file&quot;</span>
+150:                     <span class="ruby-keyword kw">end</span>
+151: 
+152:                     <span class="ruby-identifier">command</span> = [ <span class="ruby-value str">&quot;cmake&quot;</span>, <span class="ruby-node">&quot;-DCMAKE_INSTALL_PREFIX=#{prefix}&quot;</span> ]
+153:                     <span class="ruby-identifier">defines</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+154:                         <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-D#{name}=#{value}&quot;</span>
+155:                     <span class="ruby-keyword kw">end</span>
+156:                     <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">srcdir</span>
+157:                     
+158:                     <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating and configuring build system for %s&quot;</span>
+159:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">full_reconfigures?</span>
+160:                         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">cmake_cache</span>
+161:                     <span class="ruby-keyword kw">end</span>
+162:                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, *<span class="ruby-identifier">command</span>)
+163:                 <span class="ruby-keyword kw">end</span>
+164:             <span class="ruby-keyword kw">end</span>
+165:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="configurestamp-method" class="method-detail ">
-				<a name="M000150"></a>
+				<a name="method-i-configurestamp"></a>
 
 				<div class="method-heading">
 				
@@ -571,25 +636,27 @@ Configure the builddir directory before starting make
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="configurestamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 47</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configurestamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">builddir</span>, <span class="ruby-value str">&quot;CMakeCache.txt&quot;</span>) <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 48</span>
+48:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configurestamp</span>; <span class="ruby-identifier">cmake_cache</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="define-method" class="method-detail ">
-				<a name="M000152"></a>
+				<a name="method-i-define"></a>
 
 				<div class="method-heading">
 				
@@ -601,27 +668,65 @@ Configure the builddir directory before starting make
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="define-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 54</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
-            <span class="ruby-ivar">@defines</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 55</span>
+55:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+56:             <span class="ruby-ivar">@defines</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
+57:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="doc-dir-method" class="method-detail ">
+				<a name="method-i-doc_dir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">doc_dir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="doc-dir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 59</span>
+59:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">doc_dir</span>
+60:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@doc_dir</span>
+61:                 <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@doc_dir</span>, <span class="ruby-identifier">builddir</span>)
+62:             <span class="ruby-keyword kw">end</span>
+63:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="equivalent-option-value--method" class="method-detail ">
-				<a name="M000155"></a>
+				<a name="method-i-equivalent_option_value%3F"></a>
 
 				<div class="method-heading">
 				
@@ -633,37 +738,39 @@ Configure the builddir directory before starting make
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="equivalent-option-value--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 79</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">equivalent_option_value?</span>(<span class="ruby-identifier">old</span>, <span class="ruby-identifier">new</span>)
-            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">new</span>
-                <span class="ruby-keyword kw">true</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-identifier">old</span> = <span class="ruby-constant">CMAKE_EQVS</span>[<span class="ruby-identifier">old</span>]
-                <span class="ruby-identifier">new</span> = <span class="ruby-constant">CMAKE_EQVS</span>[<span class="ruby-identifier">new</span>]
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">new</span>
-                    <span class="ruby-identifier">old</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">new</span>
-                <span class="ruby-keyword kw">else</span>
-                    <span class="ruby-keyword kw">false</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 82</span>
+82:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">equivalent_option_value?</span>(<span class="ruby-identifier">old</span>, <span class="ruby-identifier">new</span>)
+83:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">new</span>
+84:                 <span class="ruby-keyword kw">true</span>
+85:             <span class="ruby-keyword kw">else</span>
+86:                 <span class="ruby-identifier">old</span> = <span class="ruby-constant">CMAKE_EQVS</span>[<span class="ruby-identifier">old</span>]
+87:                 <span class="ruby-identifier">new</span> = <span class="ruby-constant">CMAKE_EQVS</span>[<span class="ruby-identifier">new</span>]
+88:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">new</span>
+89:                     <span class="ruby-identifier">old</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">new</span>
+90:                 <span class="ruby-keyword kw">else</span>
+91:                     <span class="ruby-keyword kw">false</span>
+92:                 <span class="ruby-keyword kw">end</span>
+93:             <span class="ruby-keyword kw">end</span>
+94:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="full-reconfigures--method" class="method-detail ">
-				<a name="M000149"></a>
+				<a name="method-i-full_reconfigures%3F"></a>
 
 				<div class="method-heading">
 				
@@ -681,8 +788,9 @@ reconfiguring. This is to workaround the aggressive caching behaviour of <a
 href="CMake.html">CMake</a>, and is set to true by default.
 </p>
 <p>
-See <a href="CMake.html#M000148">CMake.full_reconfigures?</a> and
-CMake.full_reconfigures= for a global setting
+See <a
+href="CMake.html#method-i-full_reconfigures%3F">CMake.full_reconfigures?</a>
+and CMake.full_reconfigures= for a global setting
 </p>
 					
 
@@ -690,24 +798,26 @@ CMake.full_reconfigures= for a global setting
 					<div class="method-source-code"
 						id="full-reconfigures--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 39</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_reconfigures?</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@full_reconfigures</span>.<span class="ruby-identifier">nil?</span>
-                <span class="ruby-constant">CMake</span>.<span class="ruby-identifier">full_reconfigures?</span>
-            <span class="ruby-keyword kw">else</span>
-                <span class="ruby-ivar">@full_reconfigures</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 39</span>
+39:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_reconfigures?</span>
+40:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@full_reconfigures</span>.<span class="ruby-identifier">nil?</span>
+41:                 <span class="ruby-constant">CMake</span>.<span class="ruby-identifier">full_reconfigures?</span>
+42:             <span class="ruby-keyword kw">else</span>
+43:                 <span class="ruby-ivar">@full_reconfigures</span>
+44:             <span class="ruby-keyword kw">end</span>
+45:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="import-method" class="method-detail ">
-				<a name="M000156"></a>
+				<a name="method-i-import"></a>
 
 				<div class="method-heading">
 				
@@ -719,32 +829,34 @@ CMake.full_reconfigures= for a global setting
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 93</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
-            <span class="ruby-keyword kw">super</span>
-
-            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">&quot;*.pc.in&quot;</span>)) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value str">&quot;.pc.in&quot;</span>)
-                <span class="ruby-identifier">provides</span> <span class="ruby-node">&quot;pkgconfig/#{file}&quot;</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 96</span>
+ 96:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
+ 97:             <span class="ruby-keyword kw">super</span>
+ 98: 
+ 99:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">&quot;*.pc.in&quot;</span>)) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+100:                 <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value str">&quot;.pc.in&quot;</span>)
+101:                 <span class="ruby-identifier">provides</span> <span class="ruby-node">&quot;pkgconfig/#{file}&quot;</span>
+102:             <span class="ruby-keyword kw">end</span>
+103:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="install-method" class="method-detail ">
-				<a name="M000169"></a>
+				<a name="method-i-install"></a>
 
 				<div class="method-heading">
 				
@@ -765,57 +877,26 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="install-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 178</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
-            <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;installing #{name}&quot;</span>
-                <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-value str">'install'</span>)
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">update_environment</span> <span class="ruby-identifier">prefix</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">super</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 184</span>
+184:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
+185:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
+186:                 <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;installing %s&quot;</span>
+187:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-value str">'install'</span>)
+188:             <span class="ruby-keyword kw">end</span>
+189:             <span class="ruby-keyword kw">super</span>
+190:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
-			</div>
-
-		
-			<div id="install-doc-method" class="method-detail ">
-				<a name="M000153"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">install_doc</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p class="missing-docs">(Not documented)</p>
-					
-
-					
-					<div class="method-source-code"
-						id="install-doc-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 58</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_doc</span>
-            <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">builddir</span>)
-        <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
 
 				
 			</div>
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000158"></a>
+				<a name="method-i-prepare"></a>
 
 				<div class="method-heading">
 				
@@ -827,59 +908,64 @@ Install the result in prefix
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 102</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
-            <span class="ruby-keyword kw">super</span>
-
-            <span class="ruby-identifier">all_defines</span> = <span class="ruby-identifier">defines</span>.<span class="ruby-identifier">dup</span>
-            <span class="ruby-identifier">all_defines</span>[<span class="ruby-value str">'CMAKE_INSTALL_PREFIX'</span>] = <span class="ruby-identifier">prefix</span>
-
-            <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">builddir</span>, <span class="ruby-value str">'Makefile'</span>) )
-                <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span>
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">configurestamp</span>)
-                <span class="ruby-identifier">cache</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">configurestamp</span>)
-                <span class="ruby-identifier">did_change</span> = <span class="ruby-identifier">all_defines</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-                    <span class="ruby-identifier">cache_line</span> = <span class="ruby-identifier">cache</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
-                        <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^#{name}:/</span>
-                    <span class="ruby-keyword kw">end</span>
-
-                    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
-                    <span class="ruby-identifier">old_value</span> = <span class="ruby-identifier">cache_line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;=&quot;</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">chomp</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cache_line</span>
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">old_value</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">equivalent_option_value?</span>(<span class="ruby-identifier">old_value</span>, <span class="ruby-identifier">value</span>)
-                        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
-                            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;option '#{name}' changed value: '#{old_value}' =&gt; '#{value}'&quot;</span>
-                        <span class="ruby-keyword kw">end</span>
-                        
-                        <span class="ruby-keyword kw">true</span>
-                    <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">end</span>
-                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">did_change</span>
-                    <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
-                        <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;CMake configuration changed, forcing a reconfigure&quot;</span>
-                    <span class="ruby-keyword kw">end</span>
-                    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 105</span>
+105:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+106:             <span class="ruby-comment cmt"># A failed initial CMake configuration leaves a CMakeCache.txt file,</span>
+107:             <span class="ruby-comment cmt"># but no Makefile.</span>
+108:             <span class="ruby-comment cmt">#</span>
+109:             <span class="ruby-comment cmt"># Delete the CMakeCache to force reconfiguration</span>
+110:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">builddir</span>, <span class="ruby-value str">'Makefile'</span>) )
+111:                 <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">cmake_cache</span>
+112:             <span class="ruby-keyword kw">end</span>
+113: 
+114:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">cmake_cache</span>)
+115:                 <span class="ruby-identifier">all_defines</span> = <span class="ruby-identifier">defines</span>.<span class="ruby-identifier">dup</span>
+116:                 <span class="ruby-identifier">all_defines</span>[<span class="ruby-value str">'CMAKE_INSTALL_PREFIX'</span>] = <span class="ruby-identifier">prefix</span>
+117:                 <span class="ruby-identifier">cache</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">cmake_cache</span>)
+118:                 <span class="ruby-identifier">did_change</span> = <span class="ruby-identifier">all_defines</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+119:                     <span class="ruby-identifier">cache_line</span> = <span class="ruby-identifier">cache</span>.<span class="ruby-identifier">each_line</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+120:                         <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^#{name}:/</span>
+121:                     <span class="ruby-keyword kw">end</span>
+122: 
+123:                     <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+124:                     <span class="ruby-identifier">old_value</span> = <span class="ruby-identifier">cache_line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;=&quot;</span>)[<span class="ruby-value">1</span>].<span class="ruby-identifier">chomp</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cache_line</span>
+125:                     <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">old_value</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">equivalent_option_value?</span>(<span class="ruby-identifier">old_value</span>, <span class="ruby-identifier">value</span>)
+126:                         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
+127:                             <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;option '#{name}' changed value: '#{old_value}' =&gt; '#{value}'&quot;</span>
+128:                         <span class="ruby-keyword kw">end</span>
+129:                         
+130:                         <span class="ruby-keyword kw">true</span>
+131:                     <span class="ruby-keyword kw">end</span>
+132:                 <span class="ruby-keyword kw">end</span>
+133:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">did_change</span>
+134:                     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
+135:                         <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;CMake configuration changed, forcing a reconfigure&quot;</span>
+136:                     <span class="ruby-keyword kw">end</span>
+137:                     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">cmake_cache</span>
+138:                 <span class="ruby-keyword kw">end</span>
+139:             <span class="ruby-keyword kw">end</span>
+140: 
+141:             <span class="ruby-keyword kw">super</span>
+142:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="with-doc-method" class="method-detail ">
-				<a name="M000154"></a>
+				<a name="method-i-with_doc"></a>
 
 				<div class="method-heading">
 				
@@ -900,19 +986,21 @@ Declare that the given target can be used to generate documentation
 					<div class="method-source-code"
 						id="with-doc-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 63</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_doc</span>(<span class="ruby-identifier">target</span> = <span class="ruby-value str">'doc'</span>)
-            <span class="ruby-identifier">doc_task</span> <span class="ruby-keyword kw">do</span>
-                <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
-                    <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">progress</span> <span class="ruby-node">&quot;generating documentation for #{name}&quot;</span>
-                    <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'doc'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-identifier">target</span>)
-                    <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-                <span class="ruby-keyword kw">end</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/cmake.rb, line 66</span>
+66:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_doc</span>(<span class="ruby-identifier">target</span> = <span class="ruby-value str">'doc'</span>)
+67:             <span class="ruby-identifier">doc_task</span> <span class="ruby-keyword kw">do</span>
+68:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
+69:                     <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating documentation for %s&quot;</span>
+70:                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'doc'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-identifier">target</span>)
+71:                     <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+72:                 <span class="ruby-keyword kw">end</span>
+73:             <span class="ruby-keyword kw">end</span>
+74:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

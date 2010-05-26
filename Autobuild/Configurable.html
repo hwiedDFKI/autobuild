@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -45,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Package</p>
+				<p class="link"><a href="Package.html">Autobuild::Package</a></p>
 				
 			</div>
 			
@@ -59,31 +69,27 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000013">::builddir=</a></li>
+					<li><a href="#method-c-builddir">::builddir</a></li>
 					
-					<li><a href="#M000018">::new</a></li>
+					<li><a href="#method-c-builddir%3D">::builddir=</a></li>
 					
-					<li><a href="#M000028">#build</a></li>
+					<li><a href="#method-i-build">#build</a></li>
 					
-					<li><a href="#M000015">#builddir</a></li>
+					<li><a href="#method-i-builddir">#builddir</a></li>
 					
-					<li><a href="#M000014">#builddir=</a></li>
+					<li><a href="#method-i-builddir%3D">#builddir=</a></li>
 					
-					<li><a href="#M000016">#buildstamp</a></li>
+					<li><a href="#method-i-buildstamp">#buildstamp</a></li>
 					
-					<li><a href="#M000027">#configure</a></li>
+					<li><a href="#method-i-configure">#configure</a></li>
 					
-					<li><a href="#M000021">#depends_on</a></li>
+					<li><a href="#method-i-ensure_dependencies_installed">#ensure_dependencies_installed</a></li>
 					
-					<li><a href="#M000024">#ensure_dependencies_installed</a></li>
+					<li><a href="#method-i-prepare">#prepare</a></li>
 					
-					<li><a href="#M000029">#install</a></li>
+					<li><a href="#method-i-prepare_for_forced_build">#prepare_for_forced_build</a></li>
 					
-					<li><a href="#M000025">#prepare</a></li>
-					
-					<li><a href="#M000019">#prepare_for_forced_build</a></li>
-					
-					<li><a href="#M000020">#prepare_for_rebuild</a></li>
+					<li><a href="#method-i-prepare_for_rebuild">#prepare_for_rebuild</a></li>
 					
 				</ul>
 			</div>
@@ -127,6 +133,10 @@
 				
 					<li><a href="../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -146,6 +156,12 @@
 					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -189,8 +205,6 @@
 				
 					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
 				
-					<li><a href="../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
-				
 					<li><a href="../PkgConfig.html">PkgConfig</a></li>
 				
 					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
@@ -217,27 +231,30 @@
 Base class for packages that require a configuration + build step.
 </p>
 <p>
-Child classes must provide a configurestamp file which represents the last
-configuration step done. This file is updated by a call to <a
-href="Configurable.html#M000027">configure</a> (see below)
+Child classes must provide a # file which represents the last configuration
+step done. This file is updated by a call to <a
+href="Configurable.html#method-i-configure">#</a> (see below)
 </p>
 <p>
 Three new methods are added, which can be reimplemented in child classes:
 </p>
 <ul>
-<li><tt>configure</tt> does configure the package. It is ran after all
+<li><p>
+<tt>configure</tt> does configure the package. It is ran after all
 depended-upon packages are installed.
-
+</p>
 </li>
-<li><tt>build</tt> is ran after <tt>configure</tt> if the configure stamp
+<li><p>
+<tt>build</tt> is ran after <tt>configure</tt> if the configure stamp
 and/or the source files have been updated. The <a
-href="Configurable.html#M000016">buildstamp</a> stampfile represents when
-the last build has been done. The build must be done in the <a
-href="Configurable.html#M000015">builddir</a> directory.
-
+href="Configurable.html#method-i-buildstamp">#</a> stampfile represents
+when the last build has been done. The build must be done in the <a
+href="Configurable.html#method-i-builddir">#</a> directory.
+</p>
 </li>
-<li><tt>install</tt> is ran after <tt>build</tt>.
-
+<li><p>
+<tt>install</tt> is ran after <tt>build</tt>.
+</p>
 </li>
 </ul>
 
@@ -248,27 +265,6 @@ href="Configurable.html#M000015">builddir</a> directory.
 
 		<!-- Attributes -->
 		
-		<div id="attribute-method-details" class="method-section section">
-			<h3 class="section-header">Attributes</h3>
-
-			
-			<div id="builddir-attribute-method" class="method-detail">
-				<a name="builddir"></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">builddir</span><span
-						class="attribute-access-type">[R]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p class="missing-docs">(Not documented)</p>
-				
-				</div>
-			</div>
-			
-		</div>
-		
 
 		<!-- Methods -->
 		
@@ -276,8 +272,51 @@ href="Configurable.html#M000015">builddir</a> directory.
 			<h3 class="section-header">Public Class Methods</h3>
 
 		
+			<div id="builddir-method" class="method-detail ">
+				<a name="method-c-builddir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">builddir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="builddir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 25</span>
+25:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir</span>
+26:                 <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@builddir</span>
+27:                     <span class="ruby-ivar">@builddir</span>
+28:                 <span class="ruby-keyword kw">else</span>
+29:                     <span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+30:                         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-value">:@builddir</span>)
+31:                             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+32:                         <span class="ruby-keyword kw">end</span>
+33:                     <span class="ruby-keyword kw">end</span>
+34:                     <span class="ruby-keyword kw">nil</span>
+35:                 <span class="ruby-keyword kw">end</span>
+36:             <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000013"></a>
+				<a name="method-c-builddir%3D"></a>
 
 				<div class="method-heading">
 				
@@ -289,56 +328,24 @@ href="Configurable.html#M000015">builddir</a> directory.
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="builddir--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 26</span>
-            <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
-                <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-nil and non-empty&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">new</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>)
-                <span class="ruby-ivar">@builddir</span> = <span class="ruby-identifier">new</span>
-            <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 38</span>
+38:             <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
+39:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
+40:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-nil and non-empty&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">new</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>)
+41:                 <span class="ruby-ivar">@builddir</span> = <span class="ruby-identifier">new</span>
+42:             <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
-			</div>
-
-		
-			<div id="new-method" class="method-detail ">
-				<a name="M000018"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">new</span><span
-						class="method-args">(options)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p class="missing-docs">(Not documented)</p>
-					
-
-					
-					<div class="method-source-code"
-						id="new-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 47</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
-            <span class="ruby-keyword kw">super</span>
-
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">update_environment</span>(<span class="ruby-identifier">prefix</span>)
-        <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
 
 				
 			</div>
@@ -351,7 +358,7 @@ href="Configurable.html#M000015">builddir</a> directory.
 
 		
 			<div id="build-method" class="method-detail ">
-				<a name="M000028"></a>
+				<a name="method-i-build"></a>
 
 				<div class="method-heading">
 				
@@ -372,19 +379,21 @@ Do the build in builddir
 					<div class="method-source-code"
 						id="build-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 107</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 114</span>
+114:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
+115:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="builddir-method" class="method-detail ">
-				<a name="M000015"></a>
+				<a name="method-i-builddir"></a>
 
 				<div class="method-heading">
 				
@@ -405,18 +414,20 @@ Returns the absolute builddir
 					<div class="method-source-code"
 						id="builddir-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 40</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@builddir</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Configurable</span>.<span class="ruby-identifier">builddir</span>, <span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 52</span>
+52:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@builddir</span> <span class="ruby-operator">||</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">builddir</span>, <span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="builddir--method" class="method-detail ">
-				<a name="M000014"></a>
+				<a name="method-i-builddir%3D"></a>
 
 				<div class="method-heading">
 				
@@ -428,29 +439,31 @@ Returns the absolute builddir
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="builddir--source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 34</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
-            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
-            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-empty&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>
-            <span class="ruby-ivar">@builddir</span> = <span class="ruby-identifier">new</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 46</span>
+46:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builddir=</span>(<span class="ruby-identifier">new</span>)
+47:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;absolute builddirs are not supported&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">new</span>).<span class="ruby-identifier">absolute?</span>)
+48:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-value str">&quot;builddir must be non-empty&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">empty?</span>
+49:             <span class="ruby-ivar">@builddir</span> = <span class="ruby-identifier">new</span>
+50:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="buildstamp-method" class="method-detail ">
-				<a name="M000016"></a>
+				<a name="method-i-buildstamp"></a>
 
 				<div class="method-heading">
 				
@@ -472,18 +485,20 @@ has been successfully built for the last time. The path is absolute
 					<div class="method-source-code"
 						id="buildstamp-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 45</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">buildstamp</span>; <span class="ruby-node">&quot;#{builddir}/#{STAMPFILE}&quot;</span> <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 57</span>
+57:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">buildstamp</span>; <span class="ruby-node">&quot;#{builddir}/#{STAMPFILE}&quot;</span> <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="configure-method" class="method-detail ">
-				<a name="M000027"></a>
+				<a name="method-i-configure"></a>
 
 				<div class="method-heading">
 				
@@ -504,54 +519,29 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configure-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 102</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">configurestamp</span>)
-        <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 102</span>
+102:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
+103:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">builddir</span>)
+104:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;#{builddir} already exists but is not a directory&quot;</span>
+105:             <span class="ruby-keyword kw">end</span>
+106:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">builddir</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">builddir</span>)
+107: 
+108:             <span class="ruby-keyword kw">yield</span>
+109: 
+110:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">configurestamp</span>)
+111:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
-			</div>
-
-		
-			<div id="depends-on-method" class="method-detail ">
-				<a name="M000021"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">depends_on</span><span
-						class="method-args">(*packages)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p class="missing-docs">(Not documented)</p>
-					
-
-					
-					<div class="method-source-code"
-						id="depends-on-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 64</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depends_on</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">packages</span>)
-            <span class="ruby-keyword kw">super</span>
-            <span class="ruby-identifier">stamps</span> = <span class="ruby-identifier">packages</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>].<span class="ruby-identifier">installstamp</span> }
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">stamps</span>
-        <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
 
 				
 			</div>
 
 		
 			<div id="ensure-dependencies-installed-method" class="method-detail ">
-				<a name="M000024"></a>
+				<a name="method-i-ensure_dependencies_installed"></a>
 
 				<div class="method-heading">
 				
@@ -563,63 +553,31 @@ Configure the builddir directory before starting make
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="ensure-dependencies-installed-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 70</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ensure_dependencies_installed</span>
-            <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span>
-                <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg</span>].<span class="ruby-identifier">installstamp</span>].<span class="ruby-identifier">invoke</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 71</span>
+71:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ensure_dependencies_installed</span>
+72:             <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span>
+73:                 <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Task</span>[<span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg</span>].<span class="ruby-identifier">installstamp</span>].<span class="ruby-identifier">invoke</span>
+74:             <span class="ruby-keyword kw">end</span>
+75:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
-			</div>
-
-		
-			<div id="install-method" class="method-detail ">
-				<a name="M000029"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">install</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Install the result in prefix
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="install-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 111</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">installstamp</span>)
-        <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
 
 				
 			</div>
 
 		
 			<div id="prepare-method" class="method-detail ">
-				<a name="M000025"></a>
+				<a name="method-i-prepare"></a>
 
 				<div class="method-heading">
 				
@@ -631,48 +589,49 @@ Install the result in prefix
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 76</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
-            <span class="ruby-keyword kw">super</span>
-
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> <span class="ruby-keyword kw">do</span>
-                <span class="ruby-identifier">ensure_dependencies_installed</span>
-                <span class="ruby-identifier">configure</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{name}-prepare&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configurestamp</span>
-
-            <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span>
-                <span class="ruby-identifier">pkg</span>.<span class="ruby-identifier">exclude</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;^#{Regexp.quote(builddir)}&quot;</span>)
-            <span class="ruby-keyword kw">end</span>
-
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">buildstamp</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">configurestamp</span> ] <span class="ruby-keyword kw">do</span> 
-                <span class="ruby-identifier">ensure_dependencies_installed</span>
-                <span class="ruby-identifier">build</span>
-            <span class="ruby-keyword kw">end</span>
-            <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{name}-build&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">buildstamp</span>
-
-            <span class="ruby-identifier">file</span> <span class="ruby-identifier">installstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">buildstamp</span> <span class="ruby-keyword kw">do</span> 
-                <span class="ruby-identifier">install</span>
-                <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">update_environment</span>(<span class="ruby-identifier">prefix</span>)
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 77</span>
+77:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+78:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span> <span class="ruby-identifier">srcdir</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span>
+79:                 <span class="ruby-identifier">pkg</span>.<span class="ruby-identifier">exclude</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;^#{Regexp.quote(builddir)}&quot;</span>)
+80:                 <span class="ruby-identifier">pkg</span>.<span class="ruby-identifier">exclude</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;^#{doc_dir}&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">doc_dir</span>
+81:             <span class="ruby-keyword kw">end</span>
+82: 
+83:             <span class="ruby-keyword kw">super</span>
+84: 
+85:             <span class="ruby-identifier">stamps</span> = <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pkg</span><span class="ruby-operator">|</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-identifier">pkg</span>].<span class="ruby-identifier">installstamp</span> }
+86:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">stamps</span> <span class="ruby-keyword kw">do</span>
+87:                 <span class="ruby-identifier">ensure_dependencies_installed</span>
+88:                 <span class="ruby-identifier">configure</span>
+89:             <span class="ruby-keyword kw">end</span>
+90:             <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{name}-prepare&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configurestamp</span>
+91: 
+92:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">buildstamp</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">configurestamp</span> ] <span class="ruby-keyword kw">do</span>
+93:                 <span class="ruby-identifier">ensure_dependencies_installed</span>
+94:                 <span class="ruby-identifier">build</span>
+95:             <span class="ruby-keyword kw">end</span>
+96:             <span class="ruby-identifier">task</span> <span class="ruby-node">&quot;#{name}-build&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">buildstamp</span>
+97: 
+98:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">installstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">buildstamp</span>
+99:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="prepare-for-forced-build-method" class="method-detail ">
-				<a name="M000019"></a>
+				<a name="method-i-prepare_for_forced_build"></a>
 
 				<div class="method-heading">
 				
@@ -684,28 +643,30 @@ Install the result in prefix
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="prepare-for-forced-build-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 53</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare_for_forced_build</span>
-            <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">buildstamp</span>
-            <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 59</span>
+59:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare_for_forced_build</span>
+60:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">buildstamp</span>
+61:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span>
+62:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>
 
 		
 			<div id="prepare-for-rebuild-method" class="method-detail ">
-				<a name="M000020"></a>
+				<a name="method-i-prepare_for_rebuild"></a>
 
 				<div class="method-heading">
 				
@@ -717,22 +678,25 @@ Install the result in prefix
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="prepare-for-rebuild-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 58</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare_for_rebuild</span>
-            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">builddir</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">srcdir</span>
-                <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">builddir</span>
-            <span class="ruby-keyword kw">end</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/configurable.rb, line 64</span>
+64:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare_for_rebuild</span>
+65:             <span class="ruby-identifier">prepare_for_forced_build</span>
+66:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">builddir</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">srcdir</span>
+67:                 <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">builddir</span>
+68:             <span class="ruby-keyword kw">end</span>
+69:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

@@ -22,6 +22,16 @@
 <body class="class">
 
 	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
 		<div id="file-metadata">
 			<div id="file-list-section" class="section">
 				<h3 class="section-header">In Files</h3>
@@ -59,7 +69,7 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#M000064">::new</a></li>
+					<li><a href="#method-c-new">::new</a></li>
 					
 				</ul>
 			</div>
@@ -103,6 +113,10 @@
 				
 					<li><a href="../../Autobuild.html">Autobuild</a></li>
 				
+					<li><a href="../../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
 					<li><a href="../../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
 				
 					<li><a href="../../Autobuild/CMake.html">Autobuild::CMake</a></li>
@@ -122,6 +136,12 @@
 					<li><a href="../../Autobuild/Exception.html">Autobuild::Exception</a></li>
 				
 					<li><a href="../../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
 					<li><a href="../../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
 				
@@ -164,8 +184,6 @@
 					<li><a href="../../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
 				
 					<li><a href="../../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
-				
-					<li><a href="../../Autobuild/TarImporter.html">Autobuild::TarImporter</a></li>
 				
 					<li><a href="../../PkgConfig.html">PkgConfig</a></li>
 				
@@ -328,7 +346,7 @@ and not in the remote one (would be pushed by an update)
 
 		
 			<div id="new-method" class="method-detail ">
-				<a name="M000064"></a>
+				<a name="method-c-new"></a>
 
 				<div class="method-heading">
 				
@@ -340,23 +358,25 @@ and not in the remote one (would be pushed by an update)
 
 				<div class="method-description">
 					
-					<p class="missing-docs">(Not documented)</p>
+					
 					
 
 					
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 32</span>
-        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
-            <span class="ruby-ivar">@status</span> = <span class="ruby-value">-1</span>
-            <span class="ruby-ivar">@uncommitted_code</span> = <span class="ruby-keyword kw">false</span>
-            <span class="ruby-ivar">@remote_commits</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
-            <span class="ruby-ivar">@local_commits</span>  = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
-        <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/importer.rb, line 33</span>
+33:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+34:             <span class="ruby-ivar">@status</span> = <span class="ruby-value">1</span>
+35:             <span class="ruby-ivar">@uncommitted_code</span> = <span class="ruby-keyword kw">false</span>
+36:             <span class="ruby-ivar">@remote_commits</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+37:             <span class="ruby-ivar">@local_commits</span>  = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+38:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
+
+				
 
 				
 			</div>

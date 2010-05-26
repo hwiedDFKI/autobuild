@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Autobuild::ArchiveImporter</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/autobuild/import/archive_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/autobuild/import/archive.rb">lib/autobuild/import/archive.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Importer.html">Autobuild::Importer</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-filename_to_mode">::filename_to_mode</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-archive_dir">#archive_dir</a></li>
+					
+					<li><a href="#method-i-cachedir">#cachedir</a></li>
+					
+					<li><a href="#method-i-tardir">#tardir</a></li>
+					
+					<li><a href="#method-i-update_cache">#update_cache</a></li>
+					
+					<li><a href="#method-i-update_cached_file%3F">#update_cached_file?</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../Changes_txt.html">Changes.txt</a></li>
+				
+					<li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+				
+					<li class="file"><a href="../README_txt.html">README.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Autobuild.html">Autobuild</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/ArchiveImporter.html">Autobuild::ArchiveImporter</a></li>
+				
+					<li><a href="../Autobuild/Autotools.html">Autobuild::Autotools</a></li>
+				
+					<li><a href="../Autobuild/CMake.html">Autobuild::CMake</a></li>
+				
+					<li><a href="../Autobuild/CVSImporter.html">Autobuild::CVSImporter</a></li>
+				
+					<li><a href="../Autobuild/CommandNotFound.html">Autobuild::CommandNotFound</a></li>
+				
+					<li><a href="../Autobuild/ConfigException.html">Autobuild::ConfigException</a></li>
+				
+					<li><a href="../Autobuild/Configurable.html">Autobuild::Configurable</a></li>
+				
+					<li><a href="../Autobuild/DarcsImporter.html">Autobuild::DarcsImporter</a></li>
+				
+					<li><a href="../Autobuild/DummyPackage.html">Autobuild::DummyPackage</a></li>
+				
+					<li><a href="../Autobuild/Exception.html">Autobuild::Exception</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment.html">Autobuild::FakeOrogenEnvironment</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/BlackHole.html">Autobuild::FakeOrogenEnvironment::BlackHole</a></li>
+				
+					<li><a href="../Autobuild/FakeOrogenEnvironment/FakeDeployment.html">Autobuild::FakeOrogenEnvironment::FakeDeployment</a></li>
+				
+					<li><a href="../Autobuild/GenomModule.html">Autobuild::GenomModule</a></li>
+				
+					<li><a href="../Autobuild/Git.html">Autobuild::Git</a></li>
+				
+					<li><a href="../Autobuild/Git/Status.html">Autobuild::Git::Status</a></li>
+				
+					<li><a href="../Autobuild/Importer.html">Autobuild::Importer</a></li>
+				
+					<li><a href="../Autobuild/Importer/Status.html">Autobuild::Importer::Status</a></li>
+				
+					<li><a href="../Autobuild/ImporterPackage.html">Autobuild::ImporterPackage</a></li>
+				
+					<li><a href="../Autobuild/InstalledPkgConfig.html">Autobuild::InstalledPkgConfig</a></li>
+				
+					<li><a href="../Autobuild/MailReporter.html">Autobuild::MailReporter</a></li>
+				
+					<li><a href="../Autobuild/Orogen.html">Autobuild::Orogen</a></li>
+				
+					<li><a href="../Autobuild/Package.html">Autobuild::Package</a></li>
+				
+					<li><a href="../Autobuild/PackageException.html">Autobuild::PackageException</a></li>
+				
+					<li><a href="../Autobuild/Reporter.html">Autobuild::Reporter</a></li>
+				
+					<li><a href="../Autobuild/Reporting.html">Autobuild::Reporting</a></li>
+				
+					<li><a href="../Autobuild/SVN.html">Autobuild::SVN</a></li>
+				
+					<li><a href="../Autobuild/SourceTreeTask.html">Autobuild::SourceTreeTask</a></li>
+				
+					<li><a href="../Autobuild/StdoutReporter.html">Autobuild::StdoutReporter</a></li>
+				
+					<li><a href="../Autobuild/SubcommandFailed.html">Autobuild::SubcommandFailed</a></li>
+				
+					<li><a href="../Autobuild/Subprocess.html">Autobuild::Subprocess</a></li>
+				
+					<li><a href="../Autobuild/Subprocess/Failed.html">Autobuild::Subprocess::Failed</a></li>
+				
+					<li><a href="../PkgConfig.html">PkgConfig</a></li>
+				
+					<li><a href="../PkgConfig/NotFound.html">PkgConfig::NotFound</a></li>
+				
+					<li><a href="../RMail.html">RMail</a></li>
+				
+					<li><a href="../RMail/Message.html">RMail::Message</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Autobuild::ArchiveImporter</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="Plain">Plain</a></dt>
+				
+				<dd class="description"><p>
+The tarball is not compressed
+</p></dd>
+				
+			
+				<dt><a name="Gzip">Gzip</a></dt>
+				
+				<dd class="description"><p>
+The tarball is compressed with gzip
+</p></dd>
+				
+			
+				<dt><a name="Bzip">Bzip</a></dt>
+				
+				<dd class="description"><p>
+The tarball is compressed using bzip
+</p></dd>
+				
+			
+				<dt><a name="Zip">Zip</a></dt>
+				
+				<dd class="description"><p>
+Not a tarball but a zip
+</p></dd>
+				
+			
+				<dt><a name="TAR_OPTION">TAR_OPTION</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="VALID_URI_SCHEMES">VALID_URI_SCHEMES</a></dt>
+				
+				<dd class="description"><p>
+Known URI schemes for <tt>url</tt>
+</p></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="url-attribute-method" class="method-detail">
+				<a name="url"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">url</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The source URL
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="cachefile-attribute-method" class="method-detail">
+				<a name="cachefile"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">cachefile</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The local file (either a downloaded file if <tt>url</tt> is not local, or
+<tt>url</tt> itself)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="mode-attribute-method" class="method-detail">
+				<a name="mode"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">mode</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The unpack mode. One of <a href="ArchiveImporter.html#Zip">Zip</a>, <a
+href="ArchiveImporter.html#Bzip">Bzip</a>, <a
+href="ArchiveImporter.html#Gzip">Gzip</a> or <a
+href="ArchiveImporter.html#Plain">Plain</a>
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="filename-to-mode-method" class="method-detail ">
+				<a name="method-c-filename_to_mode"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">filename_to_mode</span><span
+						class="method-args">(filename)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the unpack mode from the file name
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="filename-to-mode-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 26</span>
+26:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">filename_to_mode</span>(<span class="ruby-identifier">filename</span>)
+27:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">filename</span>
+28:                 <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\.zip$/</span>; <span class="ruby-constant">Zip</span>
+29:                 <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\.tar$/</span>; <span class="ruby-constant">Plain</span>
+30:                 <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\.tar\.gz$|\.tgz$/</span>;  <span class="ruby-constant">Gzip</span>
+31:                 <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\.bz2$/</span>; <span class="ruby-constant">Bzip</span>
+32:                 <span class="ruby-keyword kw">else</span>
+33:                     <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unknown file type '#{filename}'&quot;</span>
+34:             <span class="ruby-keyword kw">end</span>
+35:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(url, options)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates a new importer which downloads <tt>url</tt> in <tt>cachedir</tt>
+and unpacks it. The following options are allowed:
+</p>
+<dl>
+<dt>:cachedir</dt><dd><p>
+the cache directory. Defaults to &#8220;#{Autobuild.prefix}/cache&#8220;
+</p>
+</dd>
+<dt>:<a href="ArchiveImporter.html#method-i-archive_dir">archive_dir</a></dt><dd><p>
+the directory contained in the archive file. If set,
+</p>
+</dd>
+</dl>
+<pre>
+      the importer will rename that directory to make it match
+      Package#srcdir
+</pre>
+<dl>
+<dt>:no_subdirectory</dt><dd><p>
+the archive does not have the custom archive
+</p>
+</dd>
+</dl>
+<pre>
+      subdirectory.</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 105</span>
+105:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">options</span>)
+106:             <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>
+107:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:update_cached_file</span>)
+108:                 <span class="ruby-ivar">@options</span>[<span class="ruby-value">:update_cached_file</span>] = <span class="ruby-keyword kw">true</span>
+109:             <span class="ruby-keyword kw">end</span>
+110:             <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cachedir</span>] <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{Autobuild.prefix}/cache&quot;</span>
+111: 
+112:             <span class="ruby-ivar">@url</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">url</span>)
+113:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConfigException</span>, <span class="ruby-node">&quot;invalid URL #{@url}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">VALID_URI_SCHEMES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@url</span>.<span class="ruby-identifier">scheme</span>)
+114: 
+115:             <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:filename</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">url</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\?.*/</span>, <span class="ruby-value str">''</span>)
+116:             <span class="ruby-ivar">@mode</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:mode</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ArchiveImporter</span>.<span class="ruby-identifier">filename_to_mode</span>(<span class="ruby-identifier">filename</span>)
+117:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@url</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'file'</span>
+118:                 <span class="ruby-ivar">@cachefile</span> = <span class="ruby-ivar">@url</span>.<span class="ruby-identifier">path</span>
+119:             <span class="ruby-keyword kw">else</span>
+120:                 <span class="ruby-ivar">@cachefile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">cachedir</span>, <span class="ruby-identifier">filename</span>)
+121:             <span class="ruby-keyword kw">end</span>
+122:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="archive-dir-method" class="method-detail ">
+				<a name="method-i-archive_dir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">archive_dir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The directory contained in the archive. If not set, we assume that it is
+the same than the source dir
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="archive-dir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 95</span>
+95:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">archive_dir</span>; <span class="ruby-ivar">@options</span>[<span class="ruby-value">:archive_dir</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">tardir</span> <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="cachedir-method" class="method-detail ">
+				<a name="method-i-cachedir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cachedir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The directory in which remote files are cached
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="cachedir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 88</span>
+88:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cachedir</span>; <span class="ruby-ivar">@options</span>[<span class="ruby-value">:cachedir</span>] <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="tardir-method" class="method-detail ">
+				<a name="method-i-tardir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">tardir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The directory contained in the tar file
+</p>
+<p>
+DEPRECATED use <a href="ArchiveImporter.html#method-i-archive_dir">#</a>
+instead
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="tardir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 92</span>
+92:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tardir</span>; <span class="ruby-ivar">@options</span>[<span class="ruby-value">:tardir</span>] <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="update-cache-method" class="method-detail ">
+				<a name="method-i-update_cache"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">update_cache</span><span
+						class="method-args">(package)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Updates the downloaded file in cache only if it is needed
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="update-cache-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 40</span>
+40:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_cache</span>(<span class="ruby-identifier">package</span>)
+41:             <span class="ruby-identifier">do_update</span> = <span class="ruby-keyword kw">false</span>
+42: 
+43:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">cachefile</span>)
+44:                 <span class="ruby-identifier">do_update</span> = <span class="ruby-keyword kw">true</span>
+45:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">update_cached_file?</span>
+46:                 <span class="ruby-identifier">cached_size</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">lstat</span>(<span class="ruby-identifier">cachefile</span>).<span class="ruby-identifier">size</span>
+47:                 <span class="ruby-identifier">cached_mtime</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">lstat</span>(<span class="ruby-identifier">cachefile</span>).<span class="ruby-identifier">mtime</span>
+48: 
+49:                 <span class="ruby-identifier">size</span>, <span class="ruby-identifier">mtime</span> = <span class="ruby-keyword kw">nil</span>
+50:                 <span class="ruby-identifier">open</span> <span class="ruby-ivar">@url</span>, <span class="ruby-value">:content_length_proc</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">size</span><span class="ruby-operator">|</span> } <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> 
+51:                     <span class="ruby-identifier">mtime</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">last_modified</span>
+52:                 <span class="ruby-keyword kw">end</span>
+53: 
+54:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mtime</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">size</span>
+55:                     <span class="ruby-identifier">do_update</span> = (<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">cached_size</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">mtime</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cached_mtime</span>)
+56:                 <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">mtime</span>
+57:                     <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;WARNING: size is not available for #{@url}, relying on modification time&quot;</span>
+58:                     <span class="ruby-identifier">do_update</span> = (<span class="ruby-identifier">mtime</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cached_mtime</span>)
+59:                 <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">size</span>
+60:                     <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;WARNING: modification time is not available for #{@url}, relying on size&quot;</span>
+61:                     <span class="ruby-identifier">do_update</span> = (<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">cached_size</span>)
+62:                 <span class="ruby-keyword kw">else</span>
+63:                     <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;WARNING: neither size nor modification time available for #{@url}, will always update&quot;</span>
+64:                     <span class="ruby-identifier">do_update</span> = <span class="ruby-keyword kw">true</span>
+65:                 <span class="ruby-keyword kw">end</span>
+66:             <span class="ruby-keyword kw">end</span>
+67: 
+68:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">do_update</span>
+69:                 <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">cachedir</span>)
+70:                 <span class="ruby-keyword kw">begin</span>
+71:                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">package</span>, <span class="ruby-value">:import</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'wget'</span>), <span class="ruby-value str">'-q'</span>, <span class="ruby-value str">'-P'</span>, <span class="ruby-identifier">cachedir</span>, <span class="ruby-ivar">@url</span>, <span class="ruby-value str">'-O'</span>, <span class="ruby-node">&quot;#{cachefile}.partial&quot;</span>)
+72:                 <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span>
+73:                     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-node">&quot;#{cachefile}.partial&quot;</span>
+74:                     <span class="ruby-identifier">raise</span>
+75:                 <span class="ruby-keyword kw">end</span>
+76:                 <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mv</span> <span class="ruby-node">&quot;#{cachefile}.partial&quot;</span>, <span class="ruby-identifier">cachefile</span>
+77:                 <span class="ruby-keyword kw">true</span>
+78:             <span class="ruby-keyword kw">end</span>
+79:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="update-cached-file--method" class="method-detail ">
+				<a name="method-i-update_cached_file%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">update_cached_file?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="update-cached-file--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/import/archive.rb, line 37</span>
+37:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_cached_file?</span>; <span class="ruby-ivar">@options</span>[<span class="ruby-value">:update_cached_file</span>] <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
