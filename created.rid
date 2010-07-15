@@ -1,5 +1,5 @@
-Thu, 15 Jul 2010 18:29:48 +0200
-lib/autobuild.rb	Wed, 14 Jul 2010 14:48:32 +0200
+Thu, 15 Jul 2010 18:49:49 +0200
+lib/autobuild.rb	Thu, 15 Jul 2010 18:49:08 +0200
 lib/autobuild/packages/orogen.rb	Mon, 12 Jul 2010 15:11:58 +0200
 lib/autobuild/import/tar.rb	Thu, 10 Dec 2009 16:36:29 +0100
 lib/autobuild/package.rb	Fri, 21 May 2010 14:59:57 +0200
@@ -15,11 +15,11 @@ lib/autobuild/import/cvs.rb	Sun, 29 Nov 2009 18:54:18 +0100
 lib/autobuild/import/archive.rb	Fri, 05 Feb 2010 22:08:21 +0100
 lib/autobuild/packages/pkgconfig.rb	Sun, 20 Sep 2009 10:12:29 +0200
 README.txt	Sun, 25 Oct 2009 12:21:10 +0100
-lib/autobuild/timestamps.rb	Wed, 14 Jul 2010 14:34:42 +0200
+lib/autobuild/timestamps.rb	Thu, 15 Jul 2010 18:34:13 +0200
 lib/autobuild/environment.rb	Mon, 15 Feb 2010 16:07:48 +0100
 Manifest.txt	Wed, 23 Dec 2009 14:08:05 +0100
 lib/autobuild/packages/autotools.rb	Thu, 03 Jun 2010 14:27:21 +0200
-Changes.txt	Wed, 14 Jul 2010 14:48:24 +0200
+Changes.txt	Thu, 15 Jul 2010 18:48:51 +0200
 lib/autobuild/import/darcs.rb	Sun, 29 Nov 2009 18:54:18 +0100
 lib/autobuild/importer.rb	Fri, 23 Apr 2010 11:53:48 +0200
 lib/autobuild/packages/dummy.rb	Wed, 03 Feb 2010 09:46:59 +0100

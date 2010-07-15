@@ -1550,11 +1550,11 @@ True if we build and if the build is applied on all packages
 					<div class="method-source-code"
 						id="get-stamp-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 77</span>
-77:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_stamp</span>(<span class="ruby-identifier">stampfile</span>)
-78:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">stampfile</span>)
-79:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">stampfile</span>)
-80:     <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 83</span>
+83:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_stamp</span>(<span class="ruby-identifier">stampfile</span>)
+84:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">stampfile</span>)
+85:         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">stampfile</span>)
+86:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1623,17 +1623,17 @@ described in SVN.new.
 					<div class="method-source-code"
 						id="hires-modification-time--source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 82</span>
-82:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">hires_modification_time?</span>
-83:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hires_modification_time</span>.<span class="ruby-identifier">nil?</span>
-84:             <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">'test'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
-85:                 <span class="ruby-identifier">io</span>.<span class="ruby-identifier">flush</span>
-86:                 <span class="ruby-identifier">p_time</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">io</span>.<span class="ruby-identifier">path</span>)
-87:                 <span class="ruby-ivar">@hires_modification_time</span> = (<span class="ruby-identifier">p_time</span>.<span class="ruby-identifier">tv_usec</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>)
-88:             <span class="ruby-keyword kw">end</span>
-89:         <span class="ruby-keyword kw">end</span>
-90:         <span class="ruby-ivar">@hires_modification_time</span>
-91:     <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 88</span>
+88:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">hires_modification_time?</span>
+89:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hires_modification_time</span>.<span class="ruby-identifier">nil?</span>
+90:             <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-value str">'test'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+91:                 <span class="ruby-identifier">io</span>.<span class="ruby-identifier">flush</span>
+92:                 <span class="ruby-identifier">p_time</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">io</span>.<span class="ruby-identifier">path</span>)
+93:                 <span class="ruby-ivar">@hires_modification_time</span> = (<span class="ruby-identifier">p_time</span>.<span class="ruby-identifier">tv_usec</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>)
+94:             <span class="ruby-keyword kw">end</span>
+95:         <span class="ruby-keyword kw">end</span>
+96:         <span class="ruby-ivar">@hires_modification_time</span>
+97:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -2279,12 +2279,12 @@ string or a block, in which case the block must return the message string.
 					<div class="method-source-code"
 						id="source-tree-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 71</span>
-71:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">path</span>, &amp;<span class="ruby-identifier">block</span>)
-72:         <span class="ruby-identifier">task</span> = <span class="ruby-constant">SourceTreeTask</span>.<span class="ruby-identifier">define_task</span>(<span class="ruby-identifier">path</span>)
-73:         <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">task</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
-74:         <span class="ruby-identifier">task</span>
-75:     <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 77</span>
+77:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">path</span>, &amp;<span class="ruby-identifier">block</span>)
+78:         <span class="ruby-identifier">task</span> = <span class="ruby-constant">SourceTreeTask</span>.<span class="ruby-identifier">define_task</span>(<span class="ruby-identifier">path</span>)
+79:         <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">task</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-operator">!</span><span class="ruby-identifier">block</span>
+80:         <span class="ruby-identifier">task</span>
+81:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -2434,24 +2434,24 @@ another automake program in Autobuild.programs by doing
 					<div class="method-source-code"
 						id="touch-stamp-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 93</span>
- 93:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">stampfile</span>)
- 94:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Touching #{stampfile}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
- 95:         <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">stampfile</span>)
- 96:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>)
- 97:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;#{dir} exists and is not a directory&quot;</span>
- 98:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>)
- 99:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dir</span>
-100:         <span class="ruby-keyword kw">end</span>
-101:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">touch</span>(<span class="ruby-identifier">stampfile</span>)
-102: 
-103:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">hires_modification_time?</span>
-104:             <span class="ruby-comment cmt"># File modification times on most Unix filesystems have a granularity of</span>
-105:             <span class="ruby-comment cmt"># one second, so we (unfortunately) have to sleep 1s to make sure that</span>
-106:             <span class="ruby-comment cmt"># time comparisons will work as expected.</span>
-107:             <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
-108:         <span class="ruby-keyword kw">end</span>
-109:     <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 99</span>
+ 99:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">stampfile</span>)
+100:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Touching #{stampfile}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
+101:         <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">stampfile</span>)
+102:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>)
+103:             <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;#{dir} exists and is not a directory&quot;</span>
+104:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dir</span>)
+105:             <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dir</span>
+106:         <span class="ruby-keyword kw">end</span>
+107:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">touch</span>(<span class="ruby-identifier">stampfile</span>)
+108: 
+109:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">hires_modification_time?</span>
+110:             <span class="ruby-comment cmt"># File modification times on most Unix filesystems have a granularity of</span>
+111:             <span class="ruby-comment cmt"># one second, so we (unfortunately) have to sleep 1s to make sure that</span>
+112:             <span class="ruby-comment cmt"># time comparisons will work as expected.</span>
+113:             <span class="ruby-identifier">sleep</span>(<span class="ruby-value">1</span>)
+114:         <span class="ruby-keyword kw">end</span>
+115:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -2510,7 +2510,7 @@ another automake program in Autobuild.programs by doing
 54:         }
 55: 
 56:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  newest file: #{latest_file} at #{latest}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">debug</span>
-57:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">latest</span>
+57:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">latest_file</span>, <span class="ruby-identifier">latest</span>
 58:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
