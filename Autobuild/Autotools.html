@@ -392,30 +392,41 @@ href="Autotools.html#method-i-use">Autotools#use</a>
      <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 111</span>
 111:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
 112:             <span class="ruby-keyword kw">super</span>
-113: 
-114:             <span class="ruby-comment cmt"># Check if config.status has been generated with the</span>
-115:             <span class="ruby-comment cmt"># same options than the ones in configureflags</span>
-116:             <span class="ruby-comment cmt">#</span>
-117:             <span class="ruby-comment cmt"># If it is not the case, remove it to force reconfiguration</span>
-118:             <span class="ruby-identifier">configureflags</span>.<span class="ruby-identifier">flatten!</span>
-119:             <span class="ruby-identifier">force_reconfigure</span> = <span class="ruby-keyword kw">false</span>
-120:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">configurestamp</span>)
-121:                 <span class="ruby-identifier">output</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">&quot;#{configurestamp} --version&quot;</span>).<span class="ruby-identifier">readlines</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp re">/with options/</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">chomp</span>
-122:                 <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;invalid output of config.status --version&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/with options &quot;(.*)&quot;$/</span>
-123:                 <span class="ruby-identifier">options</span> = <span class="ruby-constant">Shellwords</span>.<span class="ruby-identifier">shellwords</span>(<span class="ruby-node">$1</span>)
-124: 
-125:                 <span class="ruby-comment cmt"># Add the --prefix option to the configureflags array</span>
-126:                 <span class="ruby-identifier">testflags</span> = [<span class="ruby-node">&quot;--prefix=#{prefix}&quot;</span>] <span class="ruby-operator">+</span> <span class="ruby-constant">Array</span>[*<span class="ruby-identifier">configureflags</span>]
-127:                 <span class="ruby-identifier">old_opt</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">find</span>   { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">testflags</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>) }
-128:                 <span class="ruby-identifier">new_opt</span> = <span class="ruby-identifier">testflags</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>) }
-129:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old_opt</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new_opt</span>
-130:                     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span> <span class="ruby-comment cmt"># to force reconfiguration</span>
-131:                 <span class="ruby-keyword kw">end</span>
-132:             <span class="ruby-keyword kw">end</span>
-133: 
-134:             <span class="ruby-identifier">regen_target</span> = <span class="ruby-identifier">create_regen_target</span>
-135:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">regen_target</span>
-136:         <span class="ruby-keyword kw">end</span></pre>
+113:             <span class="ruby-identifier">autodetect_needed_stages</span>
+114: 
+115:             <span class="ruby-comment cmt"># Check if config.status has been generated with the</span>
+116:             <span class="ruby-comment cmt"># same options than the ones in configureflags</span>
+117:             <span class="ruby-comment cmt">#</span>
+118:             <span class="ruby-comment cmt"># If it is not the case, remove it to force reconfiguration</span>
+119:             <span class="ruby-identifier">configureflags</span>.<span class="ruby-identifier">flatten!</span>
+120:             <span class="ruby-identifier">force_reconfigure</span> = <span class="ruby-keyword kw">false</span>
+121:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">configurestamp</span>)
+122:                 <span class="ruby-identifier">output</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">&quot;#{configurestamp} --version&quot;</span>).<span class="ruby-identifier">readlines</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp re">/with options/</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">chomp</span>
+123:                 <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;invalid output of config.status --version&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/with options &quot;(.*)&quot;$/</span>
+124:                 <span class="ruby-identifier">options</span> = <span class="ruby-constant">Shellwords</span>.<span class="ruby-identifier">shellwords</span>(<span class="ruby-node">$1</span>)
+125: 
+126:                 <span class="ruby-comment cmt"># Add the --prefix option to the configureflags array</span>
+127:                 <span class="ruby-identifier">testflags</span> = [<span class="ruby-node">&quot;--prefix=#{prefix}&quot;</span>] <span class="ruby-operator">+</span> <span class="ruby-constant">Array</span>[*<span class="ruby-identifier">configureflags</span>]
+128:                 <span class="ruby-identifier">old_opt</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+129:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">testflags</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>)
+130:                         <span class="ruby-keyword kw">false</span>
+131:                     <span class="ruby-keyword kw">else</span>
+132:                         <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-identifier">o</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;=&quot;</span>)
+133:                         <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">!=</span> <span class="ruby-identifier">value</span>
+134:                     <span class="ruby-keyword kw">end</span>
+135:                 <span class="ruby-keyword kw">end</span>
+136:                 <span class="ruby-identifier">new_opt</span> = <span class="ruby-identifier">testflags</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">o</span>) }
+137:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old_opt</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">new_opt</span>
+138:                     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
+139:                         <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  forcing reconfiguration of #{name} (#{old_opt} != #{new_opt})&quot;</span>
+140:                     <span class="ruby-keyword kw">end</span>
+141:                     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-identifier">configurestamp</span> <span class="ruby-comment cmt"># to force reconfiguration</span>
+142:                 <span class="ruby-keyword kw">end</span>
+143:             <span class="ruby-keyword kw">end</span>
+144: 
+145:             <span class="ruby-identifier">regen_target</span> = <span class="ruby-identifier">create_regen_target</span>
+146:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">regen_target</span>
+147:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -651,26 +662,26 @@ Declare that the given target can be used to generate documentation
 					<div class="method-source-code"
 						id="autodetect-needed-stages-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 139</span>
-139:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">autodetect_needed_stages</span>
-140:             <span class="ruby-comment cmt"># Autodetect autoconf/aclocal/automake</span>
-141:             <span class="ruby-comment cmt">#</span>
-142:             <span class="ruby-comment cmt"># Let the user disable the use of autoconf explicitely by using 'false'.</span>
-143:             <span class="ruby-comment cmt"># 'nil' means autodetection</span>
-144:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:autoconf</span>].<span class="ruby-identifier">nil?</span>
-145:                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.in'</span>)) <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.ac'</span>))
-146:                     <span class="ruby-identifier">using</span>[<span class="ruby-value">:autoconf</span>] = <span class="ruby-keyword kw">true</span> 
-147:                 <span class="ruby-keyword kw">end</span>
-148:             <span class="ruby-keyword kw">end</span>
-149:             <span class="ruby-identifier">using</span>[<span class="ruby-value">:aclocal</span>] = <span class="ruby-identifier">using</span>[<span class="ruby-value">:autoconf</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:aclocal</span>].<span class="ruby-identifier">nil?</span>
-150:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:automake</span>].<span class="ruby-identifier">nil?</span>
-151:                 <span class="ruby-identifier">using</span>[<span class="ruby-value">:automake</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'Makefile.am'</span>))
-152:             <span class="ruby-keyword kw">end</span>
-153: 
-154:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:libtool</span>].<span class="ruby-identifier">nil?</span>
-155:                 <span class="ruby-identifier">using</span>[<span class="ruby-value">:libtool</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'ltmain.sh'</span>))
-156:             <span class="ruby-keyword kw">end</span>
-157:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 150</span>
+150:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">autodetect_needed_stages</span>
+151:             <span class="ruby-comment cmt"># Autodetect autoconf/aclocal/automake</span>
+152:             <span class="ruby-comment cmt">#</span>
+153:             <span class="ruby-comment cmt"># Let the user disable the use of autoconf explicitely by using 'false'.</span>
+154:             <span class="ruby-comment cmt"># 'nil' means autodetection</span>
+155:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:autoconf</span>].<span class="ruby-identifier">nil?</span>
+156:                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.in'</span>)) <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'configure.ac'</span>))
+157:                     <span class="ruby-identifier">using</span>[<span class="ruby-value">:autoconf</span>] = <span class="ruby-keyword kw">true</span> 
+158:                 <span class="ruby-keyword kw">end</span>
+159:             <span class="ruby-keyword kw">end</span>
+160:             <span class="ruby-identifier">using</span>[<span class="ruby-value">:aclocal</span>] = <span class="ruby-identifier">using</span>[<span class="ruby-value">:autoconf</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:aclocal</span>].<span class="ruby-identifier">nil?</span>
+161:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:automake</span>].<span class="ruby-identifier">nil?</span>
+162:                 <span class="ruby-identifier">using</span>[<span class="ruby-value">:automake</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'Makefile.am'</span>))
+163:             <span class="ruby-keyword kw">end</span>
+164: 
+165:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:libtool</span>].<span class="ruby-identifier">nil?</span>
+166:                 <span class="ruby-identifier">using</span>[<span class="ruby-value">:libtool</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'ltmain.sh'</span>))
+167:             <span class="ruby-keyword kw">end</span>
+168:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -703,15 +714,15 @@ Do the build in builddir
 					<div class="method-source-code"
 						id="build-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 216</span>
-216:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
-217:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
-218:                 <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;building %s [progress not available]&quot;</span>
-219:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-value str">'./config.status'</span>)
-220:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>)
-221:             <span class="ruby-keyword kw">end</span>
-222:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">buildstamp</span>)
-223:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 227</span>
+227:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build</span>
+228:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
+229:                 <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;building %s [progress not available]&quot;</span>
+230:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-value str">'./config.status'</span>)
+231:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'build'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>)
+232:             <span class="ruby-keyword kw">end</span>
+233:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span>(<span class="ruby-identifier">buildstamp</span>)
+234:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -744,18 +755,18 @@ Configure the builddir directory before starting make
 					<div class="method-source-code"
 						id="configure-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 203</span>
-203:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
-204:             <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">do</span>
-205:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
-206:                     <span class="ruby-identifier">command</span> = [ <span class="ruby-node">&quot;#{srcdir}/configure&quot;</span>, <span class="ruby-value str">&quot;--no-create&quot;</span>, <span class="ruby-node">&quot;--prefix=#{prefix}&quot;</span> ]
-207:                     <span class="ruby-identifier">command</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Array</span>[*<span class="ruby-identifier">configureflags</span>]
-208:                     
-209:                     <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;configuring build system for %s&quot;</span>
-210:                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, *<span class="ruby-identifier">command</span>)
-211:                 <span class="ruby-keyword kw">end</span>
-212:             <span class="ruby-keyword kw">end</span>
-213:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 214</span>
+214:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure</span>
+215:             <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">do</span>
+216:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
+217:                     <span class="ruby-identifier">command</span> = [ <span class="ruby-node">&quot;#{srcdir}/configure&quot;</span>, <span class="ruby-value str">&quot;--no-create&quot;</span>, <span class="ruby-node">&quot;--prefix=#{prefix}&quot;</span> ]
+218:                     <span class="ruby-identifier">command</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">Array</span>[*<span class="ruby-identifier">configureflags</span>]
+219:                     
+220:                     <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;configuring build system for %s&quot;</span>
+221:                     <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, *<span class="ruby-identifier">command</span>)
+222:                 <span class="ruby-keyword kw">end</span>
+223:             <span class="ruby-keyword kw">end</span>
+224:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -788,48 +799,48 @@ Adds a target to rebuild the autotools environment
 					<div class="method-source-code"
 						id="create-regen-target-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 160</span>
-160:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_regen_target</span>(<span class="ruby-identifier">confsource</span> = <span class="ruby-keyword kw">nil</span>)
-161:             <span class="ruby-identifier">conffile</span> = <span class="ruby-node">&quot;#{srcdir}/configure&quot;</span>
-162:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">confsource</span>
-163:                 <span class="ruby-identifier">file</span> <span class="ruby-identifier">conffile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">confsource</span>
-164:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">confext</span> = <span class="ruby-node">%{.ac .in}</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-node">&quot;#{conffile}#{ext}&quot;</span>) }
-165:                 <span class="ruby-identifier">file</span> <span class="ruby-identifier">conffile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{conffile}#{confext}&quot;</span>
-166:             <span class="ruby-keyword kw">else</span>
-167:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">PackageException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>), <span class="ruby-node">&quot;neither configure.ac nor configure.in present in #{srcdir}&quot;</span>
-168:             <span class="ruby-keyword kw">end</span>
-169: 
-170:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">conffile</span> <span class="ruby-keyword kw">do</span>
-171:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-172:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>].<span class="ruby-identifier">nil?</span>
-173:                         <span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>] = <span class="ruby-node">%{autogen autogen.sh}</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">f</span>) }
-174:                     <span class="ruby-keyword kw">end</span>
-175: 
-176:                     <span class="ruby-identifier">autodetect_needed_stages</span>
-177: 
-178:                     <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating build system for %s&quot;</span>
-179:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:libtool</span>]
-180:                         <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'libtoolize'</span>), <span class="ruby-value str">'--copy'</span>)
-181:                     <span class="ruby-keyword kw">end</span>
-182:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>]
-183:                         <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>]))
-184:                     <span class="ruby-keyword kw">else</span>
-185:                         [ <span class="ruby-value">:aclocal</span>, <span class="ruby-value">:autoconf</span>, <span class="ruby-value">:autoheader</span>, <span class="ruby-value">:automake</span> ].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tool</span><span class="ruby-operator">|</span>
-186:                             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tool_flag</span> = <span class="ruby-identifier">using</span>[<span class="ruby-identifier">tool</span>]
-187:                                 <span class="ruby-identifier">tool_program</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tool_flag</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
-188:                                                    <span class="ruby-identifier">tool_flag</span>.<span class="ruby-identifier">to_str</span>
-189:                                                <span class="ruby-keyword kw">else</span>; <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">tool</span>)
-190:                                                <span class="ruby-keyword kw">end</span>
-191: 
-192:                                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-identifier">tool_program</span>)
-193:                             <span class="ruby-keyword kw">end</span>
-194:                         <span class="ruby-keyword kw">end</span>
-195:                     <span class="ruby-keyword kw">end</span>
-196:                 <span class="ruby-keyword kw">end</span>
-197:             <span class="ruby-keyword kw">end</span>
-198: 
-199:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">conffile</span>
-200:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 171</span>
+171:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_regen_target</span>(<span class="ruby-identifier">confsource</span> = <span class="ruby-keyword kw">nil</span>)
+172:             <span class="ruby-identifier">conffile</span> = <span class="ruby-node">&quot;#{srcdir}/configure&quot;</span>
+173:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">confsource</span>
+174:                 <span class="ruby-identifier">file</span> <span class="ruby-identifier">conffile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">confsource</span>
+175:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">confext</span> = <span class="ruby-node">%{.ac .in}</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-node">&quot;#{conffile}#{ext}&quot;</span>) }
+176:                 <span class="ruby-identifier">file</span> <span class="ruby-identifier">conffile</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{conffile}#{confext}&quot;</span>
+177:             <span class="ruby-keyword kw">else</span>
+178:                 <span class="ruby-identifier">raise</span> <span class="ruby-constant">PackageException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>), <span class="ruby-node">&quot;neither configure.ac nor configure.in present in #{srcdir}&quot;</span>
+179:             <span class="ruby-keyword kw">end</span>
+180: 
+181:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">conffile</span> <span class="ruby-keyword kw">do</span>
+182:                 <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
+183:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>].<span class="ruby-identifier">nil?</span>
+184:                         <span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>] = <span class="ruby-node">%{autogen autogen.sh}</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">f</span>) }
+185:                     <span class="ruby-keyword kw">end</span>
+186: 
+187:                     <span class="ruby-identifier">autodetect_needed_stages</span>
+188: 
+189:                     <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating build system for %s&quot;</span>
+190:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:libtool</span>]
+191:                         <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'libtoolize'</span>), <span class="ruby-value str">'--copy'</span>)
+192:                     <span class="ruby-keyword kw">end</span>
+193:                     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>]
+194:                         <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">using</span>[<span class="ruby-value">:autogen</span>]))
+195:                     <span class="ruby-keyword kw">else</span>
+196:                         [ <span class="ruby-value">:aclocal</span>, <span class="ruby-value">:autoconf</span>, <span class="ruby-value">:autoheader</span>, <span class="ruby-value">:automake</span> ].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tool</span><span class="ruby-operator">|</span>
+197:                             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tool_flag</span> = <span class="ruby-identifier">using</span>[<span class="ruby-identifier">tool</span>]
+198:                                 <span class="ruby-identifier">tool_program</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">tool_flag</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_str</span>)
+199:                                                    <span class="ruby-identifier">tool_flag</span>.<span class="ruby-identifier">to_str</span>
+200:                                                <span class="ruby-keyword kw">else</span>; <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-identifier">tool</span>)
+201:                                                <span class="ruby-keyword kw">end</span>
+202: 
+203:                                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'configure'</span>, <span class="ruby-identifier">tool_program</span>)
+204:                             <span class="ruby-keyword kw">end</span>
+205:                         <span class="ruby-keyword kw">end</span>
+206:                     <span class="ruby-keyword kw">end</span>
+207:                 <span class="ruby-keyword kw">end</span>
+208:             <span class="ruby-keyword kw">end</span>
+209: 
+210:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">conffile</span>
+211:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -862,15 +873,15 @@ Install the result in prefix
 					<div class="method-source-code"
 						id="install-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 226</span>
-226:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
-227:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
-228:                 <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;installing %s&quot;</span>
-229:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'install'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-value str">'install'</span>)
-230:             <span class="ruby-keyword kw">end</span>
-231: 
-232:             <span class="ruby-keyword kw">super</span>
-233:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/autotools.rb, line 237</span>
+237:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install</span>
+238:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">builddir</span>) <span class="ruby-keyword kw">do</span>
+239:                 <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;installing %s&quot;</span>
+240:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'install'</span>, <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value">:make</span>), <span class="ruby-node">&quot;-j#{parallel_build_level}&quot;</span>, <span class="ruby-value str">'install'</span>)
+241:             <span class="ruby-keyword kw">end</span>
+242: 
+243:             <span class="ruby-keyword kw">super</span>
+244:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

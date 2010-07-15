@@ -6,7 +6,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>File: Changes.txt [autobuild-1.5.9 Documentation]</title>
+	<title>File: Changes.txt [autobuild-1.5.17 Documentation]</title>
 
 	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
 
@@ -157,7 +157,68 @@
 	</div>
 
 	<div id="documentation">
-		<h2>Version 1.5.9</h2>
+		<h2>Version 1.5.17</h2>
+<ul>
+<li><p>
+add a way to specify global ignores for listing files in source directories
+</p>
+</li>
+</ul>
+<h2>Version 1.5.16</h2>
+<ul>
+<li><p>
+update the TYPELIB_RUBY_PLUGIN_PATH and OROCOS_ROBY_PLUGIN_PATH environment
+variables, as oroGen now installs plugin files from the oroGen project into
+these directories
+</p>
+</li>
+</ul>
+<h2>Version 1.5.15</h2>
+<ul>
+<li><p>
+display a message when git switches branches
+</p>
+</li>
+</ul>
+<h2>Version 1.5.14</h2>
+<ul>
+<li><p>
+fix Ruby 1.9 rejecting some git logs if they have a weird encoding
+</p>
+</li>
+</ul>
+<h2>Version 1.5.13</h2>
+<ul>
+<li><p>
+fix error messages in the oroGen packages, when the loaded oroGen file has
+an error
+</p>
+</li>
+</ul>
+<h2>Version 1.5.12</h2>
+<ul>
+<li><p>
+fix exception when git logs contain non-ASCII characters on Ruby 1.9
+version compiled with another default encoding than UTF-8 (!)
+</p>
+</li>
+</ul>
+<h2>Version 1.5.11</h2>
+<ul>
+<li><p>
+don&#8217;t sleep unnecessarily on filesystems that have sub-second
+modification time resolutions. This speeds up builds.
+</p>
+</li>
+</ul>
+<h2>Version 1.5.10</h2>
+<ul>
+<li><p>
+avoid unnecessary reconfigurations in the autotools handler
+</p>
+</li>
+</ul>
+<h2>Version 1.5.9</h2>
 <ul>
 <li><p>
 small fixes
@@ -969,9 +1030,9 @@ added the &#8212;[no-]build option to do only import
 changed behaviour for mail reports:
 </p>
 <pre>
-  * set sensible default options for mail
-  * mail: true uses default options
-  * mail: &lt;string&gt; is equivalent to
+  - set sensible default options for mail
+  - mail: true uses default options
+  - mail: &lt;string&gt; is equivalent to
       mail:
           to: &lt;string&gt;
 </pre>

@@ -267,11 +267,11 @@
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 41</span>
-41:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
-42:             <span class="ruby-ivar">@exclude</span> = []
-43:             <span class="ruby-keyword kw">super</span>
-44:         <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 62</span>
+62:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+63:             <span class="ruby-ivar">@exclude</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">ignored_files</span>.<span class="ruby-identifier">dup</span>
+64:             <span class="ruby-keyword kw">super</span>
+65:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -308,10 +308,10 @@
 					<div class="method-source-code"
 						id="timestamp-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 46</span>
-46:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">timestamp</span>
-47:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tree_timestamp</span>(<span class="ruby-identifier">name</span>, <span class="ruby-regexp re">%(?:^|/)(?:CVS|_darcs|\.svn)$#</span>, *<span class="ruby-ivar">@exclude</span>)
-48:         <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/timestamps.rb, line 67</span>
+67:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">timestamp</span>
+68:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tree_timestamp</span>(<span class="ruby-identifier">name</span>, <span class="ruby-regexp re">%(?:^|/)(?:CVS|_darcs|\.svn)$#</span>, *<span class="ruby-ivar">@exclude</span>)
+69:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

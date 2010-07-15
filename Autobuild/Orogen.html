@@ -416,10 +416,10 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="dependency-mapper-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 178</span>
-178:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dependency_mapper</span>
-179:             <span class="ruby-ivar">@dependency_mapper</span>
-180:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 192</span>
+192:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dependency_mapper</span>
+193:             <span class="ruby-ivar">@dependency_mapper</span>
+194:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -450,10 +450,10 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="map-dependencies-with-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 175</span>
-175:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">map_dependencies_with</span>(&amp;<span class="ruby-identifier">block</span>)
-176:             <span class="ruby-ivar">@dependency_mapper</span> = <span class="ruby-identifier">block</span>
-177:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 189</span>
+189:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">map_dependencies_with</span>(&amp;<span class="ruby-identifier">block</span>)
+190:             <span class="ruby-ivar">@dependency_mapper</span> = <span class="ruby-identifier">block</span>
+191:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -484,13 +484,13 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 204</span>
-204:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">config</span>)
-205:             <span class="ruby-keyword kw">super</span>
-206: 
-207:             <span class="ruby-ivar">@orocos_target</span> = <span class="ruby-keyword kw">nil</span>
-208:             <span class="ruby-ivar">@orogen_file</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{File.basename(name)}.orogen&quot;</span>
-209:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 218</span>
+218:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">config</span>)
+219:             <span class="ruby-keyword kw">super</span>
+220: 
+221:             <span class="ruby-ivar">@orocos_target</span> = <span class="ruby-keyword kw">nil</span>
+222:             <span class="ruby-ivar">@orogen_file</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{File.basename(name)}.orogen&quot;</span>
+223:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -521,17 +521,17 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="orocos-target-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 143</span>
-143:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orocos_target</span>
-144:             <span class="ruby-identifier">user_target</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'OROCOS_TARGET'</span>]
-145:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orocos_target</span>
-146:                 <span class="ruby-ivar">@orocos_target</span>.<span class="ruby-identifier">dup</span>
-147:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">user_target</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">user_target</span>.<span class="ruby-identifier">empty?</span>
-148:                 <span class="ruby-identifier">user_target</span>
-149:             <span class="ruby-keyword kw">else</span>
-150:                 <span class="ruby-value str">'gnulinux'</span>
-151:             <span class="ruby-keyword kw">end</span>
-152:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 157</span>
+157:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orocos_target</span>
+158:             <span class="ruby-identifier">user_target</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'OROCOS_TARGET'</span>]
+159:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orocos_target</span>
+160:                 <span class="ruby-ivar">@orocos_target</span>.<span class="ruby-identifier">dup</span>
+161:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">user_target</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">user_target</span>.<span class="ruby-identifier">empty?</span>
+162:                 <span class="ruby-identifier">user_target</span>
+163:             <span class="ruby-keyword kw">else</span>
+164:                 <span class="ruby-value str">'gnulinux'</span>
+165:             <span class="ruby-keyword kw">end</span>
+166:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -562,19 +562,19 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="orogen-bin-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 154</span>
-154:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen_bin</span>
-155:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orogen_bin</span>
-156:                 <span class="ruby-ivar">@orogen_bin</span>
-157:             <span class="ruby-keyword kw">else</span>
-158:                 <span class="ruby-identifier">program_name</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'orogen'</span>)
-159:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">orogen_path</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'PATH'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>).<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">p</span>, <span class="ruby-identifier">program_name</span>)) }
-160:                     <span class="ruby-ivar">@orogen_bin</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_path</span>, <span class="ruby-identifier">program_name</span>)
-161:                 <span class="ruby-keyword kw">else</span>
-162:                     <span class="ruby-identifier">program_name</span>
-163:                 <span class="ruby-keyword kw">end</span>
-164:             <span class="ruby-keyword kw">end</span>
-165:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 168</span>
+168:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen_bin</span>
+169:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orogen_bin</span>
+170:                 <span class="ruby-ivar">@orogen_bin</span>
+171:             <span class="ruby-keyword kw">else</span>
+172:                 <span class="ruby-identifier">program_name</span> = <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'orogen'</span>)
+173:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">orogen_path</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'PATH'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">':'</span>).<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">p</span>, <span class="ruby-identifier">program_name</span>)) }
+174:                     <span class="ruby-ivar">@orogen_bin</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_path</span>, <span class="ruby-identifier">program_name</span>)
+175:                 <span class="ruby-keyword kw">else</span>
+176:                     <span class="ruby-identifier">program_name</span>
+177:                 <span class="ruby-keyword kw">end</span>
+178:             <span class="ruby-keyword kw">end</span>
+179:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -605,14 +605,14 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="orogen-root-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 167</span>
-167:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen_root</span>
-168:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orogen_root</span>
-169:                 <span class="ruby-ivar">@orogen_root</span>
-170:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">orogen_bin</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen_bin</span>
-171:                 <span class="ruby-ivar">@orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'../lib'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">orogen_bin</span>))
-172:             <span class="ruby-keyword kw">end</span>
-173:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 181</span>
+181:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen_root</span>
+182:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orogen_root</span>
+183:                 <span class="ruby-ivar">@orogen_root</span>
+184:             <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">orogen_bin</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">orogen_bin</span>
+185:                 <span class="ruby-ivar">@orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'../lib'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">orogen_bin</span>))
+186:             <span class="ruby-keyword kw">end</span>
+187:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -649,10 +649,10 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="corba-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 194</span>
-194:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">corba</span>
-195:             <span class="ruby-ivar">@corba</span> <span class="ruby-operator">||</span> (<span class="ruby-ivar">@corba</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">corba</span>)
-196:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 208</span>
+208:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">corba</span>
+209:             <span class="ruby-ivar">@corba</span> <span class="ruby-operator">||</span> (<span class="ruby-ivar">@corba</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">corba</span>)
+210:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -683,10 +683,10 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="extended-states-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 199</span>
-199:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extended_states</span>
-200:             <span class="ruby-ivar">@extended_states</span> <span class="ruby-operator">||</span> (<span class="ruby-ivar">@extended_states</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">extended_states</span>)
-201:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 213</span>
+213:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extended_states</span>
+214:             <span class="ruby-ivar">@extended_states</span> <span class="ruby-operator">||</span> (<span class="ruby-ivar">@extended_states</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">extended_states</span>)
+215:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -717,8 +717,8 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="genstamp-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 269</span>
-269:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genstamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.orogen'</span>, <span class="ruby-value str">'orogen-stamp'</span>) <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 286</span>
+286:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">genstamp</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-value str">'.orogen'</span>, <span class="ruby-value str">'orogen-stamp'</span>) <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -749,15 +749,15 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="guess-ruby-name-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 271</span>
-271:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">guess_ruby_name</span>
-272:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">programs</span>[<span class="ruby-value str">'ruby'</span>]
-273:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'ruby'</span>)
-274:             <span class="ruby-keyword kw">else</span>
-275:                 <span class="ruby-identifier">ruby_bin</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'RUBY_INSTALL_NAME'</span>]
-276:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">programs</span>[<span class="ruby-value str">'ruby'</span>] = <span class="ruby-identifier">ruby_bin</span>
-277:             <span class="ruby-keyword kw">end</span>
-278:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 288</span>
+288:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">guess_ruby_name</span>
+289:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">programs</span>[<span class="ruby-value str">'ruby'</span>]
+290:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">tool</span>(<span class="ruby-value str">'ruby'</span>)
+291:             <span class="ruby-keyword kw">else</span>
+292:                 <span class="ruby-identifier">ruby_bin</span> = <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-value str">'RUBY_INSTALL_NAME'</span>]
+293:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">programs</span>[<span class="ruby-value str">'ruby'</span>] = <span class="ruby-identifier">ruby_bin</span>
+294:             <span class="ruby-keyword kw">end</span>
+295:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -788,17 +788,20 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="import-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 211</span>
-211:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
-212:             <span class="ruby-keyword kw">super</span>
-213: 
-214:             <span class="ruby-ivar">@orogen_spec</span> = <span class="ruby-constant">FakeOrogenEnvironment</span>.<span class="ruby-identifier">load</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">orogen_file</span>))
-215:             <span class="ruby-identifier">provides</span> <span class="ruby-node">&quot;pkgconfig/#{orogen_spec.project_name}-toolkit-#{orocos_target}&quot;</span>
-216:             <span class="ruby-identifier">provides</span> <span class="ruby-node">&quot;pkgconfig/#{orogen_spec.project_name}-tasks-#{orocos_target}&quot;</span>
-217:             <span class="ruby-identifier">orogen_spec</span>.<span class="ruby-identifier">provides</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
-218:                 <span class="ruby-identifier">provides</span> <span class="ruby-identifier">name</span>
-219:             <span class="ruby-keyword kw">end</span>
-220:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 225</span>
+225:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
+226:             <span class="ruby-keyword kw">super</span>
+227: 
+228:             <span class="ruby-ivar">@orogen_spec</span> = <span class="ruby-constant">FakeOrogenEnvironment</span>.<span class="ruby-identifier">load</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">orogen_file</span>))
+229:             <span class="ruby-identifier">provides</span> <span class="ruby-node">&quot;pkgconfig/#{orogen_spec.project_name}-toolkit-#{orocos_target}&quot;</span>
+230:             <span class="ruby-identifier">provides</span> <span class="ruby-node">&quot;pkgconfig/#{orogen_spec.project_name}-tasks-#{orocos_target}&quot;</span>
+231:             <span class="ruby-identifier">orogen_spec</span>.<span class="ruby-identifier">provides</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+232:                 <span class="ruby-identifier">provides</span> <span class="ruby-identifier">name</span>
+233:             <span class="ruby-keyword kw">end</span>
+234: 
+235:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">env_add_path</span> <span class="ruby-value str">'TYPELIB_RUBY_PLUGIN_PATH'</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">'share'</span>, <span class="ruby-value str">'typelib'</span>, <span class="ruby-value str">'ruby'</span>)
+236:             <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">env_add_path</span> <span class="ruby-value str">'OROCOS_ROBY_PLUGIN_PATH'</span>,  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">prefix</span>, <span class="ruby-value str">'share'</span>, <span class="ruby-value str">'orocos'</span>, <span class="ruby-value str">'roby'</span>)
+237:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -829,14 +832,14 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="orocos-target-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 183</span>
-183:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">orocos_target</span>
-184:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orocos_target</span>.<span class="ruby-identifier">nil?</span>
-185:                 <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">orocos_target</span>
-186:             <span class="ruby-keyword kw">else</span>
-187:                 <span class="ruby-ivar">@orocos_target</span>
-188:             <span class="ruby-keyword kw">end</span>
-189:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 197</span>
+197:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">orocos_target</span>
+198:             <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@orocos_target</span>.<span class="ruby-identifier">nil?</span>
+199:                 <span class="ruby-constant">Orogen</span>.<span class="ruby-identifier">orocos_target</span>
+200:             <span class="ruby-keyword kw">else</span>
+201:                 <span class="ruby-ivar">@orocos_target</span>
+202:             <span class="ruby-keyword kw">end</span>
+203:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -867,54 +870,54 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="prepare-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 222</span>
-222:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
-223:             <span class="ruby-comment cmt"># Check if someone provides the pkgconfig/orocos-rtt-TARGET package,</span>
-224:             <span class="ruby-comment cmt"># and if so add it into our dependency list</span>
-225:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rtt</span> = <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-node">&quot;pkgconfig/orocos-rtt-#{orocos_target}&quot;</span>]
-226:                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
-227:                     <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;orogen: found #{rtt.name} which provides the RTT&quot;</span>
-228:                 <span class="ruby-keyword kw">end</span>
-229:                 <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">rtt</span>.<span class="ruby-identifier">name</span>
-230:             <span class="ruby-keyword kw">end</span>
-231: 
-232:             <span class="ruby-comment cmt"># If required, load the component's specification and add</span>
-233:             <span class="ruby-comment cmt"># dependencies based on the orogen specification.</span>
-234:             <span class="ruby-identifier">orogen_spec</span>.<span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg_name</span><span class="ruby-operator">|</span>
-235:                 <span class="ruby-identifier">target</span> = <span class="ruby-node">&quot;pkgconfig/#{pkg_name}&quot;</span>
-236:                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-identifier">target</span>]
-237:                     <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">target</span>
-238:                 <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">dependency_mapper</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">target</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">dependency_mapper</span>[<span class="ruby-identifier">pkg_name</span>]
-239:                     <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">target</span>
-240:                 <span class="ruby-keyword kw">end</span>
-241:             <span class="ruby-keyword kw">end</span>
-242: 
-243:             <span class="ruby-comment cmt"># Check if there is an orogen package registered. If it is the case,</span>
-244:             <span class="ruby-comment cmt"># simply depend on it. Otherwise, look out for orogen --base-dir</span>
-245:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-value str">'orogen'</span>]
-246:                 <span class="ruby-identifier">depends_on</span> <span class="ruby-value str">&quot;orogen&quot;</span>
-247:             <span class="ruby-keyword kw">else</span>
-248:                 <span class="ruby-comment cmt"># Find out where orogen is, and make sure the configurestamp depend</span>
-249:                 <span class="ruby-comment cmt"># on it. Ignore if orogen is too old to have a --base-dir option</span>
-250:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">orogen_root</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">orogen_root</span>
-251:                     <span class="ruby-identifier">orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_root</span>, <span class="ruby-value str">'orogen'</span>)
-252:                     <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">orogen_root</span>)
-253:                 <span class="ruby-keyword kw">end</span>
-254:             <span class="ruby-keyword kw">end</span>
-255: 
-256:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genstamp</span>
-257:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">orogen_file</span>) <span class="ruby-keyword kw">do</span>
-258:                 <span class="ruby-identifier">regen</span>
-259:             <span class="ruby-keyword kw">end</span>
-260: 
-261:             <span class="ruby-identifier">with_doc</span>
-262: 
-263:             <span class="ruby-keyword kw">super</span>
-264: 
-265:             <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
-266:                 <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>].<span class="ruby-identifier">installstamp</span>
-267:             <span class="ruby-keyword kw">end</span>
-268:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 239</span>
+239:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare</span>
+240:             <span class="ruby-comment cmt"># Check if someone provides the pkgconfig/orocos-rtt-TARGET package,</span>
+241:             <span class="ruby-comment cmt"># and if so add it into our dependency list</span>
+242:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rtt</span> = <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-node">&quot;pkgconfig/orocos-rtt-#{orocos_target}&quot;</span>]
+243:                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">verbose</span>
+244:                     <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;orogen: found #{rtt.name} which provides the RTT&quot;</span>
+245:                 <span class="ruby-keyword kw">end</span>
+246:                 <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">rtt</span>.<span class="ruby-identifier">name</span>
+247:             <span class="ruby-keyword kw">end</span>
+248: 
+249:             <span class="ruby-comment cmt"># If required, load the component's specification and add</span>
+250:             <span class="ruby-comment cmt"># dependencies based on the orogen specification.</span>
+251:             <span class="ruby-identifier">orogen_spec</span>.<span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pkg_name</span><span class="ruby-operator">|</span>
+252:                 <span class="ruby-identifier">target</span> = <span class="ruby-node">&quot;pkgconfig/#{pkg_name}&quot;</span>
+253:                 <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-identifier">target</span>]
+254:                     <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">target</span>
+255:                 <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">dependency_mapper</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">target</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">dependency_mapper</span>[<span class="ruby-identifier">pkg_name</span>]
+256:                     <span class="ruby-identifier">depends_on</span> <span class="ruby-identifier">target</span>
+257:                 <span class="ruby-keyword kw">end</span>
+258:             <span class="ruby-keyword kw">end</span>
+259: 
+260:             <span class="ruby-comment cmt"># Check if there is an orogen package registered. If it is the case,</span>
+261:             <span class="ruby-comment cmt"># simply depend on it. Otherwise, look out for orogen --base-dir</span>
+262:             <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Autobuild</span><span class="ruby-operator">::</span><span class="ruby-constant">Package</span>[<span class="ruby-value str">'orogen'</span>]
+263:                 <span class="ruby-identifier">depends_on</span> <span class="ruby-value str">&quot;orogen&quot;</span>
+264:             <span class="ruby-keyword kw">else</span>
+265:                 <span class="ruby-comment cmt"># Find out where orogen is, and make sure the configurestamp depend</span>
+266:                 <span class="ruby-comment cmt"># on it. Ignore if orogen is too old to have a --base-dir option</span>
+267:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">orogen_root</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">orogen_root</span>
+268:                     <span class="ruby-identifier">orogen_root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">orogen_root</span>, <span class="ruby-value str">'orogen'</span>)
+269:                     <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">source_tree</span>(<span class="ruby-identifier">orogen_root</span>)
+270:                 <span class="ruby-keyword kw">end</span>
+271:             <span class="ruby-keyword kw">end</span>
+272: 
+273:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">configurestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">genstamp</span>
+274:             <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">srcdir</span>, <span class="ruby-identifier">orogen_file</span>) <span class="ruby-keyword kw">do</span>
+275:                 <span class="ruby-identifier">regen</span>
+276:             <span class="ruby-keyword kw">end</span>
+277: 
+278:             <span class="ruby-identifier">with_doc</span>
+279: 
+280:             <span class="ruby-keyword kw">super</span>
+281: 
+282:             <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+283:                 <span class="ruby-identifier">file</span> <span class="ruby-identifier">genstamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Package</span>[<span class="ruby-identifier">p</span>].<span class="ruby-identifier">installstamp</span>
+284:             <span class="ruby-keyword kw">end</span>
+285:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -945,19 +948,19 @@ contains a camera.pc.in file, but can also be done manually with a call to
 					<div class="method-source-code"
 						id="regen-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 280</span>
-280:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
-281:             <span class="ruby-identifier">cmdline</span> = [<span class="ruby-identifier">guess_ruby_name</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">orogen_bin</span>]
-282:             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'--corba'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">corba</span>
-283:             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'--extended-states'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">extended_states</span>
-284:             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">orogen_file</span>
-285: 
-286:             <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating oroGen project %s&quot;</span>
-287:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
-288:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'orogen'</span>, *<span class="ruby-identifier">cmdline</span>
-289:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span> <span class="ruby-identifier">genstamp</span>
-290:             <span class="ruby-keyword kw">end</span>
-291:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 297</span>
+297:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">regen</span>
+298:             <span class="ruby-identifier">cmdline</span> = [<span class="ruby-identifier">guess_ruby_name</span>, <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">orogen_bin</span>]
+299:             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'--corba'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">corba</span>
+300:             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'--extended-states'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">extended_states</span>
+301:             <span class="ruby-identifier">cmdline</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">orogen_file</span>
+302: 
+303:             <span class="ruby-identifier">progress</span> <span class="ruby-value str">&quot;generating oroGen project %s&quot;</span>
+304:             <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">srcdir</span>) <span class="ruby-keyword kw">do</span>
+305:                 <span class="ruby-constant">Subprocess</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword kw">self</span>, <span class="ruby-value str">'orogen'</span>, *<span class="ruby-identifier">cmdline</span>
+306:                 <span class="ruby-constant">Autobuild</span>.<span class="ruby-identifier">touch_stamp</span> <span class="ruby-identifier">genstamp</span>
+307:             <span class="ruby-keyword kw">end</span>
+308:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

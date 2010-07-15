@@ -411,10 +411,10 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="const-missing-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 108</span>
-108:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">const_missing</span>(*<span class="ruby-identifier">args</span>)
-109:             <span class="ruby-constant">BlackHole</span>
-110:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 122</span>
+122:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">const_missing</span>(*<span class="ruby-identifier">args</span>)
+123:             <span class="ruby-constant">BlackHole</span>
+124:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -521,10 +521,10 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="const-missing-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 111</span>
-111:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">const_missing</span>(*<span class="ruby-identifier">args</span>)
-112:             <span class="ruby-constant">BlackHole</span>
-113:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 125</span>
+125:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">const_missing</span>(*<span class="ruby-identifier">args</span>)
+126:             <span class="ruby-constant">BlackHole</span>
+127:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -555,12 +555,12 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="deployment-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 102</span>
-102:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deployment</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
-103:             <span class="ruby-identifier">deployment</span> = <span class="ruby-constant">FakeDeployment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">name</span>)
-104:             <span class="ruby-identifier">deployment</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
-105:             <span class="ruby-identifier">deployment</span>
-106:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 116</span>
+116:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deployment</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+117:             <span class="ruby-identifier">deployment</span> = <span class="ruby-constant">FakeDeployment</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">name</span>)
+118:             <span class="ruby-identifier">deployment</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
+119:             <span class="ruby-identifier">deployment</span>
+120:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -591,12 +591,12 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="import-types-from-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 83</span>
-83:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import_types_from</span>(<span class="ruby-identifier">name</span>)
-84:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">base_dir</span>, <span class="ruby-identifier">name</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/\.(hh|hpp|h)/</span>
-85:                 <span class="ruby-identifier">using_toolkit</span> <span class="ruby-identifier">name</span>
-86:             <span class="ruby-keyword kw">end</span>
-87:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 97</span>
+ 97:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import_types_from</span>(<span class="ruby-identifier">name</span>)
+ 98:             <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">base_dir</span>, <span class="ruby-identifier">name</span>)) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/\.(hh|hpp|h)/</span>
+ 99:                 <span class="ruby-identifier">using_toolkit</span> <span class="ruby-identifier">name</span>
+100:             <span class="ruby-keyword kw">end</span>
+101:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -631,9 +631,23 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 68:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load</span>(<span class="ruby-identifier">file</span>)
 69:             <span class="ruby-ivar">@orogen_file</span> = <span class="ruby-identifier">file</span>
 70:             <span class="ruby-ivar">@base_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">file</span>)
-71:             <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>), <span class="ruby-identifier">binding</span>)
-72:             <span class="ruby-keyword kw">self</span>
-73:         <span class="ruby-keyword kw">end</span></pre>
+71: 
+72:             <span class="ruby-keyword kw">begin</span>
+73:                 <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>), <span class="ruby-identifier">binding</span>, <span class="ruby-identifier">file</span>, <span class="ruby-value">0</span>)
+74:             <span class="ruby-keyword kw">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+75:                 <span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">dup</span>
+76:                 <span class="ruby-identifier">message</span>   = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">dup</span>
+77: 
+78:                 <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">!~</span> <span class="ruby-node">/(\s|^)#{Regexp.quote(file)}:/</span> }
+79:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">message</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^(#{Regexp.quote(file)}:\d+): (.*)/</span>
+80:                     <span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-node">$1</span>
+81:                     <span class="ruby-identifier">message</span> = <span class="ruby-node">$2</span>
+82:                 <span class="ruby-keyword kw">end</span>
+83:                 <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">backtrace</span>
+84:             <span class="ruby-keyword kw">end</span>
+85: 
+86:             <span class="ruby-keyword kw">self</span>
+87:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -664,10 +678,10 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="method-missing-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 114</span>
-114:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(*<span class="ruby-identifier">args</span>)
-115:             <span class="ruby-constant">BlackHole</span>
-116:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 128</span>
+128:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(*<span class="ruby-identifier">args</span>)
+129:             <span class="ruby-constant">BlackHole</span>
+130:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -698,11 +712,11 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="name-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 75</span>
-75:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">name</span>(<span class="ruby-identifier">name</span>)
-76:             <span class="ruby-ivar">@project_name</span> = <span class="ruby-identifier">name</span>
-77:             <span class="ruby-keyword kw">nil</span>
-78:         <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 89</span>
+89:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">name</span>(<span class="ruby-identifier">name</span>)
+90:             <span class="ruby-ivar">@project_name</span> = <span class="ruby-identifier">name</span>
+91:             <span class="ruby-keyword kw">nil</span>
+92:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -733,10 +747,10 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="static-deployment-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 99</span>
- 99:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">static_deployment</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword kw">nil</span>, &amp;<span class="ruby-identifier">block</span>)
-100:             <span class="ruby-identifier">deployment</span>(<span class="ruby-node">&quot;test_#{project_name}&quot;</span>, &amp;<span class="ruby-identifier">block</span>)
-101:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 113</span>
+113:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">static_deployment</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword kw">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+114:             <span class="ruby-identifier">deployment</span>(<span class="ruby-node">&quot;test_#{project_name}&quot;</span>, &amp;<span class="ruby-identifier">block</span>)
+115:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -767,11 +781,11 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="using-library-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 79</span>
-79:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">using_library</span>(*<span class="ruby-identifier">names</span>)
-80:             <span class="ruby-ivar">@dependencies</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">names</span>)
-81:             <span class="ruby-keyword kw">nil</span>
-82:         <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 93</span>
+93:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">using_library</span>(*<span class="ruby-identifier">names</span>)
+94:             <span class="ruby-ivar">@dependencies</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">names</span>)
+95:             <span class="ruby-keyword kw">nil</span>
+96:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -802,12 +816,12 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="using-task-library-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 93</span>
-93:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">using_task_library</span>(*<span class="ruby-identifier">names</span>)
-94:             <span class="ruby-identifier">names</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{n}-tasks-#{pkg.orocos_target}&quot;</span> }
-95:             <span class="ruby-ivar">@dependencies</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">names</span>)
-96:             <span class="ruby-keyword kw">nil</span>
-97:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 107</span>
+107:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">using_task_library</span>(*<span class="ruby-identifier">names</span>)
+108:             <span class="ruby-identifier">names</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{n}-tasks-#{pkg.orocos_target}&quot;</span> }
+109:             <span class="ruby-ivar">@dependencies</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">names</span>)
+110:             <span class="ruby-keyword kw">nil</span>
+111:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -838,12 +852,12 @@ The <a href="Orogen.html">Autobuild::Orogen</a> instance we are working for
 					<div class="method-source-code"
 						id="using-toolkit-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 88</span>
-88:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">using_toolkit</span>(*<span class="ruby-identifier">names</span>)
-89:             <span class="ruby-identifier">names</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{n}-toolkit-#{pkg.orocos_target}&quot;</span> }
-90:             <span class="ruby-ivar">@dependencies</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">names</span>)
-91:             <span class="ruby-keyword kw">nil</span>
-92:         <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/autobuild/packages/orogen.rb, line 102</span>
+102:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">using_toolkit</span>(*<span class="ruby-identifier">names</span>)
+103:             <span class="ruby-identifier">names</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{n}-toolkit-#{pkg.orocos_target}&quot;</span> }
+104:             <span class="ruby-ivar">@dependencies</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">names</span>)
+105:             <span class="ruby-keyword kw">nil</span>
+106:         <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
